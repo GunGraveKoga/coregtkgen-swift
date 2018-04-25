@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED7283A0208DE09200AE4216 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72839F208DE09200AE4216 /* main.swift */; };
+		ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A7208DE0F600AE4216 /* GIRBase.swift */; };
+		ED7283AA208DEB5800AE4216 /* GIRType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A9208DEB5800AE4216 /* GIRType.swift */; };
+		ED7283AC208DF17200AE4216 /* GIRClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283AB208DF17200AE4216 /* GIRClass.swift */; };
+		ED7283AE208DF25B00AE4216 /* GIRDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283AD208DF25B00AE4216 /* GIRDoc.swift */; };
+		ED7283B0208DF2C200AE4216 /* GIRConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283AF208DF2C200AE4216 /* GIRConstructor.swift */; };
+		ED7283B2208DF2F500AE4216 /* GIRField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283B1208DF2F500AE4216 /* GIRField.swift */; };
+		ED7283B4208DF31600AE4216 /* GIRMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283B3208DF31600AE4216 /* GIRMethod.swift */; };
+		ED7283B6208DF35B00AE4216 /* GIRVirtualMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283B5208DF35B00AE4216 /* GIRVirtualMethod.swift */; };
+		ED7283B8208DF38C00AE4216 /* GIRProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283B7208DF38C00AE4216 /* GIRProperty.swift */; };
+		ED7283BA208DF3AE00AE4216 /* GIRImplements.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283B9208DF3AE00AE4216 /* GIRImplements.swift */; };
+		ED7283BC208DF3CE00AE4216 /* GIRFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283BB208DF3CE00AE4216 /* GIRFunction.swift */; };
+		ED7283BE208E05E000AE4216 /* GIRReturnValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283BD208E05E000AE4216 /* GIRReturnValue.swift */; };
+		ED7283C0208E060600AE4216 /* GIRParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283BF208E060600AE4216 /* GIRParameter.swift */; };
+		ED7283C2208E1C5000AE4216 /* GIRArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283C1208E1C5000AE4216 /* GIRArray.swift */; };
+		ED7283C6208F3EF700AE4216 /* GIRVarArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283C5208F3EF700AE4216 /* GIRVarArgs.swift */; };
+		ED7283C8208F435200AE4216 /* GIRConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283C7208F435200AE4216 /* GIRConstant.swift */; };
+		ED7283CA208F45AC00AE4216 /* GIRNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283C9208F45AC00AE4216 /* GIRNamespace.swift */; };
+		ED7283CC208F461B00AE4216 /* GIRInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283CB208F461B00AE4216 /* GIRInterface.swift */; };
+		ED7283CE208F467400AE4216 /* GIREnumiration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283CD208F467400AE4216 /* GIREnumiration.swift */; };
+		ED7283D0208F51B100AE4216 /* GIRPrerequisite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283CF208F51B100AE4216 /* GIRPrerequisite.swift */; };
+		ED7283D2208F548500AE4216 /* GIRMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283D1208F548500AE4216 /* GIRMember.swift */; };
+		ED72848F208FA9AD00AE4216 /* GIRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72848E208FA9AD00AE4216 /* GIRApi.swift */; };
+		ED7284922090815F00AE4216 /* XMLReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284912090815F00AE4216 /* XMLReader.swift */; };
+		ED72849420908E9B00AE4216 /* Gir2Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72849320908E9B00AE4216 /* Gir2Swift.swift */; };
+		ED7284962090D09B00AE4216 /* GIRInclude.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284952090D09B00AE4216 /* GIRInclude.swift */; };
+		ED72849B2090DB0600AE4216 /* CoreGTKUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72849A2090DB0600AE4216 /* CoreGTKUtil.swift */; };
+		ED72849D2090DB1F00AE4216 /* CoreGTKClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72849C2090DB1F00AE4216 /* CoreGTKClass.swift */; };
+		ED72849F2090DB3500AE4216 /* CoreGTKMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72849E2090DB3500AE4216 /* CoreGTKMethod.swift */; };
+		ED7284A12090DB5900AE4216 /* CoreGTKParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A02090DB5900AE4216 /* CoreGTKParameter.swift */; };
+		ED7284A32090DB6A00AE4216 /* CoreGTKClassWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A22090DB6A00AE4216 /* CoreGTKClassWriter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED72839A208DE09200AE4216 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		ED72839C208DE09200AE4216 /* coregtkgen-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "coregtkgen-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED72839F208DE09200AE4216 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ED7283A7208DE0F600AE4216 /* GIRBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRBase.swift; sourceTree = "<group>"; };
+		ED7283A9208DEB5800AE4216 /* GIRType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRType.swift; sourceTree = "<group>"; };
+		ED7283AB208DF17200AE4216 /* GIRClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRClass.swift; sourceTree = "<group>"; };
+		ED7283AD208DF25B00AE4216 /* GIRDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRDoc.swift; sourceTree = "<group>"; };
+		ED7283AF208DF2C200AE4216 /* GIRConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRConstructor.swift; sourceTree = "<group>"; };
+		ED7283B1208DF2F500AE4216 /* GIRField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRField.swift; sourceTree = "<group>"; };
+		ED7283B3208DF31600AE4216 /* GIRMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRMethod.swift; sourceTree = "<group>"; };
+		ED7283B5208DF35B00AE4216 /* GIRVirtualMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRVirtualMethod.swift; sourceTree = "<group>"; };
+		ED7283B7208DF38C00AE4216 /* GIRProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRProperty.swift; sourceTree = "<group>"; };
+		ED7283B9208DF3AE00AE4216 /* GIRImplements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRImplements.swift; sourceTree = "<group>"; };
+		ED7283BB208DF3CE00AE4216 /* GIRFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRFunction.swift; sourceTree = "<group>"; };
+		ED7283BD208E05E000AE4216 /* GIRReturnValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRReturnValue.swift; sourceTree = "<group>"; };
+		ED7283BF208E060600AE4216 /* GIRParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRParameter.swift; sourceTree = "<group>"; };
+		ED7283C1208E1C5000AE4216 /* GIRArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRArray.swift; sourceTree = "<group>"; };
+		ED7283C5208F3EF700AE4216 /* GIRVarArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRVarArgs.swift; sourceTree = "<group>"; };
+		ED7283C7208F435200AE4216 /* GIRConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRConstant.swift; sourceTree = "<group>"; };
+		ED7283C9208F45AC00AE4216 /* GIRNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRNamespace.swift; sourceTree = "<group>"; };
+		ED7283CB208F461B00AE4216 /* GIRInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRInterface.swift; sourceTree = "<group>"; };
+		ED7283CD208F467400AE4216 /* GIREnumiration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIREnumiration.swift; sourceTree = "<group>"; };
+		ED7283CF208F51B100AE4216 /* GIRPrerequisite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRPrerequisite.swift; sourceTree = "<group>"; };
+		ED7283D1208F548500AE4216 /* GIRMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRMember.swift; sourceTree = "<group>"; };
+		ED72848E208FA9AD00AE4216 /* GIRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRApi.swift; sourceTree = "<group>"; };
+		ED7284912090815F00AE4216 /* XMLReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLReader.swift; sourceTree = "<group>"; };
+		ED72849320908E9B00AE4216 /* Gir2Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gir2Swift.swift; sourceTree = "<group>"; };
+		ED7284952090D09B00AE4216 /* GIRInclude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRInclude.swift; sourceTree = "<group>"; };
+		ED72849A2090DB0600AE4216 /* CoreGTKUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTKUtil.swift; sourceTree = "<group>"; };
+		ED72849C2090DB1F00AE4216 /* CoreGTKClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTKClass.swift; sourceTree = "<group>"; };
+		ED72849E2090DB3500AE4216 /* CoreGTKMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTKMethod.swift; sourceTree = "<group>"; };
+		ED7284A02090DB5900AE4216 /* CoreGTKParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTKParameter.swift; sourceTree = "<group>"; };
+		ED7284A22090DB6A00AE4216 /* CoreGTKClassWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTKClassWriter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED728399208DE09200AE4216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED728393208DE09200AE4216 = {
+			isa = PBXGroup;
+			children = (
+				ED72839E208DE09200AE4216 /* coregtkgen-swift */,
+				ED72839D208DE09200AE4216 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED72839D208DE09200AE4216 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED72839C208DE09200AE4216 /* coregtkgen-swift */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED72839E208DE09200AE4216 /* coregtkgen-swift */ = {
+			isa = PBXGroup;
+			children = (
+				ED7284992090DAE700AE4216 /* Generator */,
+				ED7284902090813D00AE4216 /* XMLReader */,
+				ED7283A6208DE09900AE4216 /* GIR */,
+				ED72849320908E9B00AE4216 /* Gir2Swift.swift */,
+				ED72839F208DE09200AE4216 /* main.swift */,
+			);
+			path = "coregtkgen-swift";
+			sourceTree = "<group>";
+		};
+		ED7283A6208DE09900AE4216 /* GIR */ = {
+			isa = PBXGroup;
+			children = (
+				ED7283A7208DE0F600AE4216 /* GIRBase.swift */,
+				ED7283A9208DEB5800AE4216 /* GIRType.swift */,
+				ED7283AB208DF17200AE4216 /* GIRClass.swift */,
+				ED7283AD208DF25B00AE4216 /* GIRDoc.swift */,
+				ED7283B1208DF2F500AE4216 /* GIRField.swift */,
+				ED7283BB208DF3CE00AE4216 /* GIRFunction.swift */,
+				ED7283AF208DF2C200AE4216 /* GIRConstructor.swift */,
+				ED7283B3208DF31600AE4216 /* GIRMethod.swift */,
+				ED7283B5208DF35B00AE4216 /* GIRVirtualMethod.swift */,
+				ED7283B7208DF38C00AE4216 /* GIRProperty.swift */,
+				ED7283B9208DF3AE00AE4216 /* GIRImplements.swift */,
+				ED7283BD208E05E000AE4216 /* GIRReturnValue.swift */,
+				ED7283BF208E060600AE4216 /* GIRParameter.swift */,
+				ED7283C1208E1C5000AE4216 /* GIRArray.swift */,
+				ED7283C5208F3EF700AE4216 /* GIRVarArgs.swift */,
+				ED7283C7208F435200AE4216 /* GIRConstant.swift */,
+				ED7283C9208F45AC00AE4216 /* GIRNamespace.swift */,
+				ED7283CB208F461B00AE4216 /* GIRInterface.swift */,
+				ED7283CD208F467400AE4216 /* GIREnumiration.swift */,
+				ED7283CF208F51B100AE4216 /* GIRPrerequisite.swift */,
+				ED7283D1208F548500AE4216 /* GIRMember.swift */,
+				ED7284952090D09B00AE4216 /* GIRInclude.swift */,
+				ED72848E208FA9AD00AE4216 /* GIRApi.swift */,
+			);
+			path = GIR;
+			sourceTree = "<group>";
+		};
+		ED7284902090813D00AE4216 /* XMLReader */ = {
+			isa = PBXGroup;
+			children = (
+				ED7284912090815F00AE4216 /* XMLReader.swift */,
+			);
+			path = XMLReader;
+			sourceTree = "<group>";
+		};
+		ED7284992090DAE700AE4216 /* Generator */ = {
+			isa = PBXGroup;
+			children = (
+				ED72849A2090DB0600AE4216 /* CoreGTKUtil.swift */,
+				ED72849C2090DB1F00AE4216 /* CoreGTKClass.swift */,
+				ED72849E2090DB3500AE4216 /* CoreGTKMethod.swift */,
+				ED7284A02090DB5900AE4216 /* CoreGTKParameter.swift */,
+				ED7284A22090DB6A00AE4216 /* CoreGTKClassWriter.swift */,
+			);
+			path = Generator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED72839B208DE09200AE4216 /* coregtkgen-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED7283A3208DE09200AE4216 /* Build configuration list for PBXNativeTarget "coregtkgen-swift" */;
+			buildPhases = (
+				ED728398208DE09200AE4216 /* Sources */,
+				ED728399208DE09200AE4216 /* Frameworks */,
+				ED72839A208DE09200AE4216 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "coregtkgen-swift";
+			productName = "coregtkgen-swift";
+			productReference = ED72839C208DE09200AE4216 /* coregtkgen-swift */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED728394208DE09200AE4216 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = gungravekoga;
+				TargetAttributes = {
+					ED72839B208DE09200AE4216 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = ED728397208DE09200AE4216 /* Build configuration list for PBXProject "coregtkgen-swift" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ED728393208DE09200AE4216;
+			productRefGroup = ED72839D208DE09200AE4216 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED72839B208DE09200AE4216 /* coregtkgen-swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED728398208DE09200AE4216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED7283CE208F467400AE4216 /* GIREnumiration.swift in Sources */,
+				ED7283AA208DEB5800AE4216 /* GIRType.swift in Sources */,
+				ED72849B2090DB0600AE4216 /* CoreGTKUtil.swift in Sources */,
+				ED7283B6208DF35B00AE4216 /* GIRVirtualMethod.swift in Sources */,
+				ED7283B2208DF2F500AE4216 /* GIRField.swift in Sources */,
+				ED7283C6208F3EF700AE4216 /* GIRVarArgs.swift in Sources */,
+				ED7283BE208E05E000AE4216 /* GIRReturnValue.swift in Sources */,
+				ED72849420908E9B00AE4216 /* Gir2Swift.swift in Sources */,
+				ED7283BA208DF3AE00AE4216 /* GIRImplements.swift in Sources */,
+				ED7284A32090DB6A00AE4216 /* CoreGTKClassWriter.swift in Sources */,
+				ED72849F2090DB3500AE4216 /* CoreGTKMethod.swift in Sources */,
+				ED7283AC208DF17200AE4216 /* GIRClass.swift in Sources */,
+				ED7283A0208DE09200AE4216 /* main.swift in Sources */,
+				ED7283B0208DF2C200AE4216 /* GIRConstructor.swift in Sources */,
+				ED7283B4208DF31600AE4216 /* GIRMethod.swift in Sources */,
+				ED7283BC208DF3CE00AE4216 /* GIRFunction.swift in Sources */,
+				ED7283C0208E060600AE4216 /* GIRParameter.swift in Sources */,
+				ED7283B8208DF38C00AE4216 /* GIRProperty.swift in Sources */,
+				ED7284962090D09B00AE4216 /* GIRInclude.swift in Sources */,
+				ED7284922090815F00AE4216 /* XMLReader.swift in Sources */,
+				ED7284A12090DB5900AE4216 /* CoreGTKParameter.swift in Sources */,
+				ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */,
+				ED72848F208FA9AD00AE4216 /* GIRApi.swift in Sources */,
+				ED7283C2208E1C5000AE4216 /* GIRArray.swift in Sources */,
+				ED7283C8208F435200AE4216 /* GIRConstant.swift in Sources */,
+				ED72849D2090DB1F00AE4216 /* CoreGTKClass.swift in Sources */,
+				ED7283D0208F51B100AE4216 /* GIRPrerequisite.swift in Sources */,
+				ED7283D2208F548500AE4216 /* GIRMember.swift in Sources */,
+				ED7283CA208F45AC00AE4216 /* GIRNamespace.swift in Sources */,
+				ED7283CC208F461B00AE4216 /* GIRInterface.swift in Sources */,
+				ED7283AE208DF25B00AE4216 /* GIRDoc.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		ED7283A1208DE09200AE4216 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ED7283A2208DE09200AE4216 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		ED7283A4208DE09200AE4216 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		ED7283A5208DE09200AE4216 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED728397208DE09200AE4216 /* Build configuration list for PBXProject "coregtkgen-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED7283A1208DE09200AE4216 /* Debug */,
+				ED7283A2208DE09200AE4216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED7283A3208DE09200AE4216 /* Build configuration list for PBXNativeTarget "coregtkgen-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED7283A4208DE09200AE4216 /* Debug */,
+				ED7283A5208DE09200AE4216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED728394208DE09200AE4216 /* Project object */;
+}
