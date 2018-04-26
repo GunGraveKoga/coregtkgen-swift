@@ -11,7 +11,7 @@ import Foundation
 fileprivate let configURL = URL(fileURLWithPath: CommandLine.arguments[2], isDirectory: true)
 
 public enum CoreGTKClassWriter {
-    public static func generateFiles(forClass gtkClass: CoreGTKClass, inDirectory directory: String) throws {
+    public static func generateFile(forClass gtkClass: CoreGTKClass, inDirectory directory: String) throws {
         var isDir: ObjCBool = false
         
         if FileManager.default.fileExists(atPath: directory, isDirectory: &isDir) && isDir.boolValue {
@@ -37,7 +37,7 @@ public enum CoreGTKClassWriter {
         var output = ""
         
         output += self.generateLicense(forFile: "\(gtkClass.name).swift") ?? ""
-        output += "\nimport CGTK\n\n"
+        output += "\n@_exported import CGtk\n\n"
         
         output += "open class \(gtkClass.name) : \(CoreGTKUtil.swapTypes(gtkClass.cParentType!)) {\n"
         
@@ -58,10 +58,12 @@ public enum CoreGTKClassWriter {
             output += self.sourceString(forConstructor: constructor, of: gtkClass)
         }
         
+        output += "\topen var \(gtkClass.cName.uppercased()): UnsafePointer<\(gtkClass.cType)> {\n\t\tget {\n\t\t\treturn \(CoreGTKUtil.selfTypeMethodCall(gtkClass.cType))\n\t\t}\n\t}\n\n"
+        
         for method in gtkClass.methods {
             output += "\topen "
             
-            output += self.sourceString(forFunction: method)
+            output += self.sourceString(forFunction: method, passSelf: gtkClass.type)
         }
         
         output += "}\n"
@@ -69,7 +71,7 @@ public enum CoreGTKClassWriter {
         return output
     }
     
-    public static func sourceString(forFunction gtkFunction: CoreGTKMethod) -> String {
+    public static func sourceString(forFunction gtkFunction: CoreGTKMethod, passSelf: String? = nil) -> String {
         var output = "func \(gtkFunction.sig)"
         
         if !gtkFunction.returnsVoid {
@@ -79,10 +81,25 @@ public enum CoreGTKClassWriter {
         output += " {\n"
         
         if gtkFunction.returnsVoid {
-            output += "\t\t\(gtkFunction.cName)(\(self.generateCParameterListString(gtkFunction.parameters)))\n"
+            output += "\t\t\(gtkFunction.cName)("
+            
+            if passSelf != nil {
+                output += self.generateCParameterListWith(instance: passSelf!, params: gtkFunction.parameters)
+            } else {
+                output += self.generateCParameterListString(gtkFunction.parameters)
+            }
+            
+            output += "))\n"
         } else {
             output += "\t\treturn "
-            let name = "\(gtkFunction.cName)(\(self.generateCParameterListString(gtkFunction.parameters)))"
+            
+            let name: String
+            
+            if passSelf != nil {
+                name = "\(gtkFunction.cName)(\(self.generateCParameterListWith(instance: passSelf!, params: gtkFunction.parameters)))"
+            } else {
+                name = "\(gtkFunction.cName)(\(self.generateCParameterListString(gtkFunction.parameters)))"
+            }
             
             if CoreGTKUtil.isTypeSwappable(gtkFunction.cReturnType) {
                 output += CoreGTKUtil.convertType(from: gtkFunction.cReturnType, to: gtkFunction.returnType, withName: name)
@@ -101,7 +118,7 @@ public enum CoreGTKClassWriter {
     public static func sourceString(forConstructor constructor: CoreGTKMethod, of gtkClass: CoreGTKClass) -> String {
         var output = ""
         
-        output += "\topen init() {\n\t\t"
+        output += "\topen \(constructor.sig) {\n\t\t"
         let constructorString = "\(constructor.cName)(\(self.generateCParameterListString(constructor.parameters)))"
         
         output += CoreGTKUtil.getFunctionCallForConstructor(of: gtkClass.cType, with: constructorString)

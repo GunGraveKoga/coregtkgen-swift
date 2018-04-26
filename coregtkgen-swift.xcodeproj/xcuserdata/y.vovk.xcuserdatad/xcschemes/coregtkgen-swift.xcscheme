@@ -68,6 +68,14 @@
             argument = "/usr/local/opt/gtk+3/share/gir-1.0/Gtk-3.0.gir"
             isEnabled = "YES">
          </CommandLineArgument>
+         <CommandLineArgument
+            argument = "$(SRCROOT)/coregtkgen-swift/Config"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "$(SRCROOT)/coregtkgen-swift/Output"
+            isEnabled = "YES">
+         </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>

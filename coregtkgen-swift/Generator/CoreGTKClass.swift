@@ -38,11 +38,23 @@ public struct CoreGTKClass {
         return constructors.count != 0
     }
     
+    public mutating func addConstructor(_ constructor: CoreGTKMethod) {
+        self.constructors.append(constructor)
+    }
+    
     @inline(__always) public func hasFunctions() -> Bool {
         return functions.count != 0
     }
     
+    public mutating func addFunction(_ function: CoreGTKMethod) {
+        self.functions.append(function)
+    }
+    
     @inline(__always) public func hasMethods() -> Bool {
         return methods.count != 0
+    }
+    
+    public mutating func addMethod(_ method: CoreGTKMethod) {
+        self.methods.append(method)
     }
 }

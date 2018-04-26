@@ -38,10 +38,153 @@
 		ED72849F2090DB3500AE4216 /* CoreGTKMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72849E2090DB3500AE4216 /* CoreGTKMethod.swift */; };
 		ED7284A12090DB5900AE4216 /* CoreGTKParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A02090DB5900AE4216 /* CoreGTKParameter.swift */; };
 		ED7284A32090DB6A00AE4216 /* CoreGTKClassWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A22090DB6A00AE4216 /* CoreGTKClassWriter.swift */; };
+		ED7284A52091D2A800AE4216 /* CoreGTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A42091D2A800AE4216 /* CoreGTK.swift */; };
+		ED7285BD20922E7C00AE4216 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7285BC20922E7C00AE4216 /* main.swift */; };
+		ED7285C120922E9E00AE4216 /* CGTKAboutDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851B20922C3200AE4216 /* CGTKAboutDialog.swift */; };
+		ED7285C220922E9E00AE4216 /* CGTKAccelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E520922C2D00AE4216 /* CGTKAccelLabel.swift */; };
+		ED7285C320922E9E00AE4216 /* CGTKActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850820922C3100AE4216 /* CGTKActionBar.swift */; };
+		ED7285C420922E9E00AE4216 /* CGTKAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851920922C3200AE4216 /* CGTKAlignment.swift */; };
+		ED7285C520922E9E00AE4216 /* CGTKAppChooserButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850720922C3100AE4216 /* CGTKAppChooserButton.swift */; };
+		ED7285C620922E9E00AE4216 /* CGTKAppChooserDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850120922C3000AE4216 /* CGTKAppChooserDialog.swift */; };
+		ED7285C720922E9E00AE4216 /* CGTKAppChooserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850420922C3000AE4216 /* CGTKAppChooserWidget.swift */; };
+		ED7285C820922E9E00AE4216 /* CGTKApplicationWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E320922C2D00AE4216 /* CGTKApplicationWindow.swift */; };
+		ED7285C920922E9E00AE4216 /* CGTKArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852C20922C3400AE4216 /* CGTKArrow.swift */; };
+		ED7285CA20922E9E00AE4216 /* CGTKAspectFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850620922C3000AE4216 /* CGTKAspectFrame.swift */; };
+		ED7285CB20922E9E00AE4216 /* CGTKAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284FA20922C2F00AE4216 /* CGTKAssistant.swift */; };
+		ED7285CC20922E9E00AE4216 /* CGTKBin.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72853020922C3400AE4216 /* CGTKBin.swift */; };
+		ED7285CD20922E9E00AE4216 /* CGTKBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284EF20922C2E00AE4216 /* CGTKBox.swift */; };
+		ED7285CE20922E9E00AE4216 /* CGTKBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284BB20922C2A00AE4216 /* CGTKBuilder.swift */; };
+		ED7285CF20922E9E00AE4216 /* CGTKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E120922C2D00AE4216 /* CGTKButton.swift */; };
+		ED7285D020922E9E00AE4216 /* CGTKButtonBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284EB20922C2E00AE4216 /* CGTKButtonBox.swift */; };
+		ED7285D120922E9E00AE4216 /* CGTKCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851C20922C3200AE4216 /* CGTKCalendar.swift */; };
+		ED7285D220922E9E00AE4216 /* CGTKCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284F920922C2F00AE4216 /* CGTKCellView.swift */; };
+		ED7285D320922E9E00AE4216 /* CGTKCheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284F220922C2F00AE4216 /* CGTKCheckButton.swift */; };
+		ED7285D420922E9E00AE4216 /* CGTKCheckMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850920922C3100AE4216 /* CGTKCheckMenuItem.swift */; };
+		ED7285D520922E9E00AE4216 /* CGTKColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851520922C3200AE4216 /* CGTKColorButton.swift */; };
+		ED7285D620922E9E00AE4216 /* CGTKColorChooserDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852720922C3300AE4216 /* CGTKColorChooserDialog.swift */; };
+		ED7285D720922E9E00AE4216 /* CGTKColorChooserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851F20922C3300AE4216 /* CGTKColorChooserWidget.swift */; };
+		ED7285D820922E9E00AE4216 /* CGTKColorSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284AE20922C2900AE4216 /* CGTKColorSelection.swift */; };
+		ED7285D920922E9E00AE4216 /* CGTKColorSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851720922C3200AE4216 /* CGTKColorSelectionDialog.swift */; };
+		ED7285DA20922E9E00AE4216 /* CGTKComboBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284B920922C2A00AE4216 /* CGTKComboBox.swift */; };
+		ED7285DB20922E9E00AE4216 /* CGTKComboBoxText.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284EA20922C2E00AE4216 /* CGTKComboBoxText.swift */; };
+		ED7285DC20922E9E00AE4216 /* CGTKContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852120922C3300AE4216 /* CGTKContainer.swift */; };
+		ED7285DD20922E9E00AE4216 /* CGTKDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284C720922C2A00AE4216 /* CGTKDialog.swift */; };
+		ED7285DE20922E9E00AE4216 /* CGTKDrawingArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284BF20922C2A00AE4216 /* CGTKDrawingArea.swift */; };
+		ED7285DF20922E9E00AE4216 /* CGTKEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284F320922C2F00AE4216 /* CGTKEntry.swift */; };
+		ED7285E020922E9E00AE4216 /* CGTKEventBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284ED20922C2E00AE4216 /* CGTKEventBox.swift */; };
+		ED7285E120922E9E00AE4216 /* CGTKExpander.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284D520922C2C00AE4216 /* CGTKExpander.swift */; };
+		ED7285E220922E9E00AE4216 /* CGTKFileChooserButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284F520922C2F00AE4216 /* CGTKFileChooserButton.swift */; };
+		ED7285E320922E9E00AE4216 /* CGTKFileChooserDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851620922C3200AE4216 /* CGTKFileChooserDialog.swift */; };
+		ED7285E420922E9E00AE4216 /* CGTKFileChooserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284C020922C2A00AE4216 /* CGTKFileChooserWidget.swift */; };
+		ED7285E520922E9E00AE4216 /* CGTKFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850D20922C3100AE4216 /* CGTKFixed.swift */; };
+		ED7285E620922E9E00AE4216 /* CGTKFlowBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850220922C3000AE4216 /* CGTKFlowBox.swift */; };
+		ED7285E720922E9E00AE4216 /* CGTKFlowBoxChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850A20922C3100AE4216 /* CGTKFlowBoxChild.swift */; };
+		ED7285E820922E9E00AE4216 /* CGTKFontButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852B20922C3400AE4216 /* CGTKFontButton.swift */; };
+		ED7285E920922E9E00AE4216 /* CGTKFontChooserDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284F720922C2F00AE4216 /* CGTKFontChooserDialog.swift */; };
+		ED7285EA20922E9E00AE4216 /* CGTKFontChooserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284CB20922C2B00AE4216 /* CGTKFontChooserWidget.swift */; };
+		ED7285EB20922E9E00AE4216 /* CGTKFontSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852420922C3300AE4216 /* CGTKFontSelection.swift */; };
+		ED7285EC20922E9E00AE4216 /* CGTKFontSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284CA20922C2B00AE4216 /* CGTKFontSelectionDialog.swift */; };
+		ED7285ED20922E9E00AE4216 /* CGTKFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850B20922C3100AE4216 /* CGTKFrame.swift */; };
+		ED7285EE20922E9E00AE4216 /* CGTKGLArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284F820922C2F00AE4216 /* CGTKGLArea.swift */; };
+		ED7285EF20922E9E00AE4216 /* CGTKGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284BD20922C2A00AE4216 /* CGTKGrid.swift */; };
+		ED7285F020922E9E00AE4216 /* CGTKHandleBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284D920922C2C00AE4216 /* CGTKHandleBox.swift */; };
+		ED7285F120922E9E00AE4216 /* CGTKHBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852D20922C3400AE4216 /* CGTKHBox.swift */; };
+		ED7285F220922E9E00AE4216 /* CGTKHButtonBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850C20922C3100AE4216 /* CGTKHButtonBox.swift */; };
+		ED7285F320922E9E00AE4216 /* CGTKHeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851120922C3100AE4216 /* CGTKHeaderBar.swift */; };
+		ED7285F420922E9E00AE4216 /* CGTKHPaned.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284FF20922C3000AE4216 /* CGTKHPaned.swift */; };
+		ED7285F520922E9E00AE4216 /* CGTKHScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284D620922C2C00AE4216 /* CGTKHScale.swift */; };
+		ED7285F620922E9E00AE4216 /* CGTKHScrollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851420922C3200AE4216 /* CGTKHScrollbar.swift */; };
+		ED7285F720922E9E00AE4216 /* CGTKHSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E220922C2D00AE4216 /* CGTKHSeparator.swift */; };
+		ED7285F820922E9E00AE4216 /* CGTKHSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284EE20922C2E00AE4216 /* CGTKHSV.swift */; };
+		ED7285F920922E9E00AE4216 /* CGTKIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284BC20922C2A00AE4216 /* CGTKIconView.swift */; };
+		ED7285FA20922E9E00AE4216 /* CGTKImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852820922C3300AE4216 /* CGTKImage.swift */; };
+		ED7285FB20922E9E00AE4216 /* CGTKImageMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284DE20922C2D00AE4216 /* CGTKImageMenuItem.swift */; };
+		ED7285FC20922E9E00AE4216 /* CGTKInfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284B720922C2900AE4216 /* CGTKInfoBar.swift */; };
+		ED7285FD20922E9E00AE4216 /* CGTKInvisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284B820922C2900AE4216 /* CGTKInvisible.swift */; };
+		ED7285FE20922E9E00AE4216 /* CGTKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284FD20922C3000AE4216 /* CGTKLabel.swift */; };
+		ED7285FF20922E9E00AE4216 /* CGTKLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284F020922C2E00AE4216 /* CGTKLayout.swift */; };
+		ED72860020922E9E00AE4216 /* CGTKLevelBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284D220922C2B00AE4216 /* CGTKLevelBar.swift */; };
+		ED72860120922E9E00AE4216 /* CGTKLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852520922C3300AE4216 /* CGTKLinkButton.swift */; };
+		ED72860220922E9E00AE4216 /* CGTKListBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284DD20922C2D00AE4216 /* CGTKListBox.swift */; };
+		ED72860320922E9E00AE4216 /* CGTKListBoxRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284D120922C2B00AE4216 /* CGTKListBoxRow.swift */; };
+		ED72860420922E9E00AE4216 /* CGTKLockButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284B520922C2900AE4216 /* CGTKLockButton.swift */; };
+		ED72860520922E9E00AE4216 /* CGTKMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72853120922C3400AE4216 /* CGTKMenu.swift */; };
+		ED72860620922E9E00AE4216 /* CGTKMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284CC20922C2B00AE4216 /* CGTKMenuBar.swift */; };
+		ED72860720922E9E00AE4216 /* CGTKMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284D820922C2C00AE4216 /* CGTKMenuButton.swift */; };
+		ED72860820922E9E00AE4216 /* CGTKMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E420922C2D00AE4216 /* CGTKMenuItem.swift */; };
+		ED72860920922E9E00AE4216 /* CGTKMenuShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284CD20922C2B00AE4216 /* CGTKMenuShell.swift */; };
+		ED72860A20922E9E00AE4216 /* CGTKMenuToolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284D020922C2B00AE4216 /* CGTKMenuToolButton.swift */; };
+		ED72860B20922E9E00AE4216 /* CGTKMessageDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284BA20922C2A00AE4216 /* CGTKMessageDialog.swift */; };
+		ED72860C20922E9E00AE4216 /* CGTKMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284B020922C2900AE4216 /* CGTKMisc.swift */; };
+		ED72860D20922E9E00AE4216 /* CGTKModelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E720922C2D00AE4216 /* CGTKModelButton.swift */; };
+		ED72860E20922E9E00AE4216 /* CGTKNativeDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851020922C3100AE4216 /* CGTKNativeDialog.swift */; };
+		ED72860F20922E9E00AE4216 /* CGTKNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284B220922C2900AE4216 /* CGTKNotebook.swift */; };
+		ED72861020922E9E00AE4216 /* CGTKOffscreenWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852220922C3300AE4216 /* CGTKOffscreenWindow.swift */; };
+		ED72861120922E9E00AE4216 /* CGTKOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284C520922C2A00AE4216 /* CGTKOverlay.swift */; };
+		ED72861220922E9E00AE4216 /* CGTKPaned.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284D320922C2C00AE4216 /* CGTKPaned.swift */; };
+		ED72861320922E9E00AE4216 /* CGTKPlacesSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852020922C3300AE4216 /* CGTKPlacesSidebar.swift */; };
+		ED72861420922E9E00AE4216 /* CGTKPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284C820922C2B00AE4216 /* CGTKPopover.swift */; };
+		ED72861520922E9E00AE4216 /* CGTKPopoverMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284F620922C2F00AE4216 /* CGTKPopoverMenu.swift */; };
+		ED72861620922E9E00AE4216 /* CGTKProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852320922C3300AE4216 /* CGTKProgressBar.swift */; };
+		ED72861720922E9E00AE4216 /* CGTKRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851D20922C3200AE4216 /* CGTKRadioButton.swift */; };
+		ED72861820922E9E00AE4216 /* CGTKRadioMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E620922C2D00AE4216 /* CGTKRadioMenuItem.swift */; };
+		ED72861920922E9E00AE4216 /* CGTKRadioToolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284CE20922C2B00AE4216 /* CGTKRadioToolButton.swift */; };
+		ED72861A20922E9E00AE4216 /* CGTKRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850F20922C3100AE4216 /* CGTKRange.swift */; };
+		ED72861B20922E9E00AE4216 /* CGTKRecentChooserDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284EC20922C2E00AE4216 /* CGTKRecentChooserDialog.swift */; };
+		ED72861C20922E9E00AE4216 /* CGTKRecentChooserMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284C420922C2A00AE4216 /* CGTKRecentChooserMenu.swift */; };
+		ED72861D20922E9E00AE4216 /* CGTKRecentChooserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284DB20922C2C00AE4216 /* CGTKRecentChooserWidget.swift */; };
+		ED72861E20922E9E00AE4216 /* CGTKRevealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284C920922C2B00AE4216 /* CGTKRevealer.swift */; };
+		ED72861F20922E9E00AE4216 /* CGTKScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852620922C3300AE4216 /* CGTKScale.swift */; };
+		ED72862020922E9E00AE4216 /* CGTKScaleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284F420922C2F00AE4216 /* CGTKScaleButton.swift */; };
+		ED72862120922E9E00AE4216 /* CGTKScrollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284B420922C2900AE4216 /* CGTKScrollbar.swift */; };
+		ED72862220922E9E00AE4216 /* CGTKScrolledWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284B320922C2900AE4216 /* CGTKScrolledWindow.swift */; };
+		ED72862320922E9E00AE4216 /* CGTKSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284D720922C2C00AE4216 /* CGTKSearchBar.swift */; };
+		ED72862420922E9E00AE4216 /* CGTKSearchEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852920922C3400AE4216 /* CGTKSearchEntry.swift */; };
+		ED72862520922E9E00AE4216 /* CGTKSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284BE20922C2A00AE4216 /* CGTKSeparator.swift */; };
+		ED72862620922E9E00AE4216 /* CGTKSeparatorMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284D420922C2C00AE4216 /* CGTKSeparatorMenuItem.swift */; };
+		ED72862720922E9E00AE4216 /* CGTKSeparatorToolItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284DF20922C2D00AE4216 /* CGTKSeparatorToolItem.swift */; };
+		ED72862820922E9F00AE4216 /* CGTKShortcutsShortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851320922C3200AE4216 /* CGTKShortcutsShortcut.swift */; };
+		ED72862920922E9F00AE4216 /* CGTKSpinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284C320922C2A00AE4216 /* CGTKSpinButton.swift */; };
+		ED72862A20922E9F00AE4216 /* CGTKSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284FB20922C2F00AE4216 /* CGTKSpinner.swift */; };
+		ED72862B20922E9F00AE4216 /* CGTKStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850320922C3000AE4216 /* CGTKStack.swift */; };
+		ED72862C20922E9F00AE4216 /* CGTKStackSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851A20922C3200AE4216 /* CGTKStackSidebar.swift */; };
+		ED72862D20922E9F00AE4216 /* CGTKStackSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284B620922C2900AE4216 /* CGTKStackSwitcher.swift */; };
+		ED72862E20922E9F00AE4216 /* CGTKStatusbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852A20922C3400AE4216 /* CGTKStatusbar.swift */; };
+		ED72862F20922E9F00AE4216 /* CGTKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851220922C3100AE4216 /* CGTKSwitch.swift */; };
+		ED72863020922E9F00AE4216 /* CGTKTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284FE20922C3000AE4216 /* CGTKTable.swift */; };
+		ED72863120922E9F00AE4216 /* CGTKTearoffMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284C620922C2A00AE4216 /* CGTKTearoffMenuItem.swift */; };
+		ED72863220922E9F00AE4216 /* CGTKTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284DA20922C2C00AE4216 /* CGTKTextView.swift */; };
+		ED72863320922E9F00AE4216 /* CGTKToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E020922C2D00AE4216 /* CGTKToggleButton.swift */; };
+		ED72863420922E9F00AE4216 /* CGTKToggleToolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284C120922C2A00AE4216 /* CGTKToggleToolButton.swift */; };
+		ED72863520922E9F00AE4216 /* CGTKToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850020922C3000AE4216 /* CGTKToolbar.swift */; };
+		ED72863620922E9F00AE4216 /* CGTKToolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E820922C2E00AE4216 /* CGTKToolButton.swift */; };
+		ED72863720922E9F00AE4216 /* CGTKToolItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E920922C2E00AE4216 /* CGTKToolItem.swift */; };
+		ED72863820922E9F00AE4216 /* CGTKToolItemGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850520922C3000AE4216 /* CGTKToolItemGroup.swift */; };
+		ED72863920922E9F00AE4216 /* CGTKToolPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851E20922C3300AE4216 /* CGTKToolPalette.swift */; };
+		ED72863A20922E9F00AE4216 /* CGTKTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284AF20922C2900AE4216 /* CGTKTreeView.swift */; };
+		ED72863B20922E9F00AE4216 /* CGTKVBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852E20922C3400AE4216 /* CGTKVBox.swift */; };
+		ED72863C20922E9F00AE4216 /* CGTKVButtonBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72850E20922C3100AE4216 /* CGTKVButtonBox.swift */; };
+		ED72863D20922E9F00AE4216 /* CGTKViewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284CF20922C2B00AE4216 /* CGTKViewport.swift */; };
+		ED72863E20922E9F00AE4216 /* CGTKVolumeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284FC20922C3000AE4216 /* CGTKVolumeButton.swift */; };
+		ED72863F20922E9F00AE4216 /* CGTKVPaned.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284C220922C2A00AE4216 /* CGTKVPaned.swift */; };
+		ED72864020922E9F00AE4216 /* CGTKVScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284B120922C2900AE4216 /* CGTKVScale.swift */; };
+		ED72864120922E9F00AE4216 /* CGTKVScrollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851820922C3200AE4216 /* CGTKVScrollbar.swift */; };
+		ED72864220922E9F00AE4216 /* CGTKVSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72852F20922C3400AE4216 /* CGTKVSeparator.swift */; };
+		ED72864320922E9F00AE4216 /* CGTKWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284F120922C2F00AE4216 /* CGTKWidget.swift */; };
+		ED72864420922E9F00AE4216 /* CGTKWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284DC20922C2C00AE4216 /* CGTKWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		ED72839A208DE09200AE4216 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		ED7285B820922E7C00AE4216 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -85,10 +228,157 @@
 		ED72849E2090DB3500AE4216 /* CoreGTKMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTKMethod.swift; sourceTree = "<group>"; };
 		ED7284A02090DB5900AE4216 /* CoreGTKParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTKParameter.swift; sourceTree = "<group>"; };
 		ED7284A22090DB6A00AE4216 /* CoreGTKClassWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTKClassWriter.swift; sourceTree = "<group>"; };
+		ED7284A42091D2A800AE4216 /* CoreGTK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTK.swift; sourceTree = "<group>"; };
+		ED7284A72091D2E600AE4216 /* global_conf.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = global_conf.map; sourceTree = "<group>"; };
+		ED7284A82091D2E700AE4216 /* extra_methods.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = extra_methods.map; sourceTree = "<group>"; };
+		ED7284A92091D2E700AE4216 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		ED7284AB2091D2E700AE4216 /* convert_type.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = convert_type.map; sourceTree = "<group>"; };
+		ED7284AC2091D2E700AE4216 /* swap_types.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = swap_types.map; sourceTree = "<group>"; };
+		ED7284AE20922C2900AE4216 /* CGTKColorSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKColorSelection.swift; sourceTree = "<group>"; };
+		ED7284AF20922C2900AE4216 /* CGTKTreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKTreeView.swift; sourceTree = "<group>"; };
+		ED7284B020922C2900AE4216 /* CGTKMisc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKMisc.swift; sourceTree = "<group>"; };
+		ED7284B120922C2900AE4216 /* CGTKVScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKVScale.swift; sourceTree = "<group>"; };
+		ED7284B220922C2900AE4216 /* CGTKNotebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKNotebook.swift; sourceTree = "<group>"; };
+		ED7284B320922C2900AE4216 /* CGTKScrolledWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKScrolledWindow.swift; sourceTree = "<group>"; };
+		ED7284B420922C2900AE4216 /* CGTKScrollbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKScrollbar.swift; sourceTree = "<group>"; };
+		ED7284B520922C2900AE4216 /* CGTKLockButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKLockButton.swift; sourceTree = "<group>"; };
+		ED7284B620922C2900AE4216 /* CGTKStackSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKStackSwitcher.swift; sourceTree = "<group>"; };
+		ED7284B720922C2900AE4216 /* CGTKInfoBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKInfoBar.swift; sourceTree = "<group>"; };
+		ED7284B820922C2900AE4216 /* CGTKInvisible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKInvisible.swift; sourceTree = "<group>"; };
+		ED7284B920922C2A00AE4216 /* CGTKComboBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKComboBox.swift; sourceTree = "<group>"; };
+		ED7284BA20922C2A00AE4216 /* CGTKMessageDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKMessageDialog.swift; sourceTree = "<group>"; };
+		ED7284BB20922C2A00AE4216 /* CGTKBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKBuilder.swift; sourceTree = "<group>"; };
+		ED7284BC20922C2A00AE4216 /* CGTKIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKIconView.swift; sourceTree = "<group>"; };
+		ED7284BD20922C2A00AE4216 /* CGTKGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKGrid.swift; sourceTree = "<group>"; };
+		ED7284BE20922C2A00AE4216 /* CGTKSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKSeparator.swift; sourceTree = "<group>"; };
+		ED7284BF20922C2A00AE4216 /* CGTKDrawingArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKDrawingArea.swift; sourceTree = "<group>"; };
+		ED7284C020922C2A00AE4216 /* CGTKFileChooserWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFileChooserWidget.swift; sourceTree = "<group>"; };
+		ED7284C120922C2A00AE4216 /* CGTKToggleToolButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKToggleToolButton.swift; sourceTree = "<group>"; };
+		ED7284C220922C2A00AE4216 /* CGTKVPaned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKVPaned.swift; sourceTree = "<group>"; };
+		ED7284C320922C2A00AE4216 /* CGTKSpinButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKSpinButton.swift; sourceTree = "<group>"; };
+		ED7284C420922C2A00AE4216 /* CGTKRecentChooserMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKRecentChooserMenu.swift; sourceTree = "<group>"; };
+		ED7284C520922C2A00AE4216 /* CGTKOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKOverlay.swift; sourceTree = "<group>"; };
+		ED7284C620922C2A00AE4216 /* CGTKTearoffMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKTearoffMenuItem.swift; sourceTree = "<group>"; };
+		ED7284C720922C2A00AE4216 /* CGTKDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKDialog.swift; sourceTree = "<group>"; };
+		ED7284C820922C2B00AE4216 /* CGTKPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKPopover.swift; sourceTree = "<group>"; };
+		ED7284C920922C2B00AE4216 /* CGTKRevealer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKRevealer.swift; sourceTree = "<group>"; };
+		ED7284CA20922C2B00AE4216 /* CGTKFontSelectionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFontSelectionDialog.swift; sourceTree = "<group>"; };
+		ED7284CB20922C2B00AE4216 /* CGTKFontChooserWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFontChooserWidget.swift; sourceTree = "<group>"; };
+		ED7284CC20922C2B00AE4216 /* CGTKMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKMenuBar.swift; sourceTree = "<group>"; };
+		ED7284CD20922C2B00AE4216 /* CGTKMenuShell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKMenuShell.swift; sourceTree = "<group>"; };
+		ED7284CE20922C2B00AE4216 /* CGTKRadioToolButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKRadioToolButton.swift; sourceTree = "<group>"; };
+		ED7284CF20922C2B00AE4216 /* CGTKViewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKViewport.swift; sourceTree = "<group>"; };
+		ED7284D020922C2B00AE4216 /* CGTKMenuToolButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKMenuToolButton.swift; sourceTree = "<group>"; };
+		ED7284D120922C2B00AE4216 /* CGTKListBoxRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKListBoxRow.swift; sourceTree = "<group>"; };
+		ED7284D220922C2B00AE4216 /* CGTKLevelBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKLevelBar.swift; sourceTree = "<group>"; };
+		ED7284D320922C2C00AE4216 /* CGTKPaned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKPaned.swift; sourceTree = "<group>"; };
+		ED7284D420922C2C00AE4216 /* CGTKSeparatorMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKSeparatorMenuItem.swift; sourceTree = "<group>"; };
+		ED7284D520922C2C00AE4216 /* CGTKExpander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKExpander.swift; sourceTree = "<group>"; };
+		ED7284D620922C2C00AE4216 /* CGTKHScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKHScale.swift; sourceTree = "<group>"; };
+		ED7284D720922C2C00AE4216 /* CGTKSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKSearchBar.swift; sourceTree = "<group>"; };
+		ED7284D820922C2C00AE4216 /* CGTKMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKMenuButton.swift; sourceTree = "<group>"; };
+		ED7284D920922C2C00AE4216 /* CGTKHandleBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKHandleBox.swift; sourceTree = "<group>"; };
+		ED7284DA20922C2C00AE4216 /* CGTKTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKTextView.swift; sourceTree = "<group>"; };
+		ED7284DB20922C2C00AE4216 /* CGTKRecentChooserWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKRecentChooserWidget.swift; sourceTree = "<group>"; };
+		ED7284DC20922C2C00AE4216 /* CGTKWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKWindow.swift; sourceTree = "<group>"; };
+		ED7284DD20922C2D00AE4216 /* CGTKListBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKListBox.swift; sourceTree = "<group>"; };
+		ED7284DE20922C2D00AE4216 /* CGTKImageMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKImageMenuItem.swift; sourceTree = "<group>"; };
+		ED7284DF20922C2D00AE4216 /* CGTKSeparatorToolItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKSeparatorToolItem.swift; sourceTree = "<group>"; };
+		ED7284E020922C2D00AE4216 /* CGTKToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKToggleButton.swift; sourceTree = "<group>"; };
+		ED7284E120922C2D00AE4216 /* CGTKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKButton.swift; sourceTree = "<group>"; };
+		ED7284E220922C2D00AE4216 /* CGTKHSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKHSeparator.swift; sourceTree = "<group>"; };
+		ED7284E320922C2D00AE4216 /* CGTKApplicationWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKApplicationWindow.swift; sourceTree = "<group>"; };
+		ED7284E420922C2D00AE4216 /* CGTKMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKMenuItem.swift; sourceTree = "<group>"; };
+		ED7284E520922C2D00AE4216 /* CGTKAccelLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKAccelLabel.swift; sourceTree = "<group>"; };
+		ED7284E620922C2D00AE4216 /* CGTKRadioMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKRadioMenuItem.swift; sourceTree = "<group>"; };
+		ED7284E720922C2D00AE4216 /* CGTKModelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKModelButton.swift; sourceTree = "<group>"; };
+		ED7284E820922C2E00AE4216 /* CGTKToolButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKToolButton.swift; sourceTree = "<group>"; };
+		ED7284E920922C2E00AE4216 /* CGTKToolItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKToolItem.swift; sourceTree = "<group>"; };
+		ED7284EA20922C2E00AE4216 /* CGTKComboBoxText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKComboBoxText.swift; sourceTree = "<group>"; };
+		ED7284EB20922C2E00AE4216 /* CGTKButtonBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKButtonBox.swift; sourceTree = "<group>"; };
+		ED7284EC20922C2E00AE4216 /* CGTKRecentChooserDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKRecentChooserDialog.swift; sourceTree = "<group>"; };
+		ED7284ED20922C2E00AE4216 /* CGTKEventBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKEventBox.swift; sourceTree = "<group>"; };
+		ED7284EE20922C2E00AE4216 /* CGTKHSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKHSV.swift; sourceTree = "<group>"; };
+		ED7284EF20922C2E00AE4216 /* CGTKBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKBox.swift; sourceTree = "<group>"; };
+		ED7284F020922C2E00AE4216 /* CGTKLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKLayout.swift; sourceTree = "<group>"; };
+		ED7284F120922C2F00AE4216 /* CGTKWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKWidget.swift; sourceTree = "<group>"; };
+		ED7284F220922C2F00AE4216 /* CGTKCheckButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKCheckButton.swift; sourceTree = "<group>"; };
+		ED7284F320922C2F00AE4216 /* CGTKEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKEntry.swift; sourceTree = "<group>"; };
+		ED7284F420922C2F00AE4216 /* CGTKScaleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKScaleButton.swift; sourceTree = "<group>"; };
+		ED7284F520922C2F00AE4216 /* CGTKFileChooserButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFileChooserButton.swift; sourceTree = "<group>"; };
+		ED7284F620922C2F00AE4216 /* CGTKPopoverMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKPopoverMenu.swift; sourceTree = "<group>"; };
+		ED7284F720922C2F00AE4216 /* CGTKFontChooserDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFontChooserDialog.swift; sourceTree = "<group>"; };
+		ED7284F820922C2F00AE4216 /* CGTKGLArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKGLArea.swift; sourceTree = "<group>"; };
+		ED7284F920922C2F00AE4216 /* CGTKCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKCellView.swift; sourceTree = "<group>"; };
+		ED7284FA20922C2F00AE4216 /* CGTKAssistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKAssistant.swift; sourceTree = "<group>"; };
+		ED7284FB20922C2F00AE4216 /* CGTKSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKSpinner.swift; sourceTree = "<group>"; };
+		ED7284FC20922C3000AE4216 /* CGTKVolumeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKVolumeButton.swift; sourceTree = "<group>"; };
+		ED7284FD20922C3000AE4216 /* CGTKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKLabel.swift; sourceTree = "<group>"; };
+		ED7284FE20922C3000AE4216 /* CGTKTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKTable.swift; sourceTree = "<group>"; };
+		ED7284FF20922C3000AE4216 /* CGTKHPaned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKHPaned.swift; sourceTree = "<group>"; };
+		ED72850020922C3000AE4216 /* CGTKToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKToolbar.swift; sourceTree = "<group>"; };
+		ED72850120922C3000AE4216 /* CGTKAppChooserDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKAppChooserDialog.swift; sourceTree = "<group>"; };
+		ED72850220922C3000AE4216 /* CGTKFlowBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFlowBox.swift; sourceTree = "<group>"; };
+		ED72850320922C3000AE4216 /* CGTKStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKStack.swift; sourceTree = "<group>"; };
+		ED72850420922C3000AE4216 /* CGTKAppChooserWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKAppChooserWidget.swift; sourceTree = "<group>"; };
+		ED72850520922C3000AE4216 /* CGTKToolItemGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKToolItemGroup.swift; sourceTree = "<group>"; };
+		ED72850620922C3000AE4216 /* CGTKAspectFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKAspectFrame.swift; sourceTree = "<group>"; };
+		ED72850720922C3100AE4216 /* CGTKAppChooserButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKAppChooserButton.swift; sourceTree = "<group>"; };
+		ED72850820922C3100AE4216 /* CGTKActionBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKActionBar.swift; sourceTree = "<group>"; };
+		ED72850920922C3100AE4216 /* CGTKCheckMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKCheckMenuItem.swift; sourceTree = "<group>"; };
+		ED72850A20922C3100AE4216 /* CGTKFlowBoxChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFlowBoxChild.swift; sourceTree = "<group>"; };
+		ED72850B20922C3100AE4216 /* CGTKFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFrame.swift; sourceTree = "<group>"; };
+		ED72850C20922C3100AE4216 /* CGTKHButtonBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKHButtonBox.swift; sourceTree = "<group>"; };
+		ED72850D20922C3100AE4216 /* CGTKFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFixed.swift; sourceTree = "<group>"; };
+		ED72850E20922C3100AE4216 /* CGTKVButtonBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKVButtonBox.swift; sourceTree = "<group>"; };
+		ED72850F20922C3100AE4216 /* CGTKRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKRange.swift; sourceTree = "<group>"; };
+		ED72851020922C3100AE4216 /* CGTKNativeDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKNativeDialog.swift; sourceTree = "<group>"; };
+		ED72851120922C3100AE4216 /* CGTKHeaderBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKHeaderBar.swift; sourceTree = "<group>"; };
+		ED72851220922C3100AE4216 /* CGTKSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKSwitch.swift; sourceTree = "<group>"; };
+		ED72851320922C3200AE4216 /* CGTKShortcutsShortcut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKShortcutsShortcut.swift; sourceTree = "<group>"; };
+		ED72851420922C3200AE4216 /* CGTKHScrollbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKHScrollbar.swift; sourceTree = "<group>"; };
+		ED72851520922C3200AE4216 /* CGTKColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKColorButton.swift; sourceTree = "<group>"; };
+		ED72851620922C3200AE4216 /* CGTKFileChooserDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFileChooserDialog.swift; sourceTree = "<group>"; };
+		ED72851720922C3200AE4216 /* CGTKColorSelectionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKColorSelectionDialog.swift; sourceTree = "<group>"; };
+		ED72851820922C3200AE4216 /* CGTKVScrollbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKVScrollbar.swift; sourceTree = "<group>"; };
+		ED72851920922C3200AE4216 /* CGTKAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKAlignment.swift; sourceTree = "<group>"; };
+		ED72851A20922C3200AE4216 /* CGTKStackSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKStackSidebar.swift; sourceTree = "<group>"; };
+		ED72851B20922C3200AE4216 /* CGTKAboutDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKAboutDialog.swift; sourceTree = "<group>"; };
+		ED72851C20922C3200AE4216 /* CGTKCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKCalendar.swift; sourceTree = "<group>"; };
+		ED72851D20922C3200AE4216 /* CGTKRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKRadioButton.swift; sourceTree = "<group>"; };
+		ED72851E20922C3300AE4216 /* CGTKToolPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKToolPalette.swift; sourceTree = "<group>"; };
+		ED72851F20922C3300AE4216 /* CGTKColorChooserWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKColorChooserWidget.swift; sourceTree = "<group>"; };
+		ED72852020922C3300AE4216 /* CGTKPlacesSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKPlacesSidebar.swift; sourceTree = "<group>"; };
+		ED72852120922C3300AE4216 /* CGTKContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKContainer.swift; sourceTree = "<group>"; };
+		ED72852220922C3300AE4216 /* CGTKOffscreenWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKOffscreenWindow.swift; sourceTree = "<group>"; };
+		ED72852320922C3300AE4216 /* CGTKProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKProgressBar.swift; sourceTree = "<group>"; };
+		ED72852420922C3300AE4216 /* CGTKFontSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFontSelection.swift; sourceTree = "<group>"; };
+		ED72852520922C3300AE4216 /* CGTKLinkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKLinkButton.swift; sourceTree = "<group>"; };
+		ED72852620922C3300AE4216 /* CGTKScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKScale.swift; sourceTree = "<group>"; };
+		ED72852720922C3300AE4216 /* CGTKColorChooserDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKColorChooserDialog.swift; sourceTree = "<group>"; };
+		ED72852820922C3300AE4216 /* CGTKImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKImage.swift; sourceTree = "<group>"; };
+		ED72852920922C3400AE4216 /* CGTKSearchEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKSearchEntry.swift; sourceTree = "<group>"; };
+		ED72852A20922C3400AE4216 /* CGTKStatusbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKStatusbar.swift; sourceTree = "<group>"; };
+		ED72852B20922C3400AE4216 /* CGTKFontButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFontButton.swift; sourceTree = "<group>"; };
+		ED72852C20922C3400AE4216 /* CGTKArrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKArrow.swift; sourceTree = "<group>"; };
+		ED72852D20922C3400AE4216 /* CGTKHBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKHBox.swift; sourceTree = "<group>"; };
+		ED72852E20922C3400AE4216 /* CGTKVBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKVBox.swift; sourceTree = "<group>"; };
+		ED72852F20922C3400AE4216 /* CGTKVSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKVSeparator.swift; sourceTree = "<group>"; };
+		ED72853020922C3400AE4216 /* CGTKBin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKBin.swift; sourceTree = "<group>"; };
+		ED72853120922C3400AE4216 /* CGTKMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKMenu.swift; sourceTree = "<group>"; };
+		ED7285BA20922E7C00AE4216 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED7285BC20922E7C00AE4216 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		ED728399208DE09200AE4216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED7285B720922E7C00AE4216 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -101,6 +391,7 @@
 		14D0CB622091399900C02AC5 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
+				ED7284A42091D2A800AE4216 /* CoreGTK.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -109,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				ED72839E208DE09200AE4216 /* coregtkgen-swift */,
+				ED7285BB20922E7C00AE4216 /* test */,
 				ED72839D208DE09200AE4216 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				ED72839C208DE09200AE4216 /* coregtkgen-swift */,
+				ED7285BA20922E7C00AE4216 /* test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +417,8 @@
 		ED72839E208DE09200AE4216 /* coregtkgen-swift */ = {
 			isa = PBXGroup;
 			children = (
+				ED7284AD2091F59F00AE4216 /* Output */,
+				ED7284A62091D2C100AE4216 /* Config */,
 				14D0CB622091399900C02AC5 /* BaseClasses */,
 				ED7284992090DAE700AE4216 /* Generator */,
 				ED7284902090813D00AE4216 /* XMLReader */,
@@ -184,6 +479,165 @@
 			path = Generator;
 			sourceTree = "<group>";
 		};
+		ED7284A62091D2C100AE4216 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				ED7284AB2091D2E700AE4216 /* convert_type.map */,
+				ED7284A82091D2E700AE4216 /* extra_methods.map */,
+				ED7284A72091D2E600AE4216 /* global_conf.map */,
+				ED7284A92091D2E700AE4216 /* license.txt */,
+				ED7284AC2091D2E700AE4216 /* swap_types.map */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		ED7284AD2091F59F00AE4216 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				ED72851B20922C3200AE4216 /* CGTKAboutDialog.swift */,
+				ED7284E520922C2D00AE4216 /* CGTKAccelLabel.swift */,
+				ED72850820922C3100AE4216 /* CGTKActionBar.swift */,
+				ED72851920922C3200AE4216 /* CGTKAlignment.swift */,
+				ED72850720922C3100AE4216 /* CGTKAppChooserButton.swift */,
+				ED72850120922C3000AE4216 /* CGTKAppChooserDialog.swift */,
+				ED72850420922C3000AE4216 /* CGTKAppChooserWidget.swift */,
+				ED7284E320922C2D00AE4216 /* CGTKApplicationWindow.swift */,
+				ED72852C20922C3400AE4216 /* CGTKArrow.swift */,
+				ED72850620922C3000AE4216 /* CGTKAspectFrame.swift */,
+				ED7284FA20922C2F00AE4216 /* CGTKAssistant.swift */,
+				ED72853020922C3400AE4216 /* CGTKBin.swift */,
+				ED7284EF20922C2E00AE4216 /* CGTKBox.swift */,
+				ED7284BB20922C2A00AE4216 /* CGTKBuilder.swift */,
+				ED7284E120922C2D00AE4216 /* CGTKButton.swift */,
+				ED7284EB20922C2E00AE4216 /* CGTKButtonBox.swift */,
+				ED72851C20922C3200AE4216 /* CGTKCalendar.swift */,
+				ED7284F920922C2F00AE4216 /* CGTKCellView.swift */,
+				ED7284F220922C2F00AE4216 /* CGTKCheckButton.swift */,
+				ED72850920922C3100AE4216 /* CGTKCheckMenuItem.swift */,
+				ED72851520922C3200AE4216 /* CGTKColorButton.swift */,
+				ED72852720922C3300AE4216 /* CGTKColorChooserDialog.swift */,
+				ED72851F20922C3300AE4216 /* CGTKColorChooserWidget.swift */,
+				ED7284AE20922C2900AE4216 /* CGTKColorSelection.swift */,
+				ED72851720922C3200AE4216 /* CGTKColorSelectionDialog.swift */,
+				ED7284B920922C2A00AE4216 /* CGTKComboBox.swift */,
+				ED7284EA20922C2E00AE4216 /* CGTKComboBoxText.swift */,
+				ED72852120922C3300AE4216 /* CGTKContainer.swift */,
+				ED7284C720922C2A00AE4216 /* CGTKDialog.swift */,
+				ED7284BF20922C2A00AE4216 /* CGTKDrawingArea.swift */,
+				ED7284F320922C2F00AE4216 /* CGTKEntry.swift */,
+				ED7284ED20922C2E00AE4216 /* CGTKEventBox.swift */,
+				ED7284D520922C2C00AE4216 /* CGTKExpander.swift */,
+				ED7284F520922C2F00AE4216 /* CGTKFileChooserButton.swift */,
+				ED72851620922C3200AE4216 /* CGTKFileChooserDialog.swift */,
+				ED7284C020922C2A00AE4216 /* CGTKFileChooserWidget.swift */,
+				ED72850D20922C3100AE4216 /* CGTKFixed.swift */,
+				ED72850220922C3000AE4216 /* CGTKFlowBox.swift */,
+				ED72850A20922C3100AE4216 /* CGTKFlowBoxChild.swift */,
+				ED72852B20922C3400AE4216 /* CGTKFontButton.swift */,
+				ED7284F720922C2F00AE4216 /* CGTKFontChooserDialog.swift */,
+				ED7284CB20922C2B00AE4216 /* CGTKFontChooserWidget.swift */,
+				ED72852420922C3300AE4216 /* CGTKFontSelection.swift */,
+				ED7284CA20922C2B00AE4216 /* CGTKFontSelectionDialog.swift */,
+				ED72850B20922C3100AE4216 /* CGTKFrame.swift */,
+				ED7284F820922C2F00AE4216 /* CGTKGLArea.swift */,
+				ED7284BD20922C2A00AE4216 /* CGTKGrid.swift */,
+				ED7284D920922C2C00AE4216 /* CGTKHandleBox.swift */,
+				ED72852D20922C3400AE4216 /* CGTKHBox.swift */,
+				ED72850C20922C3100AE4216 /* CGTKHButtonBox.swift */,
+				ED72851120922C3100AE4216 /* CGTKHeaderBar.swift */,
+				ED7284FF20922C3000AE4216 /* CGTKHPaned.swift */,
+				ED7284D620922C2C00AE4216 /* CGTKHScale.swift */,
+				ED72851420922C3200AE4216 /* CGTKHScrollbar.swift */,
+				ED7284E220922C2D00AE4216 /* CGTKHSeparator.swift */,
+				ED7284EE20922C2E00AE4216 /* CGTKHSV.swift */,
+				ED7284BC20922C2A00AE4216 /* CGTKIconView.swift */,
+				ED72852820922C3300AE4216 /* CGTKImage.swift */,
+				ED7284DE20922C2D00AE4216 /* CGTKImageMenuItem.swift */,
+				ED7284B720922C2900AE4216 /* CGTKInfoBar.swift */,
+				ED7284B820922C2900AE4216 /* CGTKInvisible.swift */,
+				ED7284FD20922C3000AE4216 /* CGTKLabel.swift */,
+				ED7284F020922C2E00AE4216 /* CGTKLayout.swift */,
+				ED7284D220922C2B00AE4216 /* CGTKLevelBar.swift */,
+				ED72852520922C3300AE4216 /* CGTKLinkButton.swift */,
+				ED7284DD20922C2D00AE4216 /* CGTKListBox.swift */,
+				ED7284D120922C2B00AE4216 /* CGTKListBoxRow.swift */,
+				ED7284B520922C2900AE4216 /* CGTKLockButton.swift */,
+				ED72853120922C3400AE4216 /* CGTKMenu.swift */,
+				ED7284CC20922C2B00AE4216 /* CGTKMenuBar.swift */,
+				ED7284D820922C2C00AE4216 /* CGTKMenuButton.swift */,
+				ED7284E420922C2D00AE4216 /* CGTKMenuItem.swift */,
+				ED7284CD20922C2B00AE4216 /* CGTKMenuShell.swift */,
+				ED7284D020922C2B00AE4216 /* CGTKMenuToolButton.swift */,
+				ED7284BA20922C2A00AE4216 /* CGTKMessageDialog.swift */,
+				ED7284B020922C2900AE4216 /* CGTKMisc.swift */,
+				ED7284E720922C2D00AE4216 /* CGTKModelButton.swift */,
+				ED72851020922C3100AE4216 /* CGTKNativeDialog.swift */,
+				ED7284B220922C2900AE4216 /* CGTKNotebook.swift */,
+				ED72852220922C3300AE4216 /* CGTKOffscreenWindow.swift */,
+				ED7284C520922C2A00AE4216 /* CGTKOverlay.swift */,
+				ED7284D320922C2C00AE4216 /* CGTKPaned.swift */,
+				ED72852020922C3300AE4216 /* CGTKPlacesSidebar.swift */,
+				ED7284C820922C2B00AE4216 /* CGTKPopover.swift */,
+				ED7284F620922C2F00AE4216 /* CGTKPopoverMenu.swift */,
+				ED72852320922C3300AE4216 /* CGTKProgressBar.swift */,
+				ED72851D20922C3200AE4216 /* CGTKRadioButton.swift */,
+				ED7284E620922C2D00AE4216 /* CGTKRadioMenuItem.swift */,
+				ED7284CE20922C2B00AE4216 /* CGTKRadioToolButton.swift */,
+				ED72850F20922C3100AE4216 /* CGTKRange.swift */,
+				ED7284EC20922C2E00AE4216 /* CGTKRecentChooserDialog.swift */,
+				ED7284C420922C2A00AE4216 /* CGTKRecentChooserMenu.swift */,
+				ED7284DB20922C2C00AE4216 /* CGTKRecentChooserWidget.swift */,
+				ED7284C920922C2B00AE4216 /* CGTKRevealer.swift */,
+				ED72852620922C3300AE4216 /* CGTKScale.swift */,
+				ED7284F420922C2F00AE4216 /* CGTKScaleButton.swift */,
+				ED7284B420922C2900AE4216 /* CGTKScrollbar.swift */,
+				ED7284B320922C2900AE4216 /* CGTKScrolledWindow.swift */,
+				ED7284D720922C2C00AE4216 /* CGTKSearchBar.swift */,
+				ED72852920922C3400AE4216 /* CGTKSearchEntry.swift */,
+				ED7284BE20922C2A00AE4216 /* CGTKSeparator.swift */,
+				ED7284D420922C2C00AE4216 /* CGTKSeparatorMenuItem.swift */,
+				ED7284DF20922C2D00AE4216 /* CGTKSeparatorToolItem.swift */,
+				ED72851320922C3200AE4216 /* CGTKShortcutsShortcut.swift */,
+				ED7284C320922C2A00AE4216 /* CGTKSpinButton.swift */,
+				ED7284FB20922C2F00AE4216 /* CGTKSpinner.swift */,
+				ED72850320922C3000AE4216 /* CGTKStack.swift */,
+				ED72851A20922C3200AE4216 /* CGTKStackSidebar.swift */,
+				ED7284B620922C2900AE4216 /* CGTKStackSwitcher.swift */,
+				ED72852A20922C3400AE4216 /* CGTKStatusbar.swift */,
+				ED72851220922C3100AE4216 /* CGTKSwitch.swift */,
+				ED7284FE20922C3000AE4216 /* CGTKTable.swift */,
+				ED7284C620922C2A00AE4216 /* CGTKTearoffMenuItem.swift */,
+				ED7284DA20922C2C00AE4216 /* CGTKTextView.swift */,
+				ED7284E020922C2D00AE4216 /* CGTKToggleButton.swift */,
+				ED7284C120922C2A00AE4216 /* CGTKToggleToolButton.swift */,
+				ED72850020922C3000AE4216 /* CGTKToolbar.swift */,
+				ED7284E820922C2E00AE4216 /* CGTKToolButton.swift */,
+				ED7284E920922C2E00AE4216 /* CGTKToolItem.swift */,
+				ED72850520922C3000AE4216 /* CGTKToolItemGroup.swift */,
+				ED72851E20922C3300AE4216 /* CGTKToolPalette.swift */,
+				ED7284AF20922C2900AE4216 /* CGTKTreeView.swift */,
+				ED72852E20922C3400AE4216 /* CGTKVBox.swift */,
+				ED72850E20922C3100AE4216 /* CGTKVButtonBox.swift */,
+				ED7284CF20922C2B00AE4216 /* CGTKViewport.swift */,
+				ED7284FC20922C3000AE4216 /* CGTKVolumeButton.swift */,
+				ED7284C220922C2A00AE4216 /* CGTKVPaned.swift */,
+				ED7284B120922C2900AE4216 /* CGTKVScale.swift */,
+				ED72851820922C3200AE4216 /* CGTKVScrollbar.swift */,
+				ED72852F20922C3400AE4216 /* CGTKVSeparator.swift */,
+				ED7284F120922C2F00AE4216 /* CGTKWidget.swift */,
+				ED7284DC20922C2C00AE4216 /* CGTKWindow.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		ED7285BB20922E7C00AE4216 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				ED7285BC20922E7C00AE4216 /* main.swift */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,6 +658,23 @@
 			productReference = ED72839C208DE09200AE4216 /* coregtkgen-swift */;
 			productType = "com.apple.product-type.tool";
 		};
+		ED7285B920922E7C00AE4216 /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED7285BE20922E7C00AE4216 /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				ED7285B620922E7C00AE4216 /* Sources */,
+				ED7285B720922E7C00AE4216 /* Frameworks */,
+				ED7285B820922E7C00AE4216 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test;
+			productName = test;
+			productReference = ED7285BA20922E7C00AE4216 /* test */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,6 +686,10 @@
 				ORGANIZATIONNAME = gungravekoga;
 				TargetAttributes = {
 					ED72839B208DE09200AE4216 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					ED7285B920922E7C00AE4216 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -233,6 +708,7 @@
 			projectRoot = "";
 			targets = (
 				ED72839B208DE09200AE4216 /* coregtkgen-swift */,
+				ED7285B920922E7C00AE4216 /* test */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +741,7 @@
 				ED7284A12090DB5900AE4216 /* CoreGTKParameter.swift in Sources */,
 				ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */,
 				ED72848F208FA9AD00AE4216 /* GIRApi.swift in Sources */,
+				ED7284A52091D2A800AE4216 /* CoreGTK.swift in Sources */,
 				ED7283C2208E1C5000AE4216 /* GIRArray.swift in Sources */,
 				ED7283C8208F435200AE4216 /* GIRConstant.swift in Sources */,
 				ED72849D2090DB1F00AE4216 /* CoreGTKClass.swift in Sources */,
@@ -273,6 +750,146 @@
 				ED7283CA208F45AC00AE4216 /* GIRNamespace.swift in Sources */,
 				ED7283CC208F461B00AE4216 /* GIRInterface.swift in Sources */,
 				ED7283AE208DF25B00AE4216 /* GIRDoc.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED7285B620922E7C00AE4216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED7285F420922E9E00AE4216 /* CGTKHPaned.swift in Sources */,
+				ED72860620922E9E00AE4216 /* CGTKMenuBar.swift in Sources */,
+				ED72862920922E9F00AE4216 /* CGTKSpinButton.swift in Sources */,
+				ED7285F820922E9E00AE4216 /* CGTKHSV.swift in Sources */,
+				ED7285CF20922E9E00AE4216 /* CGTKButton.swift in Sources */,
+				ED72860B20922E9E00AE4216 /* CGTKMessageDialog.swift in Sources */,
+				ED72862F20922E9F00AE4216 /* CGTKSwitch.swift in Sources */,
+				ED72862D20922E9F00AE4216 /* CGTKStackSwitcher.swift in Sources */,
+				ED72864220922E9F00AE4216 /* CGTKVSeparator.swift in Sources */,
+				ED7285D820922E9E00AE4216 /* CGTKColorSelection.swift in Sources */,
+				ED7285C420922E9E00AE4216 /* CGTKAlignment.swift in Sources */,
+				ED7285E920922E9E00AE4216 /* CGTKFontChooserDialog.swift in Sources */,
+				ED7285D920922E9E00AE4216 /* CGTKColorSelectionDialog.swift in Sources */,
+				ED7285E420922E9E00AE4216 /* CGTKFileChooserWidget.swift in Sources */,
+				ED7285C120922E9E00AE4216 /* CGTKAboutDialog.swift in Sources */,
+				ED72861120922E9E00AE4216 /* CGTKOverlay.swift in Sources */,
+				ED7285FC20922E9E00AE4216 /* CGTKInfoBar.swift in Sources */,
+				ED72863320922E9F00AE4216 /* CGTKToggleButton.swift in Sources */,
+				ED7285E620922E9E00AE4216 /* CGTKFlowBox.swift in Sources */,
+				ED72862320922E9E00AE4216 /* CGTKSearchBar.swift in Sources */,
+				ED72863720922E9F00AE4216 /* CGTKToolItem.swift in Sources */,
+				ED7285ED20922E9E00AE4216 /* CGTKFrame.swift in Sources */,
+				ED7285DF20922E9E00AE4216 /* CGTKEntry.swift in Sources */,
+				ED72861620922E9E00AE4216 /* CGTKProgressBar.swift in Sources */,
+				ED7285E820922E9E00AE4216 /* CGTKFontButton.swift in Sources */,
+				ED72861520922E9E00AE4216 /* CGTKPopoverMenu.swift in Sources */,
+				ED7285C920922E9E00AE4216 /* CGTKArrow.swift in Sources */,
+				ED72860920922E9E00AE4216 /* CGTKMenuShell.swift in Sources */,
+				ED72861D20922E9E00AE4216 /* CGTKRecentChooserWidget.swift in Sources */,
+				ED7285DE20922E9E00AE4216 /* CGTKDrawingArea.swift in Sources */,
+				ED7285C820922E9E00AE4216 /* CGTKApplicationWindow.swift in Sources */,
+				ED72862820922E9F00AE4216 /* CGTKShortcutsShortcut.swift in Sources */,
+				ED7285CD20922E9E00AE4216 /* CGTKBox.swift in Sources */,
+				ED7285FF20922E9E00AE4216 /* CGTKLayout.swift in Sources */,
+				ED72862C20922E9F00AE4216 /* CGTKStackSidebar.swift in Sources */,
+				ED72862B20922E9F00AE4216 /* CGTKStack.swift in Sources */,
+				ED72861020922E9E00AE4216 /* CGTKOffscreenWindow.swift in Sources */,
+				ED72861F20922E9E00AE4216 /* CGTKScale.swift in Sources */,
+				ED7285E320922E9E00AE4216 /* CGTKFileChooserDialog.swift in Sources */,
+				ED72860F20922E9E00AE4216 /* CGTKNotebook.swift in Sources */,
+				ED7285D720922E9E00AE4216 /* CGTKColorChooserWidget.swift in Sources */,
+				ED72863820922E9F00AE4216 /* CGTKToolItemGroup.swift in Sources */,
+				ED72860320922E9E00AE4216 /* CGTKListBoxRow.swift in Sources */,
+				ED7285F120922E9E00AE4216 /* CGTKHBox.swift in Sources */,
+				ED7285EC20922E9E00AE4216 /* CGTKFontSelectionDialog.swift in Sources */,
+				ED72860020922E9E00AE4216 /* CGTKLevelBar.swift in Sources */,
+				ED72860120922E9E00AE4216 /* CGTKLinkButton.swift in Sources */,
+				ED7285E520922E9E00AE4216 /* CGTKFixed.swift in Sources */,
+				ED72861220922E9E00AE4216 /* CGTKPaned.swift in Sources */,
+				ED7285C620922E9E00AE4216 /* CGTKAppChooserDialog.swift in Sources */,
+				ED7285DC20922E9E00AE4216 /* CGTKContainer.swift in Sources */,
+				ED72860520922E9E00AE4216 /* CGTKMenu.swift in Sources */,
+				ED72860220922E9E00AE4216 /* CGTKListBox.swift in Sources */,
+				ED7285CB20922E9E00AE4216 /* CGTKAssistant.swift in Sources */,
+				ED72860720922E9E00AE4216 /* CGTKMenuButton.swift in Sources */,
+				ED72861420922E9E00AE4216 /* CGTKPopover.swift in Sources */,
+				ED72861820922E9E00AE4216 /* CGTKRadioMenuItem.swift in Sources */,
+				ED7285F520922E9E00AE4216 /* CGTKHScale.swift in Sources */,
+				ED72861720922E9E00AE4216 /* CGTKRadioButton.swift in Sources */,
+				ED7285FB20922E9E00AE4216 /* CGTKImageMenuItem.swift in Sources */,
+				ED72863120922E9F00AE4216 /* CGTKTearoffMenuItem.swift in Sources */,
+				ED72860C20922E9E00AE4216 /* CGTKMisc.swift in Sources */,
+				ED72862420922E9E00AE4216 /* CGTKSearchEntry.swift in Sources */,
+				ED7285F720922E9E00AE4216 /* CGTKHSeparator.swift in Sources */,
+				ED72863E20922E9F00AE4216 /* CGTKVolumeButton.swift in Sources */,
+				ED72860E20922E9E00AE4216 /* CGTKNativeDialog.swift in Sources */,
+				ED72863620922E9F00AE4216 /* CGTKToolButton.swift in Sources */,
+				ED72863B20922E9F00AE4216 /* CGTKVBox.swift in Sources */,
+				ED72863420922E9F00AE4216 /* CGTKToggleToolButton.swift in Sources */,
+				ED72863020922E9F00AE4216 /* CGTKTable.swift in Sources */,
+				ED72863520922E9F00AE4216 /* CGTKToolbar.swift in Sources */,
+				ED72860420922E9E00AE4216 /* CGTKLockButton.swift in Sources */,
+				ED7285EB20922E9E00AE4216 /* CGTKFontSelection.swift in Sources */,
+				ED7285D220922E9E00AE4216 /* CGTKCellView.swift in Sources */,
+				ED72863D20922E9F00AE4216 /* CGTKViewport.swift in Sources */,
+				ED72864120922E9F00AE4216 /* CGTKVScrollbar.swift in Sources */,
+				ED7285F320922E9E00AE4216 /* CGTKHeaderBar.swift in Sources */,
+				ED72863920922E9F00AE4216 /* CGTKToolPalette.swift in Sources */,
+				ED7285CA20922E9E00AE4216 /* CGTKAspectFrame.swift in Sources */,
+				ED72862620922E9E00AE4216 /* CGTKSeparatorMenuItem.swift in Sources */,
+				ED7285BD20922E7C00AE4216 /* main.swift in Sources */,
+				ED72860D20922E9E00AE4216 /* CGTKModelButton.swift in Sources */,
+				ED72862120922E9E00AE4216 /* CGTKScrollbar.swift in Sources */,
+				ED7285C320922E9E00AE4216 /* CGTKActionBar.swift in Sources */,
+				ED72863F20922E9F00AE4216 /* CGTKVPaned.swift in Sources */,
+				ED72861A20922E9E00AE4216 /* CGTKRange.swift in Sources */,
+				ED72861320922E9E00AE4216 /* CGTKPlacesSidebar.swift in Sources */,
+				ED7285C520922E9E00AE4216 /* CGTKAppChooserButton.swift in Sources */,
+				ED7285FA20922E9E00AE4216 /* CGTKImage.swift in Sources */,
+				ED72862220922E9E00AE4216 /* CGTKScrolledWindow.swift in Sources */,
+				ED72863A20922E9F00AE4216 /* CGTKTreeView.swift in Sources */,
+				ED72862720922E9E00AE4216 /* CGTKSeparatorToolItem.swift in Sources */,
+				ED72864320922E9F00AE4216 /* CGTKWidget.swift in Sources */,
+				ED7285C720922E9E00AE4216 /* CGTKAppChooserWidget.swift in Sources */,
+				ED72863220922E9F00AE4216 /* CGTKTextView.swift in Sources */,
+				ED7285F220922E9E00AE4216 /* CGTKHButtonBox.swift in Sources */,
+				ED7285E020922E9E00AE4216 /* CGTKEventBox.swift in Sources */,
+				ED7285D520922E9E00AE4216 /* CGTKColorButton.swift in Sources */,
+				ED7285DA20922E9E00AE4216 /* CGTKComboBox.swift in Sources */,
+				ED72864420922E9F00AE4216 /* CGTKWindow.swift in Sources */,
+				ED7285DD20922E9E00AE4216 /* CGTKDialog.swift in Sources */,
+				ED72862520922E9E00AE4216 /* CGTKSeparator.swift in Sources */,
+				ED7285D420922E9E00AE4216 /* CGTKCheckMenuItem.swift in Sources */,
+				ED7285CC20922E9E00AE4216 /* CGTKBin.swift in Sources */,
+				ED72864020922E9F00AE4216 /* CGTKVScale.swift in Sources */,
+				ED72861C20922E9E00AE4216 /* CGTKRecentChooserMenu.swift in Sources */,
+				ED7285FE20922E9E00AE4216 /* CGTKLabel.swift in Sources */,
+				ED72862020922E9E00AE4216 /* CGTKScaleButton.swift in Sources */,
+				ED72862E20922E9F00AE4216 /* CGTKStatusbar.swift in Sources */,
+				ED7285C220922E9E00AE4216 /* CGTKAccelLabel.swift in Sources */,
+				ED7285CE20922E9E00AE4216 /* CGTKBuilder.swift in Sources */,
+				ED72862A20922E9F00AE4216 /* CGTKSpinner.swift in Sources */,
+				ED7285EE20922E9E00AE4216 /* CGTKGLArea.swift in Sources */,
+				ED7285D620922E9E00AE4216 /* CGTKColorChooserDialog.swift in Sources */,
+				ED7285F620922E9E00AE4216 /* CGTKHScrollbar.swift in Sources */,
+				ED7285DB20922E9E00AE4216 /* CGTKComboBoxText.swift in Sources */,
+				ED7285EF20922E9E00AE4216 /* CGTKGrid.swift in Sources */,
+				ED7285D120922E9E00AE4216 /* CGTKCalendar.swift in Sources */,
+				ED72861920922E9E00AE4216 /* CGTKRadioToolButton.swift in Sources */,
+				ED72863C20922E9F00AE4216 /* CGTKVButtonBox.swift in Sources */,
+				ED7285E120922E9E00AE4216 /* CGTKExpander.swift in Sources */,
+				ED72860A20922E9E00AE4216 /* CGTKMenuToolButton.swift in Sources */,
+				ED7285E220922E9E00AE4216 /* CGTKFileChooserButton.swift in Sources */,
+				ED7285F920922E9E00AE4216 /* CGTKIconView.swift in Sources */,
+				ED7285FD20922E9E00AE4216 /* CGTKInvisible.swift in Sources */,
+				ED72861B20922E9E00AE4216 /* CGTKRecentChooserDialog.swift in Sources */,
+				ED72861E20922E9E00AE4216 /* CGTKRevealer.swift in Sources */,
+				ED7285D020922E9E00AE4216 /* CGTKButtonBox.swift in Sources */,
+				ED72860820922E9E00AE4216 /* CGTKMenuItem.swift in Sources */,
+				ED7285F020922E9E00AE4216 /* CGTKHandleBox.swift in Sources */,
+				ED7285D320922E9E00AE4216 /* CGTKCheckButton.swift in Sources */,
+				ED7285E720922E9E00AE4216 /* CGTKFlowBoxChild.swift in Sources */,
+				ED7285EA20922E9E00AE4216 /* CGTKFontChooserWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,12 +944,80 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/usr/local/Cellar/gtk+3/3.22.29_1/include/gtk-3.0",
+					"/usr/local/Cellar/glib/2.56.0/include/gio-unix-2.0",
+					/usr/local/Cellar/cairo/1.14.12/include/cairo,
+					/usr/local/Cellar/libepoxy/1.5.0/include,
+					"/usr/local/Cellar/pango/1.42.0_1/include/pango-1.0",
+					/usr/local/Cellar/harfbuzz/1.7.6_1/include/harfbuzz,
+					/usr/local/Cellar/graphite2/1.3.10/include,
+					"/usr/local/Cellar/atk/2.28.1_1/include/atk-1.0",
+					/usr/local/Cellar/cairo/1.14.12/include/cairo,
+					"/usr/local/Cellar/pixman/0.34.0_1/include/pixman-1",
+					/usr/local/Cellar/fontconfig/2.12.6/include,
+					/usr/local/opt/freetype/include/freetype2,
+					/usr/local/Cellar/pcre/8.42/include,
+					/usr/local/opt/gettext/includ,
+					"/usr/local/Cellar/glib/2.56.0/lib/glib-2.0/include",
+					"/usr/local/Cellar/gdk-pixbuf/2.36.11_1/include/gdk-pixbuf-2.0",
+					/usr/local/Cellar/libpng/1.6.34/include/libpng16,
+					"/usr/local/Cellar/glib/2.56.0/include/glib-2.0",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-D_REENTRANT",
+					"-I/usr/local/Cellar/gtk+3/3.22.29_1/include/gtk-3.0",
+					"-I/usr/local/Cellar/glib/2.56.0/include/gio-unix-2.0/",
+					"-I/usr/local/Cellar/cairo/1.14.12/include/cairo",
+					"-I/usr/local/Cellar/libepoxy/1.5.0/include",
+					"-I/usr/local/Cellar/pango/1.42.0_1/include/pango-1.0",
+					"-I/usr/local/Cellar/harfbuzz/1.7.6_1/include/harfbuzz",
+					"-I/usr/local/Cellar/graphite2/1.3.10/include",
+					"-I/usr/local/Cellar/pango/1.42.0_1/include/pango-1.0",
+					"-I/usr/local/Cellar/atk/2.28.1_1/include/atk-1.0",
+					"-I/usr/local/Cellar/cairo/1.14.12/include/cairo",
+					"-I/usr/local/Cellar/pixman/0.34.0_1/include/pixman-1",
+					"-I/usr/local/Cellar/fontconfig/2.12.6/include",
+					"-I/usr/local/opt/freetype/include/freetype2",
+					"-I/usr/local/Cellar/libpng/1.6.34/include/libpng16",
+					"-I/usr/local/Cellar/gdk-pixbuf/2.36.11_1/include/gdk-pixbuf-2.0",
+					"-I/usr/local/Cellar/libpng/1.6.34/include/libpng16",
+					"-I/usr/local/Cellar/glib/2.56.0/include/glib-2.0",
+					"-I/usr/local/Cellar/glib/2.56.0/lib/glib-2.0/include",
+					"-I/usr/local/opt/gettext/include",
+					"-I/usr/local/Cellar/pcre/8.42/include",
+				);
+				OTHER_LDFLAGS = (
+					"-L/usr/local/Cellar/gtk+3/3.22.29_1/lib",
+					"-L/usr/local/Cellar/pango/1.42.0_1/lib",
+					"-L/usr/local/Cellar/atk/2.28.1_1/lib",
+					"-L/usr/local/Cellar/cairo/1.14.12/lib",
+					"-L/usr/local/Cellar/gdk-pixbuf/2.36.11_1/lib",
+					"-L/usr/local/Cellar/glib/2.56.0/lib",
+					"-L/usr/local/opt/gettext/lib",
+					"-lgtk-3",
+					"-lgdk-3",
+					"-lpangocairo-1.0",
+					"-lpango-1.0",
+					"-latk-1.0",
+					"-lcairo-gobject",
+					"-lcairo",
+					"-lgdk_pixbuf-2.0",
+					"-lgio-2.0",
+					"-lgobject-2.0",
+					"-lglib-2.0",
+					"-lintl",
+					"-Wl,-framework",
+					"-Wl,CoreFoundation",
+				);
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -378,10 +1063,78 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/usr/local/Cellar/gtk+3/3.22.29_1/include/gtk-3.0",
+					"/usr/local/Cellar/glib/2.56.0/include/gio-unix-2.0",
+					/usr/local/Cellar/cairo/1.14.12/include/cairo,
+					/usr/local/Cellar/libepoxy/1.5.0/include,
+					"/usr/local/Cellar/pango/1.42.0_1/include/pango-1.0",
+					/usr/local/Cellar/harfbuzz/1.7.6_1/include/harfbuzz,
+					/usr/local/Cellar/graphite2/1.3.10/include,
+					"/usr/local/Cellar/atk/2.28.1_1/include/atk-1.0",
+					/usr/local/Cellar/cairo/1.14.12/include/cairo,
+					"/usr/local/Cellar/pixman/0.34.0_1/include/pixman-1",
+					/usr/local/Cellar/fontconfig/2.12.6/include,
+					/usr/local/opt/freetype/include/freetype2,
+					/usr/local/Cellar/pcre/8.42/include,
+					/usr/local/opt/gettext/includ,
+					"/usr/local/Cellar/glib/2.56.0/lib/glib-2.0/include",
+					"/usr/local/Cellar/gdk-pixbuf/2.36.11_1/include/gdk-pixbuf-2.0",
+					/usr/local/Cellar/libpng/1.6.34/include/libpng16,
+					"/usr/local/Cellar/glib/2.56.0/include/glib-2.0",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = (
+					"-D_REENTRANT",
+					"-I/usr/local/Cellar/gtk+3/3.22.29_1/include/gtk-3.0",
+					"-I/usr/local/Cellar/glib/2.56.0/include/gio-unix-2.0/",
+					"-I/usr/local/Cellar/cairo/1.14.12/include/cairo",
+					"-I/usr/local/Cellar/libepoxy/1.5.0/include",
+					"-I/usr/local/Cellar/pango/1.42.0_1/include/pango-1.0",
+					"-I/usr/local/Cellar/harfbuzz/1.7.6_1/include/harfbuzz",
+					"-I/usr/local/Cellar/graphite2/1.3.10/include",
+					"-I/usr/local/Cellar/pango/1.42.0_1/include/pango-1.0",
+					"-I/usr/local/Cellar/atk/2.28.1_1/include/atk-1.0",
+					"-I/usr/local/Cellar/cairo/1.14.12/include/cairo",
+					"-I/usr/local/Cellar/pixman/0.34.0_1/include/pixman-1",
+					"-I/usr/local/Cellar/fontconfig/2.12.6/include",
+					"-I/usr/local/opt/freetype/include/freetype2",
+					"-I/usr/local/Cellar/libpng/1.6.34/include/libpng16",
+					"-I/usr/local/Cellar/gdk-pixbuf/2.36.11_1/include/gdk-pixbuf-2.0",
+					"-I/usr/local/Cellar/libpng/1.6.34/include/libpng16",
+					"-I/usr/local/Cellar/glib/2.56.0/include/glib-2.0",
+					"-I/usr/local/Cellar/glib/2.56.0/lib/glib-2.0/include",
+					"-I/usr/local/opt/gettext/include",
+					"-I/usr/local/Cellar/pcre/8.42/include",
+				);
+				OTHER_LDFLAGS = (
+					"-L/usr/local/Cellar/gtk+3/3.22.29_1/lib",
+					"-L/usr/local/Cellar/pango/1.42.0_1/lib",
+					"-L/usr/local/Cellar/atk/2.28.1_1/lib",
+					"-L/usr/local/Cellar/cairo/1.14.12/lib",
+					"-L/usr/local/Cellar/gdk-pixbuf/2.36.11_1/lib",
+					"-L/usr/local/Cellar/glib/2.56.0/lib",
+					"-L/usr/local/opt/gettext/lib",
+					"-lgtk-3",
+					"-lgdk-3",
+					"-lpangocairo-1.0",
+					"-lpango-1.0",
+					"-latk-1.0",
+					"-lcairo-gobject",
+					"-lcairo",
+					"-lgdk_pixbuf-2.0",
+					"-lgio-2.0",
+					"-lgobject-2.0",
+					"-lglib-2.0",
+					"-lintl",
+					"-Wl,-framework",
+					"-Wl,CoreFoundation",
+				);
 				SDKROOT = macosx;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -395,6 +1148,24 @@
 			name = Debug;
 		};
 		ED7283A5208DE09200AE4216 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		ED7285BF20922E7C00AE4216 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		ED7285C020922E7C00AE4216 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -420,6 +1191,15 @@
 			buildConfigurations = (
 				ED7283A4208DE09200AE4216 /* Debug */,
 				ED7283A5208DE09200AE4216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED7285BE20922E7C00AE4216 /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED7285BF20922E7C00AE4216 /* Debug */,
+				ED7285C020922E7C00AE4216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

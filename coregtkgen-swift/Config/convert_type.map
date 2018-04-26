@@ -1,0 +1,26 @@
+{
+    "const gchar*" : {
+	"String" : "String(utf8String: %@)"
+    },
+    
+    "const char*" : {
+        "String" : "String(utf8String: %@)"
+    },
+    
+    "Bool" : {
+    "gboolean" : "%@ ? 1 : 0"
+    },
+    
+    "gboolean" : {
+    "Bool" : "%@ != 0 ? true : false"
+    },
+    
+    "gchar*" : {
+    "String" : "String(utf8String: %@)"
+    },
+    
+    "String" : {
+    "gchar*" : "%@",
+    "const gchar*" : "%@"
+    }
+}

@@ -8,12 +8,7 @@
 
 import Foundation
 
-public struct CoreGTKParameter : Equatable {
-    public static func ==(lhs: CoreGTKParameter, rhs: CoreGTKParameter) -> Bool {
-        return lhs.cName == rhs.cName && lhs.cType == lhs.cType
-    }
-    
-    
+public struct CoreGTKParameter {
     public var cName: String
     public var cType: String
     
@@ -25,7 +20,27 @@ public struct CoreGTKParameter : Equatable {
     
     public var type: String {
         get {
-            return CoreGTKUtil.swapTypes(cType)
+            var type = CoreGTKUtil.swapTypes(cType)
+            
+            var range = type.range(of: "const")
+            
+            if range != nil {
+                type = String(type[range!.upperBound...]).trimmingCharacters(in: CharacterSet.whitespaces)
+            }
+            
+            range = type.range(of: "**", options: .caseInsensitive)
+            
+            if range != nil {
+                return "UnsafeMutablePointer<UnsafePointer<\(type[..<range!.lowerBound])>?>!"
+            }
+            
+            range = type.range(of: "*", options: .caseInsensitive)
+            
+            if range != nil {
+                return "UnsafePointer<\(type[..<range!.lowerBound])>!"
+            }
+            
+            return type
         }
     }
 }

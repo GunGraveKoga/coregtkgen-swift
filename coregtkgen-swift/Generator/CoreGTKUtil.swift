@@ -22,9 +22,9 @@ public enum CoreGTKUtil {
     fileprivate static func _dictionaryFromFile(_ file: String) -> [String: Any] {
         let url = configURL.appendingPathComponent(file, isDirectory: false)
         let data = try! Data(contentsOf: url)
-        let jsonDecoder = JSONDecoder()
+        let json = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers)
         
-        return try! jsonDecoder.decode(Dictionary<String, Any>.self, from: data)
+        return (json as! Dictionary)
     }
     
     public static func convertUSSToCamelCase(_ string: String) -> String {
@@ -32,9 +32,9 @@ public enum CoreGTKUtil {
         
         var result: String
         
-        if output.count > 0 {
+        if output.count > 1 {
             let index = output.index(after: output.startIndex)
-            result = output[..<index].uppercased() + output[index...]
+            result = output[..<index].lowercased() + output[index...]
         } else {
             result = output.lowercased()
         }
@@ -80,7 +80,7 @@ public enum CoreGTKUtil {
     }
     
     public static func getFunctionCallForConstructor(of type: String, with constructor: String) -> String {
-        return "super.init(withGObject: \(constructor))"
+        return "super.init(withGObject: \(constructor))\n"
     }
     
     public static func convertType(from fromType: String, to toType: String, withName name: String) -> String {
@@ -193,11 +193,11 @@ public enum CoreGTKUtil {
         return dictExtraMethods[clazz] as? Dictionary<String, Any>
     }
     
-    public static func globalConfigValue(forKey key: String) -> Any? {
+    public static func globalConfigValue<T>(forKey key: String) -> T? {
         if dictGlobalConf.count == 0 {
             dictGlobalConf.merge(self._dictionaryFromFile("global_conf.map"), uniquingKeysWith: {(_, last) in last})
         }
         
-        return dictGlobalConf[key]
+        return dictGlobalConf[key] as? T
     }
 }
