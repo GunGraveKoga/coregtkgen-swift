@@ -98,6 +98,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14D0CB622091399900C02AC5 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
 		ED728393208DE09200AE4216 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +124,7 @@
 		ED72839E208DE09200AE4216 /* coregtkgen-swift */ = {
 			isa = PBXGroup;
 			children = (
+				14D0CB622091399900C02AC5 /* BaseClasses */,
 				ED7284992090DAE700AE4216 /* Generator */,
 				ED7284902090813D00AE4216 /* XMLReader */,
 				ED7283A6208DE09900AE4216 /* GIR */,
