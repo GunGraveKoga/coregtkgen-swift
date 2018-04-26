@@ -35,9 +35,17 @@ public enum CoreGTKClassWriter {
     
     public static func sourceString(forClass gtkClass: CoreGTKClass) -> String {
         var output = ""
+        let gtkClassName = gtkClass.cName.uppercased()
         
         output += self.generateLicense(forFile: "\(gtkClass.name).swift") ?? ""
         output += "\n@_exported import CGtk\n\n"
+        
+        if gtkClassName != "WIDGET" {
+            let type = CoreGTKUtil.selfTypeMacrosName(gtkClass.cType)
+            output += "public let GTK_TYPE_\(type): GType = gtk_\(type.lowercased())_get_type()\n\n"
+            output += "@inline(__always) public func GTK_\(type)(_ ptr: UnsafeMutableRawPointer!) -> UnsafeMutablePointer<\(gtkClass.cType)> {\n"
+            output += "\treturn G_TYPE_CHECK_INSTANCE_CAST(ptr, GTK_TYPE_\(type))\n}\n\n"
+        }
         
         output += "open class \(gtkClass.name) : \(CoreGTKUtil.swapTypes(gtkClass.cParentType!)) {\n"
         
@@ -58,7 +66,9 @@ public enum CoreGTKClassWriter {
             output += self.sourceString(forConstructor: constructor, of: gtkClass)
         }
         
-        output += "\topen var \(gtkClass.cName.uppercased()): UnsafePointer<\(gtkClass.cType)> {\n\t\tget {\n\t\t\treturn \(CoreGTKUtil.selfTypeMethodCall(gtkClass.cType))\n\t\t}\n\t}\n\n"
+        if gtkClassName != "WIDGET" {
+            output += "\topen var \(gtkClassName): UnsafeMutablePointer<\(gtkClass.cType)>! {\n\t\tget {\n\t\t\treturn \(CoreGTKUtil.selfTypeMethodCall(gtkClass.cType))\n\t\t}\n\t}\n\n"
+        }
         
         for method in gtkClass.methods {
             output += "\topen "
@@ -89,7 +99,7 @@ public enum CoreGTKClassWriter {
                 output += self.generateCParameterListString(gtkFunction.parameters)
             }
             
-            output += "))\n"
+            output += ")\n"
         } else {
             output += "\t\treturn "
             
@@ -118,7 +128,7 @@ public enum CoreGTKClassWriter {
     public static func sourceString(forConstructor constructor: CoreGTKMethod, of gtkClass: CoreGTKClass) -> String {
         var output = ""
         
-        output += "\topen \(constructor.sig) {\n\t\t"
+        output += "\tpublic \(constructor.sig) {\n\t\t"
         let constructorString = "\(constructor.cName)(\(self.generateCParameterListString(constructor.parameters)))"
         
         output += CoreGTKUtil.getFunctionCallForConstructor(of: gtkClass.cType, with: constructorString)

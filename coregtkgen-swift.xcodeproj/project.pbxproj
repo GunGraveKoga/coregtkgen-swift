@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14D54F4520926073008A63BD /* CGTKBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D54F4420926073008A63BD /* CGTKBase.swift */; };
+		14D54F462092640F008A63BD /* CoreGTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A42091D2A800AE4216 /* CoreGTK.swift */; };
 		ED7283A0208DE09200AE4216 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72839F208DE09200AE4216 /* main.swift */; };
 		ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A7208DE0F600AE4216 /* GIRBase.swift */; };
 		ED7283AA208DEB5800AE4216 /* GIRType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A9208DEB5800AE4216 /* GIRType.swift */; };
@@ -38,7 +40,6 @@
 		ED72849F2090DB3500AE4216 /* CoreGTKMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72849E2090DB3500AE4216 /* CoreGTKMethod.swift */; };
 		ED7284A12090DB5900AE4216 /* CoreGTKParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A02090DB5900AE4216 /* CoreGTKParameter.swift */; };
 		ED7284A32090DB6A00AE4216 /* CoreGTKClassWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A22090DB6A00AE4216 /* CoreGTKClassWriter.swift */; };
-		ED7284A52091D2A800AE4216 /* CoreGTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A42091D2A800AE4216 /* CoreGTK.swift */; };
 		ED7285BD20922E7C00AE4216 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7285BC20922E7C00AE4216 /* main.swift */; };
 		ED7285C120922E9E00AE4216 /* CGTKAboutDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72851B20922C3200AE4216 /* CGTKAboutDialog.swift */; };
 		ED7285C220922E9E00AE4216 /* CGTKAccelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284E520922C2D00AE4216 /* CGTKAccelLabel.swift */; };
@@ -196,6 +197,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		14D54F4420926073008A63BD /* CGTKBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKBase.swift; sourceTree = "<group>"; };
 		ED72839C208DE09200AE4216 /* coregtkgen-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "coregtkgen-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED72839F208DE09200AE4216 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ED7283A7208DE0F600AE4216 /* GIRBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRBase.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				ED7284A42091D2A800AE4216 /* CoreGTK.swift */,
+				14D54F4420926073008A63BD /* CGTKBase.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -627,7 +630,8 @@
 				ED7284F120922C2F00AE4216 /* CGTKWidget.swift */,
 				ED7284DC20922C2C00AE4216 /* CGTKWindow.swift */,
 			);
-			path = Output;
+			name = Output;
+			path = ../Output;
 			sourceTree = "<group>";
 		};
 		ED7285BB20922E7C00AE4216 /* test */ = {
@@ -741,7 +745,6 @@
 				ED7284A12090DB5900AE4216 /* CoreGTKParameter.swift in Sources */,
 				ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */,
 				ED72848F208FA9AD00AE4216 /* GIRApi.swift in Sources */,
-				ED7284A52091D2A800AE4216 /* CoreGTK.swift in Sources */,
 				ED7283C2208E1C5000AE4216 /* GIRArray.swift in Sources */,
 				ED7283C8208F435200AE4216 /* GIRConstant.swift in Sources */,
 				ED72849D2090DB1F00AE4216 /* CoreGTKClass.swift in Sources */,
@@ -780,6 +783,7 @@
 				ED72863720922E9F00AE4216 /* CGTKToolItem.swift in Sources */,
 				ED7285ED20922E9E00AE4216 /* CGTKFrame.swift in Sources */,
 				ED7285DF20922E9E00AE4216 /* CGTKEntry.swift in Sources */,
+				14D54F462092640F008A63BD /* CoreGTK.swift in Sources */,
 				ED72861620922E9E00AE4216 /* CGTKProgressBar.swift in Sources */,
 				ED7285E820922E9E00AE4216 /* CGTKFontButton.swift in Sources */,
 				ED72861520922E9E00AE4216 /* CGTKPopoverMenu.swift in Sources */,
@@ -882,6 +886,7 @@
 				ED7285E220922E9E00AE4216 /* CGTKFileChooserButton.swift in Sources */,
 				ED7285F920922E9E00AE4216 /* CGTKIconView.swift in Sources */,
 				ED7285FD20922E9E00AE4216 /* CGTKInvisible.swift in Sources */,
+				14D54F4520926073008A63BD /* CGTKBase.swift in Sources */,
 				ED72861B20922E9E00AE4216 /* CGTKRecentChooserDialog.swift in Sources */,
 				ED72861E20922E9E00AE4216 /* CGTKRevealer.swift in Sources */,
 				ED7285D020922E9E00AE4216 /* CGTKButtonBox.swift in Sources */,

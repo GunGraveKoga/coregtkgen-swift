@@ -11,6 +11,7 @@ import Foundation
 public struct CoreGTKMethod {
     public var cName: String
     public var cReturnType: String
+    public var isReturnNullable: Bool
     public private(set) var parameters = [CoreGTKParameter]()
     public var deprecated = false
     public var cDeprecatedMessage: String? = nil
@@ -30,19 +31,39 @@ public struct CoreGTKMethod {
             var range = type.range(of: "const")
             
             if range != nil {
-                type = String(type[range!.upperBound]).trimmingCharacters(in: CharacterSet.whitespaces)
+                type = String(type[range!.upperBound...]).trimmingCharacters(in: CharacterSet.whitespaces)
             }
             
             range = type.range(of: "**", options: .caseInsensitive)
             
             if range != nil {
-                return "UnsafeMutablePointer<UnsafePointer<\(type[..<range!.lowerBound])>?>?"
+                var result = "UnsafeMutablePointer<UnsafeMutablePointer<\(type[..<range!.lowerBound])>?>"
+                
+                if isReturnNullable {
+                    result += "?"
+                } else {
+                    result += "!"
+                }
+                
+                return result
             }
             
             range = type.range(of: "*", options: .caseInsensitive)
             
             if range != nil {
-                return "UnsafePointer<\(type[..<range!.lowerBound])>?"
+                var result = "UnsafeMutablePointer<\(type[..<range!.lowerBound])>"
+                
+                if isReturnNullable {
+                    result += "?"
+                } else {
+                    result += "!"
+                }
+                
+                return result
+            }
+            
+            if isReturnNullable {
+                return type + "?"
             }
             
             return type
@@ -55,10 +76,10 @@ public struct CoreGTKMethod {
         }
     }
     
-    init(cName: String, cReturnType: String) {
+    init(cName: String, cReturnType: String, isReturnNullable: Bool) {
         self.cName = cName
         self.cReturnType = cReturnType
-        
+        self.isReturnNullable = isReturnNullable
     }
     
     public mutating func setParameters(_ parameters_: [CoreGTKParameter]) {
@@ -77,7 +98,7 @@ public struct CoreGTKMethod {
              "gtk_builder_value_from_string",
              "gtk_builder_value_from_string_type":
             do {
-                let param = CoreGTKParameter(cName: "err", cType: "UnsafeMutablePointer<UnsafePointer<GError>?>!")
+                let param = CoreGTKParameter(cName: "err", cType: "GError**", nullable: true, optional: true)
                 self.parameters.append(param)
             }
         default:

@@ -11,10 +11,25 @@ import Foundation
 public struct CoreGTKParameter {
     public var cName: String
     public var cType: String
+    public var nullable: Bool
+    public var optional: Bool
     
     public var name: String {
         get {
-            return CoreGTKUtil.convertUSSToCamelCase(cName)
+            let _name = CoreGTKUtil.convertUSSToCamelCase(cName)
+            
+            switch _name {
+            case "func":
+                return "function"
+            case "protocol":
+                return "gtkProtocol"
+            case "class":
+                return "gtkClass"
+            default:
+                break
+            }
+            
+            return _name
         }
     }
     
@@ -31,13 +46,41 @@ public struct CoreGTKParameter {
             range = type.range(of: "**", options: .caseInsensitive)
             
             if range != nil {
-                return "UnsafeMutablePointer<UnsafePointer<\(type[..<range!.lowerBound])>?>!"
+                var result = "UnsafeMutablePointer<UnsafeMutablePointer<\(type[..<range!.lowerBound])>?>"
+                
+                if nullable {
+                    result += "?"
+                    
+                    if optional {
+                        result += " = nil"
+                    }
+                } else {
+                    result += "!"
+                }
+                
+                return result
             }
             
             range = type.range(of: "*", options: .caseInsensitive)
             
             if range != nil {
-                return "UnsafePointer<\(type[..<range!.lowerBound])>!"
+                var result = "UnsafeMutablePointer<\(type[..<range!.lowerBound])>"
+                
+                if nullable {
+                    result += "?"
+                    
+                    if optional {
+                        result += " = nil"
+                    }
+                } else {
+                    result += "!"
+                }
+                
+                return result
+            }
+            
+            if nullable && optional {
+                return type + "? = nil"
             }
             
             return type

@@ -10,6 +10,7 @@ import Foundation
 
 public class GIRReturnValue : GIRBase {
     public private(set) var transferOwnership: String? = nil
+    public private(set) var nullable: Bool = false
     public private(set) var doc: GIRDoc? = nil
     public private(set) var type: GIRType? = nil
     public private(set) var array: GIRArray? = nil
@@ -27,6 +28,8 @@ public class GIRReturnValue : GIRBase {
                 self.type = GIRType(value as! Dictionary<String, Any>)
             case "array":
                 self.array = GIRArray(value as! Dictionary<String, Any>)
+            case "nullable":
+                self.nullable = (value as! String == "1") ? true : false
             default:
                 self.logUnknownElement(key)
             }

@@ -156,7 +156,7 @@ public enum Gir2Swift {
                 type = function.returnValue!.type!.cType!
             }
             
-            var method = CoreGTKMethod(cName: function.cIdentifier!, cReturnType: type)
+            var method = CoreGTKMethod(cName: function.cIdentifier!, cReturnType: type, isReturnNullable: function.returnValue!.nullable)
             
             var params = [CoreGTKParameter]()
             
@@ -186,7 +186,7 @@ public enum Gir2Swift {
             type = parameter.type!.cType!
         }
         
-        return CoreGTKParameter(cName: parameter.name!, cType: type)
+        return CoreGTKParameter(cName: parameter.name!, cType: type, nullable: parameter.nullable, optional: parameter.optional)
     }
     
     fileprivate static func hasVarArgs<T>(_ function: T) -> Bool where T: GIRFunctionBase {

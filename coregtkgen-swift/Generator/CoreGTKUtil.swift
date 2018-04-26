@@ -94,8 +94,9 @@ public enum CoreGTKUtil {
             if fromType.hasPrefix("Gtk") && toType.hasPrefix("CGTK") {
                 return "\(toType[..<toType.endIndex])(withGObject: \(name))"
             } else if fromType.hasPrefix("CGTK") && toType.hasPrefix("Gtk") {
-                let index = toType.index(toType.startIndex, offsetBy: 4)
-                return "\(name).\(toType[index...])"
+                let start = toType.index(toType.startIndex, offsetBy: 3)
+                let end = toType.index(toType.endIndex, offsetBy: -1)
+                return "\(name).\(toType[start..<end].uppercased())"
             } else {
                 return name
             }
@@ -147,6 +148,41 @@ public enum CoreGTKUtil {
         } else {
             return type
         }
+    }
+    
+    public static func selfTypeMacrosName(_ type_: String) -> String {
+        guard type_.hasPrefix("Gtk") else {
+            return type_
+        }
+        
+        var result = ""
+        
+        let index = type_.index(type_.startIndex, offsetBy: 3)
+        
+        var type = type_[index...]
+        
+        if type == "GLArea" {
+            result += "GL_AREA"
+        } else {
+            var countBetweenUnderscores = 0
+            var i = 0
+            let set = CharacterSet.uppercaseLetters
+            
+            type.unicodeScalars.forEach {
+                
+                if i != 0 && set.contains($0) && countBetweenUnderscores > 0 {
+                    result += "_\(String($0).uppercased())"
+                    countBetweenUnderscores = 0
+                } else {
+                    result += String($0).uppercased()
+                    countBetweenUnderscores += 1
+                }
+                
+                i += 1
+            }
+        }
+        
+        return result
     }
     
     public static func addToTrimMethodName(_ value: String) {

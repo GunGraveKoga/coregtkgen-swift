@@ -15,6 +15,8 @@ public class GIRParameter : GIRBase {
     public private(set) var scope: String? = nil
     public private(set) var allowNone: Bool = false
     public private(set) var callerAllocates: Bool = false
+    public private(set) var nullable: Bool = false
+    public private(set) var optional: Bool = false
     public private(set) var closure: Int = 0
     public private(set) var destroy: Int = 0
     public private(set) var doc: GIRDoc? = nil
@@ -39,6 +41,10 @@ public class GIRParameter : GIRBase {
                 self.allowNone = (value as! String == "1") ? true : false
             case "caller-allocates":
                 self.callerAllocates = (value as! String == "1") ? true : false
+            case "nullable":
+                self.nullable = (value as! String == "1") ? true : false
+            case "optional":
+                self.optional = (value as! String == "1") ? true : false
             case "closure":
                 self.closure = Int(value as! String)!
             case "destroy":

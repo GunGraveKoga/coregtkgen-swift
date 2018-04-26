@@ -11,9 +11,13 @@
 "Gtk" : "CGTK",
 "String" : "const gchar*",
 "String" : "const char*",
-"gchar**" : "UnsafeMutablePointer<UnsafePointer<gchar>?>!",
-"guint*" : "UnsafeMutablePointer<guint>?",
-"gdouble*" : "UnsafeMutablePointer<gdouble>?",
+"gchar**" : "UnsafeMutablePointer<UnsafeMutablePointer<gchar>?>!",
+"guint*" : "UnsafeMutablePointer<guint>!",
+"gdouble*" : "UnsafeMutablePointer<gdouble>!",
+"int" : "Int32",
+"double" : "Double",
+"float" : "Float",
+"int*" : "UnsafeMutablePointer<Int32>"
 	
 "CGTKAboutDialog" : "AboutDialog",
 "CGTKAccelLabel" : "AccelLabel",
