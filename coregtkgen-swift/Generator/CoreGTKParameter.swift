@@ -36,7 +36,7 @@ public struct CoreGTKParameter {
     public var type: String {
         get {
             var type = CoreGTKUtil.swapTypes(cType)
-            
+            var isConst = false
             var range = type.range(of: "const")
             
             if range != nil {
@@ -45,6 +45,8 @@ public struct CoreGTKParameter {
                 if type.hasSuffix("*") {
                     type = CoreGTKUtil.swapTypes(type)
                 }
+                
+                isConst = true
             }
             
             range = type.range(of: "**", options: .caseInsensitive)
@@ -54,7 +56,7 @@ public struct CoreGTKParameter {
                 
                 let isGtkType = cType.hasPrefix("Gtk") || cType.hasPrefix("Gdk") || cType.hasPrefix("Atk") || cType.hasPrefix("G")
                 
-                if isGtkType {
+                if isGtkType && !isConst {
                     result += "Mutable"
                 }
                 
@@ -86,7 +88,7 @@ public struct CoreGTKParameter {
                 
                 var result = "Unsafe"
                 
-                if isGtkType {
+                if isGtkType && !isConst {
                     result += "Mutable"
                 }
                 
@@ -118,10 +120,9 @@ public struct CoreGTKParameter {
             let _name = self.name
             let isFunction = _name.range(of: "func", options: .caseInsensitive) != nil
             let isNotify = _name.range(of: "notify", options: .caseInsensitive) != nil
-            let isCallback = _name.range(of: "callback", options: .caseInsensitive) != nil
             let isDestroyCallback = _name.range(of: "destroy", options: .caseInsensitive) != nil
             
-            if isFunction || isNotify || isCallback || isDestroyCallback ||
+            if isFunction || isNotify || _name == "callback" || isDestroyCallback ||
                 _name == "detacher" || _name == "updateHeader" {
                 return "@escaping " + type
             }

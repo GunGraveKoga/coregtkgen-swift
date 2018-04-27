@@ -12,6 +12,7 @@ public struct CoreGTKClass {
     public var cName: String
     public var cType: String
     public var cParentType: String?
+    public var doc: String? = nil
     public private(set) var constructors = [CoreGTKMethod]()
     public private(set) var functions = [CoreGTKMethod]()
     public private(set) var methods = [CoreGTKMethod]()
@@ -45,6 +46,18 @@ public struct CoreGTKClass {
     }
     
     public mutating func addConstructor(_ constructor: CoreGTKMethod) {
+        switch constructor.cName {
+        case "gtk_combo_box_text_new_with_entry",
+             "gtk_combo_box_new_with_entry":
+            do {
+                var _constructor = constructor
+                _constructor.isConstructor = false
+                self.addFunction(_constructor)
+                return
+            }
+        default:
+            break
+        }
         self.constructors.append(constructor)
     }
     

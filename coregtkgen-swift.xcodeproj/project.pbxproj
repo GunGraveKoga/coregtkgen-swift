@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14742C072093D83F0079EB12 /* CGTKTypeWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14742C062093D83F0079EB12 /* CGTKTypeWrapper.swift */; };
 		14D54F4520926073008A63BD /* CGTKBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D54F4420926073008A63BD /* CGTKBase.swift */; };
 		14D54F462092640F008A63BD /* CoreGTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A42091D2A800AE4216 /* CoreGTK.swift */; };
 		ED29C4E920937F710069EA46 /* CGTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4E820937F710069EA46 /* CGTK.swift */; };
@@ -199,6 +200,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		14742C062093D83F0079EB12 /* CGTKTypeWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKTypeWrapper.swift; sourceTree = "<group>"; };
 		14D54F4420926073008A63BD /* CGTKBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKBase.swift; sourceTree = "<group>"; };
 		ED29C4E720932FE30069EA46 /* CGtk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CGtk; sourceTree = "<group>"; };
 		ED29C4E820937F710069EA46 /* CGTK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTK.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				14D54F4420926073008A63BD /* CGTKBase.swift */,
 				ED29C4E820937F710069EA46 /* CGTK.swift */,
 				ED29C4EA209391680069EA46 /* CGTKSignalConnector.swift */,
+				14742C062093D83F0079EB12 /* CGTKTypeWrapper.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -886,6 +889,7 @@
 				ED7285EE20922E9E00AE4216 /* CGTKGLArea.swift in Sources */,
 				ED7285D620922E9E00AE4216 /* CGTKColorChooserDialog.swift in Sources */,
 				ED7285F620922E9E00AE4216 /* CGTKHScrollbar.swift in Sources */,
+				14742C072093D83F0079EB12 /* CGTKTypeWrapper.swift in Sources */,
 				ED7285DB20922E9E00AE4216 /* CGTKComboBoxText.swift in Sources */,
 				ED7285EF20922E9E00AE4216 /* CGTKGrid.swift in Sources */,
 				ED7285D120922E9E00AE4216 /* CGTKCalendar.swift in Sources */,

@@ -165,9 +165,9 @@ public enum CoreGTKUtil {
         case "GtkHScrollbar":
             result += "HSCROLLBAR"
         case "GtkHButtonBox":
-            result + "HBUTTON_BOX"
+            result += "HBUTTON_BOX"
         case "GtkVButtonBox":
-            result + "VBUTTON_BOX"
+            result += "VBUTTON_BOX"
         default:
             do {
                 let index = type_.index(type_.startIndex, offsetBy: 3)

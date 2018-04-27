@@ -133,6 +133,8 @@ public enum Gir2Swift {
                 }
             }
             
+            gtkClass.doc = clazz.doc?.docText
+            
             do {
                 try CoreGTKClassWriter.generateFile(forClass: gtkClass, inDirectory: CommandLine.arguments[3])
             } catch let error {
@@ -170,6 +172,7 @@ public enum Gir2Swift {
             
             method.deprecated = function.deprecated
             method.cDeprecatedMessage = function.docDeprecated?.docText
+            method.doc = function.doc?.docText
             
             return method
         }

@@ -16,6 +16,7 @@ public struct CoreGTKMethod {
     public var deprecated = false
     public var cDeprecatedMessage: String? = nil
     public var isConstructor = false
+    public var doc: String? = nil
     
     public var name: String {
         get {
@@ -27,7 +28,7 @@ public struct CoreGTKMethod {
     public var returnType: String {
         get {
             var type = CoreGTKUtil.swapTypes(cReturnType)
-            
+            var isConst = false
             var range = type.range(of: "const")
             
             if range != nil {
@@ -36,6 +37,8 @@ public struct CoreGTKMethod {
                 if type.hasSuffix("*") {
                     type = CoreGTKUtil.swapTypes(type)
                 }
+                
+                isConst = true
             }
             
             range = type.range(of: "**", options: .caseInsensitive)
@@ -45,7 +48,7 @@ public struct CoreGTKMethod {
                 
                 let isGtkType = cReturnType.hasPrefix("Gtk") || cReturnType.hasPrefix("Gdk") || cReturnType.hasPrefix("Atk") || cReturnType.hasPrefix("G")
                 
-                if isGtkType {
+                if isGtkType && !isConst {
                     result += "Mutable"
                 }
                 
@@ -73,7 +76,7 @@ public struct CoreGTKMethod {
                 
                 var result = "Unsafe"
                 
-                if isGtkType {
+                if isGtkType && !isConst {
                     result += "Mutable"
                 }
                 

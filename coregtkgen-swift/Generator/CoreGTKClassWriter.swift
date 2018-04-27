@@ -39,9 +39,20 @@ public enum CoreGTKClassWriter {
         output += self.generateLicense(forFile: "\(gtkClass.name).swift") ?? ""
         output += "\n@_exported import CGtk\n\n"
         output += self.macrosesSourceString(forClass: gtkClass)
+        
+        if gtkClass.doc != nil {
+            let set = CharacterSet.whitespaces
+            for line in gtkClass.doc!.split(separator: "\n") {
+                output += "/// " + line.trimmingCharacters(in: set) + "\n"
+            }
+            
+            output += "\n\n"
+        }
+        
         output += "open class \(gtkClass.name) : \(CoreGTKUtil.swapTypes(gtkClass.cParentType!)) {\n"
         
         for function in gtkClass.functions {
+            output += self.generateDocumentation(forMethod: function)
             output += "\topen class "
             output += self.sourceString(forFunction: function)
         }
@@ -55,14 +66,15 @@ public enum CoreGTKClassWriter {
         }
         
         for constructor in gtkClass.constructors {
+            output += self.generateDocumentation(forMethod: constructor)
             output += self.sourceString(forConstructor: constructor, of: gtkClass)
         }
         
         output += self.selfTypeMethodSourceString(forClass: gtkClass)
         
         for method in gtkClass.methods {
+            output += self.generateDocumentation(forMethod: method)
             output += "\topen "
-            
             output += self.sourceString(forFunction: method, passSelf: gtkClass.type)
         }
         
@@ -74,7 +86,6 @@ public enum CoreGTKClassWriter {
     public static func sourceString(forFunction gtkFunction: CoreGTKMethod, passSelf: String? = nil) -> String {
         var output = ""
         
-        output += self.generateDocumentation(forMethod: gtkFunction)
         output += "func \(gtkFunction.sig)"
         
         if !gtkFunction.returnsVoid {
@@ -121,7 +132,6 @@ public enum CoreGTKClassWriter {
     public static func sourceString(forConstructor constructor: CoreGTKMethod, of gtkClass: CoreGTKClass) -> String {
         var output = ""
         
-        output += self.generateDocumentation(forMethod: constructor)
         output += "\tpublic convenience \(constructor.sig) {\n\t\t"
         
         let constructorString = "\(constructor.cName)(\(self.generateCParameterListString(constructor.parameters)))"
@@ -250,18 +260,27 @@ public enum CoreGTKClassWriter {
     }
     
     public static func generateDocumentation(forMethod method: CoreGTKMethod) -> String {
-        var doc = "/// func \(method.sig) -> \(method.returnType)\n"
+        var doc = ""
+        
+        if method.doc != nil {
+            let set = CharacterSet.whitespaces
+            for line in method.doc!.split(separator: "\n") {
+                doc += "\t/// " + line.trimmingCharacters(in: set) + "\n"
+            }
+        } else {
+            doc += "\t/// func \(method.sig) -> \(method.returnType)\n"
+        }
         
         if method.parameters.count > 0 {
-            doc += "/// Parameters:\n"
+            doc += "\t/// Parameters:\n"
             
             for parameter in method.parameters {
-                doc += "///\t- \(parameter.name): \(parameter.type)\n"
+                doc += "\t///\t- \(parameter.name): \(parameter.type)\n"
             }
         }
         
         if !method.returnsVoid {
-            doc += "/// - Returns: \(method.returnType)\n"
+            doc += "\t/// - Returns: \(method.returnType)\n"
         }
         
         return doc
