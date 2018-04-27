@@ -18,7 +18,13 @@ public struct CoreGTKClass {
     
     public var type: String {
         get {
-            return CoreGTKUtil.swapTypes(cType)
+            let gtkType = CoreGTKUtil.swapTypes(cType)
+            
+            guard gtkType != "OpaquePointer" else {
+                return cType
+            }
+            
+            return gtkType
         }
     }
     

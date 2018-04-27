@@ -108,6 +108,11 @@ public let G_TYPE_FUNDAMENTAL_MAX: GType = G_TYPE_MAKE_FUNDAMENTAL(255)
     }
 }
 
+@inline(__always) public func G_TYPE_CHECK_INSTANCE_CAST(_ ptr: UnsafeMutableRawPointer!, _ g_type: GType) -> OpaquePointer! {
+    let type = g_type_check_instance_cast(ptr.assumingMemoryBound(to: GTypeInstance.self), g_type)
+    return OpaquePointer(type!)
+}
+
 @inline(__always) public func G_TYPE_INSTANCE_GET_INTERFACE<T>(_ ptr: UnsafeMutableRawPointer!, _ g_type: GType) -> UnsafeMutablePointer<T>! {
     let result = g_type_interface_peek(ptr.assumingMemoryBound(to: GTypeInstance.self).pointee.g_class, g_type)
     return result!.assumingMemoryBound(to: T.self)

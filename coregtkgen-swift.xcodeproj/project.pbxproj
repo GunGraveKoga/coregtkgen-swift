@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		14D54F4520926073008A63BD /* CGTKBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D54F4420926073008A63BD /* CGTKBase.swift */; };
 		14D54F462092640F008A63BD /* CoreGTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A42091D2A800AE4216 /* CoreGTK.swift */; };
+		ED29C4E920937F710069EA46 /* CGTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4E820937F710069EA46 /* CGTK.swift */; };
+		ED29C4EB209391680069EA46 /* CGTKSignalConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4EA209391680069EA46 /* CGTKSignalConnector.swift */; };
 		ED7283A0208DE09200AE4216 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72839F208DE09200AE4216 /* main.swift */; };
 		ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A7208DE0F600AE4216 /* GIRBase.swift */; };
 		ED7283AA208DEB5800AE4216 /* GIRType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A9208DEB5800AE4216 /* GIRType.swift */; };
@@ -198,6 +200,9 @@
 
 /* Begin PBXFileReference section */
 		14D54F4420926073008A63BD /* CGTKBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKBase.swift; sourceTree = "<group>"; };
+		ED29C4E720932FE30069EA46 /* CGtk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CGtk; sourceTree = "<group>"; };
+		ED29C4E820937F710069EA46 /* CGTK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTK.swift; sourceTree = "<group>"; };
+		ED29C4EA209391680069EA46 /* CGTKSignalConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKSignalConnector.swift; sourceTree = "<group>"; };
 		ED72839C208DE09200AE4216 /* coregtkgen-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "coregtkgen-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED72839F208DE09200AE4216 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ED7283A7208DE0F600AE4216 /* GIRBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRBase.swift; sourceTree = "<group>"; };
@@ -395,6 +400,8 @@
 			children = (
 				ED7284A42091D2A800AE4216 /* CoreGTK.swift */,
 				14D54F4420926073008A63BD /* CGTKBase.swift */,
+				ED29C4E820937F710069EA46 /* CGTK.swift */,
+				ED29C4EA209391680069EA46 /* CGTKSignalConnector.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -402,6 +409,7 @@
 		ED728393208DE09200AE4216 = {
 			isa = PBXGroup;
 			children = (
+				ED29C4E720932FE30069EA46 /* CGtk */,
 				ED72839E208DE09200AE4216 /* coregtkgen-swift */,
 				ED7285BB20922E7C00AE4216 /* test */,
 				ED72839D208DE09200AE4216 /* Products */,
@@ -797,6 +805,7 @@
 				ED7285FF20922E9E00AE4216 /* CGTKLayout.swift in Sources */,
 				ED72862C20922E9F00AE4216 /* CGTKStackSidebar.swift in Sources */,
 				ED72862B20922E9F00AE4216 /* CGTKStack.swift in Sources */,
+				ED29C4E920937F710069EA46 /* CGTK.swift in Sources */,
 				ED72861020922E9E00AE4216 /* CGTKOffscreenWindow.swift in Sources */,
 				ED72861F20922E9E00AE4216 /* CGTKScale.swift in Sources */,
 				ED7285E320922E9E00AE4216 /* CGTKFileChooserDialog.swift in Sources */,
@@ -807,6 +816,7 @@
 				ED7285F120922E9E00AE4216 /* CGTKHBox.swift in Sources */,
 				ED7285EC20922E9E00AE4216 /* CGTKFontSelectionDialog.swift in Sources */,
 				ED72860020922E9E00AE4216 /* CGTKLevelBar.swift in Sources */,
+				ED29C4EB209391680069EA46 /* CGTKSignalConnector.swift in Sources */,
 				ED72860120922E9E00AE4216 /* CGTKLinkButton.swift in Sources */,
 				ED7285E520922E9E00AE4216 /* CGTKFixed.swift in Sources */,
 				ED72861220922E9E00AE4216 /* CGTKPaned.swift in Sources */,

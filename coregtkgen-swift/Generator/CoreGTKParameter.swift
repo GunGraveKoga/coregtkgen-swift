@@ -41,12 +41,30 @@ public struct CoreGTKParameter {
             
             if range != nil {
                 type = String(type[range!.upperBound...]).trimmingCharacters(in: CharacterSet.whitespaces)
+                
+                if type.hasSuffix("*") {
+                    type = CoreGTKUtil.swapTypes(type)
+                }
             }
             
             range = type.range(of: "**", options: .caseInsensitive)
             
             if range != nil {
-                var result = "UnsafeMutablePointer<UnsafeMutablePointer<\(type[..<range!.lowerBound])>?>"
+                var result = "Unsafe"
+                
+                let isGtkType = cType.hasPrefix("Gtk") || cType.hasPrefix("Gdk") || cType.hasPrefix("Atk") || cType.hasPrefix("G")
+                
+                if isGtkType {
+                    result += "Mutable"
+                }
+                
+                result += "Pointer<Unsafe"
+                
+                if isGtkType {
+                    result += "Mutable"
+                }
+                
+                result += "Pointer<\(type[..<range!.lowerBound])>?>"
                 
                 if nullable {
                     result += "?"
@@ -64,7 +82,15 @@ public struct CoreGTKParameter {
             range = type.range(of: "*", options: .caseInsensitive)
             
             if range != nil {
-                var result = "UnsafeMutablePointer<\(type[..<range!.lowerBound])>"
+                let isGtkType = cType.hasPrefix("Gtk") || cType.hasPrefix("Gdk") || cType.hasPrefix("Atk") || cType.hasPrefix("G")
+                
+                var result = "Unsafe"
+                
+                if isGtkType {
+                    result += "Mutable"
+                }
+                
+                result += "Pointer<\(type[..<range!.lowerBound])>"
                 
                 if nullable {
                     result += "?"
@@ -81,6 +107,23 @@ public struct CoreGTKParameter {
             
             if nullable && optional {
                 return type + "? = nil"
+            } else if type == "OpaquePointer" {
+                if nullable {
+                    return type + "?"
+                }
+                
+                return type + "!"
+            }
+            
+            let _name = self.name
+            let isFunction = _name.range(of: "func", options: .caseInsensitive) != nil
+            let isNotify = _name.range(of: "notify", options: .caseInsensitive) != nil
+            let isCallback = _name.range(of: "callback", options: .caseInsensitive) != nil
+            let isDestroyCallback = _name.range(of: "destroy", options: .caseInsensitive) != nil
+            
+            if isFunction || isNotify || isCallback || isDestroyCallback ||
+                _name == "detacher" || _name == "updateHeader" {
+                return "@escaping " + type
             }
             
             return type

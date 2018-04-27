@@ -80,7 +80,7 @@ public enum CoreGTKUtil {
     }
     
     public static func getFunctionCallForConstructor(of type: String, with constructor: String) -> String {
-        return "super.init(withGObject: \(constructor))\n"
+        return "self.init(withGObject: \(constructor))\n"
     }
     
     public static func convertType(from fromType: String, to toType: String, withName name: String) -> String {
@@ -92,6 +92,10 @@ public enum CoreGTKUtil {
         
         if outerDict == nil {
             if fromType.hasPrefix("Gtk") && toType.hasPrefix("CGTK") {
+                if toType.hasSuffix("?") || toType.hasSuffix("!") {
+                    let index = toType.index(before: toType.endIndex)
+                    return "\(toType[..<index])(withGObject: \(name))"
+                }
                 return "\(toType[..<toType.endIndex])(withGObject: \(name))"
             } else if fromType.hasPrefix("CGTK") && toType.hasPrefix("Gtk") {
                 let start = toType.index(toType.startIndex, offsetBy: 3)
@@ -102,12 +106,19 @@ public enum CoreGTKUtil {
             }
         }
         
-        let val = (outerDict as! Dictionary<String, Any>)[toType]
+        let val: String?
+        
+        if toType.hasSuffix("?") || toType.hasSuffix("!") {
+            let index = toType.index(before: toType.endIndex)
+            val = (outerDict as! Dictionary<String, Any>)[String(toType[..<index])] as? String
+        } else {
+            val = (outerDict as! Dictionary<String, Any>)[toType] as? String
+        }
         
         if val == nil {
             return name
         } else {
-            return String(format: (val as! String), name)
+            return String(format: val!, name)
         }
     }
     
@@ -118,11 +129,50 @@ public enum CoreGTKUtil {
             
             return "self.\(swappedType[index...])"
         } else if type.hasPrefix("Gtk") {
-            var result = ""
+            return "GTK_" + self.selfTypeMacrosName(type) + "(self.GOBJECT)"
             
-            if type == "GtkGLArea" {
-                result += "GTK_GL_AREA"
-            } else {
+        } else {
+            return type
+        }
+    }
+    
+    public static func selfTypeMacrosName(_ type_: String) -> String {
+        guard type_.hasPrefix("Gtk") else {
+            return type_
+        }
+        
+        var result = ""
+        
+        switch type_ {
+        case "GtkGLArea":
+            result += "GL_AREA"
+        case "GtkHSV":
+            result += "HSV"
+        case "GtkVSeparator":
+            result += "VSEPARATOR"
+        case "GtkHSeparator":
+            result += "HSEPARATOR"
+        case "GtkHBox":
+            result += "HBOX"
+        case "GtkVBox":
+            result += "VBOX"
+        case "GtkHScale":
+            result += "HSCALE"
+        case "GtkVScale":
+            result += "VSCALE"
+        case "GtkVScrollbar":
+            result += "VSCROLLBAR"
+        case "GtkHScrollbar":
+            result += "HSCROLLBAR"
+        case "GtkHButtonBox":
+            result + "HBUTTON_BOX"
+        case "GtkVButtonBox":
+            result + "VBUTTON_BOX"
+        default:
+            do {
+                let index = type_.index(type_.startIndex, offsetBy: 3)
+                var type = type_[index...]
+                
                 var countBetweenUnderscores = 0
                 var i = 0
                 let set = CharacterSet.uppercaseLetters
@@ -139,46 +189,6 @@ public enum CoreGTKUtil {
                     
                     i += 1
                 }
-            }
-            
-            result += "(self.GOBJECT)"
-            
-            return result
-            
-        } else {
-            return type
-        }
-    }
-    
-    public static func selfTypeMacrosName(_ type_: String) -> String {
-        guard type_.hasPrefix("Gtk") else {
-            return type_
-        }
-        
-        var result = ""
-        
-        let index = type_.index(type_.startIndex, offsetBy: 3)
-        
-        var type = type_[index...]
-        
-        if type == "GLArea" {
-            result += "GL_AREA"
-        } else {
-            var countBetweenUnderscores = 0
-            var i = 0
-            let set = CharacterSet.uppercaseLetters
-            
-            type.unicodeScalars.forEach {
-                
-                if i != 0 && set.contains($0) && countBetweenUnderscores > 0 {
-                    result += "_\(String($0).uppercased())"
-                    countBetweenUnderscores = 0
-                } else {
-                    result += String($0).uppercased()
-                    countBetweenUnderscores += 1
-                }
-                
-                i += 1
             }
         }
         

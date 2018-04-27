@@ -35,18 +35,10 @@ public enum CoreGTKClassWriter {
     
     public static func sourceString(forClass gtkClass: CoreGTKClass) -> String {
         var output = ""
-        let gtkClassName = gtkClass.cName.uppercased()
         
         output += self.generateLicense(forFile: "\(gtkClass.name).swift") ?? ""
         output += "\n@_exported import CGtk\n\n"
-        
-        if gtkClassName != "WIDGET" {
-            let type = CoreGTKUtil.selfTypeMacrosName(gtkClass.cType)
-            output += "public let GTK_TYPE_\(type): GType = gtk_\(type.lowercased())_get_type()\n\n"
-            output += "@inline(__always) public func GTK_\(type)(_ ptr: UnsafeMutableRawPointer!) -> UnsafeMutablePointer<\(gtkClass.cType)> {\n"
-            output += "\treturn G_TYPE_CHECK_INSTANCE_CAST(ptr, GTK_TYPE_\(type))\n}\n\n"
-        }
-        
+        output += self.macrosesSourceString(forClass: gtkClass)
         output += "open class \(gtkClass.name) : \(CoreGTKUtil.swapTypes(gtkClass.cParentType!)) {\n"
         
         for function in gtkClass.functions {
@@ -54,7 +46,7 @@ public enum CoreGTKClassWriter {
             output += self.sourceString(forFunction: function)
         }
         
-        let _extraMethods = CoreGTKUtil.extraMethods(of: gtkClass.name)
+        let _extraMethods = CoreGTKUtil.extraMethods(of: gtkClass.type)
         
         if let extraMethods = _extraMethods {
             for (key, value) in extraMethods {
@@ -66,9 +58,7 @@ public enum CoreGTKClassWriter {
             output += self.sourceString(forConstructor: constructor, of: gtkClass)
         }
         
-        if gtkClassName != "WIDGET" {
-            output += "\topen var \(gtkClassName): UnsafeMutablePointer<\(gtkClass.cType)>! {\n\t\tget {\n\t\t\treturn \(CoreGTKUtil.selfTypeMethodCall(gtkClass.cType))\n\t\t}\n\t}\n\n"
-        }
+        output += self.selfTypeMethodSourceString(forClass: gtkClass)
         
         for method in gtkClass.methods {
             output += "\topen "
@@ -82,7 +72,10 @@ public enum CoreGTKClassWriter {
     }
     
     public static func sourceString(forFunction gtkFunction: CoreGTKMethod, passSelf: String? = nil) -> String {
-        var output = "func \(gtkFunction.sig)"
+        var output = ""
+        
+        output += self.generateDocumentation(forMethod: gtkFunction)
+        output += "func \(gtkFunction.sig)"
         
         if !gtkFunction.returnsVoid {
             output += " -> \(gtkFunction.returnType)"
@@ -128,12 +121,77 @@ public enum CoreGTKClassWriter {
     public static func sourceString(forConstructor constructor: CoreGTKMethod, of gtkClass: CoreGTKClass) -> String {
         var output = ""
         
-        output += "\tpublic \(constructor.sig) {\n\t\t"
+        output += self.generateDocumentation(forMethod: constructor)
+        output += "\tpublic convenience \(constructor.sig) {\n\t\t"
+        
         let constructorString = "\(constructor.cName)(\(self.generateCParameterListString(constructor.parameters)))"
         
         output += CoreGTKUtil.getFunctionCallForConstructor(of: gtkClass.cType, with: constructorString)
         
         output += "\t}\n\n"
+        
+        return output
+    }
+    
+    public static func macrosesSourceString(forClass gtkClass: CoreGTKClass) -> String {
+        let gtkClassName = gtkClass.cName.uppercased()
+        var output = ""
+        
+        switch gtkClassName {
+        case "WIDGET",
+             "HPANED",
+             "VPANED":
+            break
+        default:
+            do {
+                let type: String
+                let macrosName = CoreGTKUtil.selfTypeMacrosName(gtkClass.cType)
+                
+                switch gtkClassName {
+                case "POPOVERMENU",
+                     "SHORTCUTSSHORTCUT",
+                     "MODELBUTTON",
+                     "PLACESSIDEBAR":
+                    type = "OpaquePointer!"
+                default:
+                    type = "UnsafeMutablePointer<\(gtkClass.cType)>"
+                }
+                
+                output += "public let GTK_TYPE_\(macrosName): GType = gtk_\(macrosName.lowercased())_get_type()\n\n"
+                output += "@inline(__always) public func GTK_\(macrosName)(_ ptr: UnsafeMutableRawPointer!) -> \(type) {\n"
+                output += "\treturn G_TYPE_CHECK_INSTANCE_CAST(ptr, GTK_TYPE_\(macrosName))\n}\n\n"
+            }
+        }
+        
+        return output
+    }
+    
+    public static func selfTypeMethodSourceString(forClass gtkClass: CoreGTKClass) -> String {
+        let gtkClassName = gtkClass.cName.uppercased()
+        var output = ""
+        
+        switch gtkClassName {
+        case "WIDGET",
+             "HPANED",
+             "VPANED":
+            break
+        default:
+            do {
+                let type: String
+                
+                switch gtkClassName {
+                case "POPOVERMENU",
+                     "SHORTCUTSSHORTCUT",
+                     "MODELBUTTON",
+                     "PLACESSIDEBAR":
+                    type = "OpaquePointer!"
+                default:
+                    type = "UnsafeMutablePointer<\(gtkClass.cType)>!"
+                }
+                
+                output += "\topen var \(gtkClassName): \(type) {\n\t\tget {\n\t\t\treturn \(CoreGTKUtil.selfTypeMethodCall(gtkClass.cType))\n\t\t}\n\t}\n\n"
+            }
+        }
         
         return output
     }
@@ -203,7 +261,7 @@ public enum CoreGTKClassWriter {
         }
         
         if !method.returnsVoid {
-            doc += "/// - Returns: \(method.returnType)"
+            doc += "/// - Returns: \(method.returnType)\n"
         }
         
         return doc

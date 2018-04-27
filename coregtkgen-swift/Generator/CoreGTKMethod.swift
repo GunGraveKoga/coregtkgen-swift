@@ -32,12 +32,30 @@ public struct CoreGTKMethod {
             
             if range != nil {
                 type = String(type[range!.upperBound...]).trimmingCharacters(in: CharacterSet.whitespaces)
+                
+                if type.hasSuffix("*") {
+                    type = CoreGTKUtil.swapTypes(type)
+                }
             }
             
             range = type.range(of: "**", options: .caseInsensitive)
             
             if range != nil {
-                var result = "UnsafeMutablePointer<UnsafeMutablePointer<\(type[..<range!.lowerBound])>?>"
+                var result = "Unsafe"
+                
+                let isGtkType = cReturnType.hasPrefix("Gtk") || cReturnType.hasPrefix("Gdk") || cReturnType.hasPrefix("Atk") || cReturnType.hasPrefix("G")
+                
+                if isGtkType {
+                    result += "Mutable"
+                }
+                
+                result += "Pointer<Unsafe"
+                
+                if isGtkType {
+                    result += "Mutable"
+                }
+                
+                result += "Pointer<\(type[..<range!.lowerBound])>?>"
                 
                 if isReturnNullable {
                     result += "?"
@@ -51,7 +69,15 @@ public struct CoreGTKMethod {
             range = type.range(of: "*", options: .caseInsensitive)
             
             if range != nil {
-                var result = "UnsafeMutablePointer<\(type[..<range!.lowerBound])>"
+                let isGtkType = cReturnType.hasPrefix("Gtk") || cReturnType.hasPrefix("Gdk") || cReturnType.hasPrefix("Atk") || cReturnType.hasPrefix("G")
+                
+                var result = "Unsafe"
+                
+                if isGtkType {
+                    result += "Mutable"
+                }
+                
+                result += "Pointer<\(type[..<range!.lowerBound])>"
                 
                 if isReturnNullable {
                     result += "?"
@@ -62,7 +88,7 @@ public struct CoreGTKMethod {
                 return result
             }
             
-            if isReturnNullable {
+            if isReturnNullable || type == "String" {
                 return type + "?"
             }
             

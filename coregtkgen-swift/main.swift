@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CGtk
 
 let path = CommandLine.arguments[1]
 
