@@ -53,7 +53,11 @@ public enum CoreGTKClassWriter {
         
         for function in gtkClass.functions {
             output += self.generateDocumentation(forMethod: function)
-            output += "\topen class "
+            output += "\t"
+            if function.isOverrided {
+                output += "override "
+            }
+            output += "open class "
             output += self.sourceString(forFunction: function)
         }
         
@@ -74,7 +78,11 @@ public enum CoreGTKClassWriter {
         
         for method in gtkClass.methods {
             output += self.generateDocumentation(forMethod: method)
-            output += "\topen "
+            output += "\t"
+            if method.isOverrided {
+                output += "override "
+            }
+            output += "open "
             output += self.sourceString(forFunction: method, passSelf: gtkClass.type)
         }
         
@@ -87,10 +95,6 @@ public enum CoreGTKClassWriter {
         var output = ""
         
         output += "func \(gtkFunction.sig)"
-        
-        if !gtkFunction.returnsVoid {
-            output += " -> \(gtkFunction.returnType)"
-        }
         
         output += " {\n"
         
@@ -132,7 +136,13 @@ public enum CoreGTKClassWriter {
     public static func sourceString(forConstructor constructor: CoreGTKMethod, of gtkClass: CoreGTKClass) -> String {
         var output = ""
         
-        output += "\tpublic convenience \(constructor.sig) {\n\t\t"
+        output += "\t"
+        
+        if constructor.isOverrided {
+            output += "override "
+        }
+        
+        output += "public convenience \(constructor.sig) {\n\t\t"
         
         let constructorString = "\(constructor.cName)(\(self.generateCParameterListString(constructor.parameters)))"
         

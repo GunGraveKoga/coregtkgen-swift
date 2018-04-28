@@ -17,6 +17,7 @@ public struct CoreGTKMethod {
     public var cDeprecatedMessage: String? = nil
     public var isConstructor = false
     public var doc: String? = nil
+    public var isOverrided = false
     
     public var name: String {
         get {
@@ -184,6 +185,10 @@ public struct CoreGTKMethod {
             }
             
             result += ")"
+            
+            if !self.returnsVoid && !isConstructor {
+                result += " -> \(self.returnType)"
+            }
             
             return result
         }

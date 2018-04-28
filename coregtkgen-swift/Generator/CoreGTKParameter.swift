@@ -122,7 +122,7 @@ public struct CoreGTKParameter {
             let isNotify = _name.range(of: "notify", options: .caseInsensitive) != nil
             let isDestroyCallback = _name.range(of: "destroy", options: .caseInsensitive) != nil
             
-            if isFunction || isNotify || _name == "callback" || isDestroyCallback ||
+            if isFunction || isNotify || _name == "callback" || _name == "callbackSymbol" || isDestroyCallback ||
                 _name == "detacher" || _name == "updateHeader" {
                 return "@escaping " + type
             }

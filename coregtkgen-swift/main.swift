@@ -13,14 +13,12 @@ let path = CommandLine.arguments[1]
 
 do {
     let aip = try Gir2Swift.firsApiFrom(girFile: path)
-    print(aip!.elementTypeName!)
-    
-    print("parsed")
     
     if let api = aip {
+        print("Parsed")
         _ = Gir2Swift.generateClassFileFromApi(api)
     } else {
-        print("nil")
+        print("Failed to parse gir file \(path)")
     }
 } catch let error {
     print("\(error)")

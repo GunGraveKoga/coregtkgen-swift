@@ -13,9 +13,9 @@ public struct CoreGTKClass {
     public var cType: String
     public var cParentType: String?
     public var doc: String? = nil
-    public private(set) var constructors = [CoreGTKMethod]()
-    public private(set) var functions = [CoreGTKMethod]()
-    public private(set) var methods = [CoreGTKMethod]()
+    public var constructors = [CoreGTKMethod]()
+    public var functions = [CoreGTKMethod]()
+    public var methods = [CoreGTKMethod]()
     
     public var type: String {
         get {

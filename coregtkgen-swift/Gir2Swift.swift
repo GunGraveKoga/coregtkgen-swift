@@ -94,14 +94,14 @@ public enum Gir2Swift {
             CoreGTKUtil.addToTrimMethodName("gtk_\(result)")
         }
         
+        var classesDictionary = [String: CoreGTKClass]()
+        
         for clazz in namespace.classes {
             if !classesToGen!.contains(clazz.name!) {
                 continue
             }
             // Create class
             var gtkClass = CoreGTKClass(cName: clazz.name!, cType: clazz.cType!, cParentType: clazz.parent)
-            print("Generated class \(gtkClass.name)")
-            
             // Set constructors
             for constructor in clazz.constructors {
                 let ctor = self.generateMethodFromFunction(constructor)
@@ -109,7 +109,6 @@ public enum Gir2Swift {
                 if var ctor = ctor {
                     ctor.isConstructor = true
                     gtkClass.addConstructor(ctor)
-                    print("Generated constructor \(ctor.sig)")
                 }
             }
             
@@ -119,7 +118,6 @@ public enum Gir2Swift {
                 
                 if let classFunction = classFunction {
                     gtkClass.addFunction(classFunction)
-                    print("Generated class method \(classFunction.sig)")
                 }
             }
             
@@ -129,12 +127,57 @@ public enum Gir2Swift {
                 
                 if let instanceMethod = instanceMethod {
                     gtkClass.addMethod(instanceMethod)
-                    print("Generated instance method \(instanceMethod.sig)")
                 }
             }
             
             gtkClass.doc = clazz.doc?.docText
             
+            classesDictionary[gtkClass.name] = gtkClass
+        }
+        
+        do {
+            let classesArray = classesDictionary.map {$0.value}
+            let rootClasses = classesArray.filter {
+                if CoreGTKUtil.swapTypes($0.cParentType!) == "CGTKBase" {
+                    return true
+                }
+                
+                return false
+            }
+            
+            for clazz in rootClasses {
+                
+                let rootFunctions = clazz.hasFunctions() ? Set(clazz.functions.map {$0.sig}) : nil
+                let rootConstructors = clazz.hasConstructors() ? Set(clazz.constructors.map {$0.sig}) : nil
+                let rootMethods = clazz.hasMethods() ? Set(clazz.methods.map {$0.sig}) : nil
+                
+                if let overrides = self.resolveOverrides(parent: clazz.name, functionsSigs: rootFunctions, constructorsSigs: rootConstructors, methodsSigs: rootMethods, classes: classesArray) {
+                    for (key, value) in overrides {
+                        do {
+                            if let functions = value["functions"] {
+                                for index in functions {
+                                    classesDictionary[key]!.functions[index].isOverrided = true
+                                }
+                            }
+                            
+                            if let constructors = value["constructors"] {
+                                for index in constructors {
+                                    classesDictionary[key]!.constructors[index].isOverrided = true
+                                }
+                            }
+                            
+                            if let methods = value["methods"] {
+                                for index in methods {
+                                    classesDictionary[key]!.methods[index].isOverrided = true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        for (_, gtkClass) in classesDictionary {
             do {
                 try CoreGTKClassWriter.generateFile(forClass: gtkClass, inDirectory: CommandLine.arguments[3])
             } catch let error {
@@ -145,6 +188,124 @@ public enum Gir2Swift {
         }
         
         return true
+    }
+    
+    fileprivate static func resolveOverrides(parent: String, functionsSigs: Set<String>?, constructorsSigs: Set<String>?, methodsSigs: Set<String>?, classes: [CoreGTKClass]) -> [String: [String: [Int]]]? {
+        let children = classes.filter {
+            if CoreGTKUtil.swapTypes($0.cParentType!) == parent {
+                return true
+            }
+            
+            return false
+        }
+        
+        guard children.count > 0 else {
+            return nil
+        }
+        
+        var overrides = [String: [String: [Int]]]()
+        
+        for child in children {
+            var childOverrides = [String: [Int]]()
+            
+            var rootFunctions: Set<String>? = nil
+            
+            if child.hasFunctions() {
+                if functionsSigs != nil {
+                    rootFunctions = functionsSigs
+                } else {
+                    rootFunctions = Set<String>()
+                }
+                
+                do {
+                    var indexes = [Int]()
+                    
+                    for (index, method) in child.functions.enumerated() {
+                        let sig = method.sig
+                        
+                        if functionsSigs?.contains(sig) ?? false {
+                            indexes.append(index)
+                        }
+                        
+                        rootFunctions!.insert(sig)
+                    }
+                    
+                    if indexes.count > 0 {
+                        childOverrides["functions"] = indexes
+                    }
+                }
+            }
+ 
+            var rootConstructors: Set<String>? = nil
+            /*
+            if child.hasConstructors() {
+                if constructorsSigs != nil {
+                    rootConstructors = constructorsSigs
+                } else {
+                    rootConstructors = Set<String>()
+                }
+                
+                do {
+                    var indexes = [Int]()
+                    
+                    for (index, method) in child.constructors.enumerated() {
+                        let sig = method.sig
+                        
+                        if constructorsSigs?.contains(sig) ?? false {
+                            indexes.append(index)
+                        }
+                        
+                        rootConstructors!.insert(sig)
+                    }
+                    
+                    if indexes.count > 0 {
+                        childOverrides["constructors"] = indexes
+                    }
+                }
+            }
+            */
+            var rootMethods: Set<String>? = nil
+            
+            if child.hasMethods() {
+                if methodsSigs != nil {
+                    rootMethods = methodsSigs
+                } else {
+                    rootMethods = Set<String>()
+                }
+                
+                do {
+                    var indexes = [Int]()
+                    
+                    for (index, method) in child.methods.enumerated() {
+                        let sig = method.sig
+                        
+                        if methodsSigs?.contains(sig) ?? false {
+                            indexes.append(index)
+                        }
+                        
+                        rootMethods!.insert(sig)
+                    }
+                    
+                    if indexes.count > 0 {
+                        childOverrides["methods"] = indexes
+                    }
+                }
+            }
+            
+            if childOverrides.count > 0 {
+                overrides[child.name] = childOverrides
+            }
+            
+            if let nexOverrides = self.resolveOverrides(parent: child.name, functionsSigs: rootFunctions, constructorsSigs: rootConstructors, methodsSigs: rootMethods, classes: classes) {
+                overrides.merge(nexOverrides, uniquingKeysWith: {(_, last) in last})
+            }
+        }
+        
+        guard overrides.count > 0 else {
+            return nil
+        }
+        
+        return overrides
     }
     
     fileprivate static func generateMethodFromFunction<T>(_ function: T) -> CoreGTKMethod? where T: GIRFunctionBase {
