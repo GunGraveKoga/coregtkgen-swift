@@ -12,6 +12,9 @@
 		14D54F462092640F008A63BD /* CoreGTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284A42091D2A800AE4216 /* CoreGTK.swift */; };
 		ED29C4E920937F710069EA46 /* CGTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4E820937F710069EA46 /* CGTK.swift */; };
 		ED29C4EB209391680069EA46 /* CGTKSignalConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4EA209391680069EA46 /* CGTKSignalConnector.swift */; };
+		ED29C4F92094B34D0069EA46 /* CoreGTKSwiftHelper.c in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4F72094B34D0069EA46 /* CoreGTKSwiftHelper.c */; };
+		ED29C4FA2094B34D0069EA46 /* CoreGTKSwiftHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = ED29C4F82094B34D0069EA46 /* CoreGTKSwiftHelper.h */; };
+		ED29C4FC2094CB070069EA46 /* libCoreGTKSwiftHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED29C4F02094B2ED0069EA46 /* libCoreGTKSwiftHelper.a */; };
 		ED7283A0208DE09200AE4216 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72839F208DE09200AE4216 /* main.swift */; };
 		ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A7208DE0F600AE4216 /* GIRBase.swift */; };
 		ED7283AA208DEB5800AE4216 /* GIRType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A9208DEB5800AE4216 /* GIRType.swift */; };
@@ -178,6 +181,16 @@
 		ED72864420922E9F00AE4216 /* CGTKWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7284DC20922C2C00AE4216 /* CGTKWindow.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		ED29C4F42094B2FA0069EA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED728394208DE09200AE4216 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED29C4EF2094B2ED0069EA46;
+			remoteInfo = CoreGTKSwiftHelper;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		ED72839A208DE09200AE4216 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -205,6 +218,9 @@
 		ED29C4E720932FE30069EA46 /* CGtk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CGtk; sourceTree = "<group>"; };
 		ED29C4E820937F710069EA46 /* CGTK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTK.swift; sourceTree = "<group>"; };
 		ED29C4EA209391680069EA46 /* CGTKSignalConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKSignalConnector.swift; sourceTree = "<group>"; };
+		ED29C4F02094B2ED0069EA46 /* libCoreGTKSwiftHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCoreGTKSwiftHelper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED29C4F72094B34D0069EA46 /* CoreGTKSwiftHelper.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CoreGTKSwiftHelper.c; sourceTree = "<group>"; };
+		ED29C4F82094B34D0069EA46 /* CoreGTKSwiftHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreGTKSwiftHelper.h; sourceTree = "<group>"; };
 		ED72839C208DE09200AE4216 /* coregtkgen-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "coregtkgen-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED72839F208DE09200AE4216 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ED7283A7208DE0F600AE4216 /* GIRBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRBase.swift; sourceTree = "<group>"; };
@@ -380,6 +396,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ED29C4ED2094B2ED0069EA46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED728399208DE09200AE4216 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,6 +414,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED29C4FC2094CB070069EA46 /* libCoreGTKSwiftHelper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,13 +433,31 @@
 			path = BaseClasses;
 			sourceTree = "<group>";
 		};
+		ED29C4F62094B3260069EA46 /* CoreGTKSwiftHelper */ = {
+			isa = PBXGroup;
+			children = (
+				ED29C4F72094B34D0069EA46 /* CoreGTKSwiftHelper.c */,
+				ED29C4F82094B34D0069EA46 /* CoreGTKSwiftHelper.h */,
+			);
+			path = CoreGTKSwiftHelper;
+			sourceTree = "<group>";
+		};
+		ED29C4FB2094CB070069EA46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED728393208DE09200AE4216 = {
 			isa = PBXGroup;
 			children = (
+				ED29C4F62094B3260069EA46 /* CoreGTKSwiftHelper */,
 				ED29C4E720932FE30069EA46 /* CGtk */,
 				ED72839E208DE09200AE4216 /* coregtkgen-swift */,
 				ED7285BB20922E7C00AE4216 /* test */,
 				ED72839D208DE09200AE4216 /* Products */,
+				ED29C4FB2094CB070069EA46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -424,6 +466,7 @@
 			children = (
 				ED72839C208DE09200AE4216 /* coregtkgen-swift */,
 				ED7285BA20922E7C00AE4216 /* test */,
+				ED29C4F02094B2ED0069EA46 /* libCoreGTKSwiftHelper.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -655,7 +698,35 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		ED29C4EE2094B2ED0069EA46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED29C4FA2094B34D0069EA46 /* CoreGTKSwiftHelper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		ED29C4EF2094B2ED0069EA46 /* CoreGTKSwiftHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED29C4F32094B2ED0069EA46 /* Build configuration list for PBXNativeTarget "CoreGTKSwiftHelper" */;
+			buildPhases = (
+				ED29C4EC2094B2ED0069EA46 /* Sources */,
+				ED29C4ED2094B2ED0069EA46 /* Frameworks */,
+				ED29C4EE2094B2ED0069EA46 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreGTKSwiftHelper;
+			productName = CoreGTKSwiftHelper;
+			productReference = ED29C4F02094B2ED0069EA46 /* libCoreGTKSwiftHelper.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		ED72839B208DE09200AE4216 /* coregtkgen-swift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED7283A3208DE09200AE4216 /* Build configuration list for PBXNativeTarget "coregtkgen-swift" */;
@@ -684,6 +755,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				ED29C4F52094B2FA0069EA46 /* PBXTargetDependency */,
 			);
 			name = test;
 			productName = test;
@@ -700,6 +772,10 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = gungravekoga;
 				TargetAttributes = {
+					ED29C4EF2094B2ED0069EA46 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					ED72839B208DE09200AE4216 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -724,11 +800,20 @@
 			targets = (
 				ED72839B208DE09200AE4216 /* coregtkgen-swift */,
 				ED7285B920922E7C00AE4216 /* test */,
+				ED29C4EF2094B2ED0069EA46 /* CoreGTKSwiftHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ED29C4EC2094B2ED0069EA46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED29C4F92094B34D0069EA46 /* CoreGTKSwiftHelper.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED728398208DE09200AE4216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -914,7 +999,33 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		ED29C4F52094B2FA0069EA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED29C4EF2094B2ED0069EA46 /* CoreGTKSwiftHelper */;
+			targetProxy = ED29C4F42094B2FA0069EA46 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		ED29C4F12094B2ED0069EA46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ED29C4F22094B2ED0069EA46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		ED7283A1208DE09200AE4216 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1196,6 +1307,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ED29C4F32094B2ED0069EA46 /* Build configuration list for PBXNativeTarget "CoreGTKSwiftHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED29C4F12094B2ED0069EA46 /* Debug */,
+				ED29C4F22094B2ED0069EA46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ED728397208DE09200AE4216 /* Build configuration list for PBXProject "coregtkgen-swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

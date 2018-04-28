@@ -11,3 +11,4 @@
 #include <sys/types.h>
 #endif
 #include <gtk/gtk.h>
+#include "CoreGTKSwiftHelper.h"
