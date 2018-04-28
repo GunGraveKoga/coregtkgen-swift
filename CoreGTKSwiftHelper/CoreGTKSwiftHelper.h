@@ -11,7 +11,7 @@
 
 #include <gtk/gtk.h>
 
-extern glong swift_g_signal_connect(gpointer instance, const gchar *detailed_signal, void(^callback)(gpointer, void*));
+extern glong swift_g_signal_connect(gpointer instance, const gchar *detailed_signal, void(^callback)(gpointer));
 
 extern glong swift_g_signal_connect_f(gpointer instance, const gchar *detailed_signal, void (*callback)(gpointer, void*), void *ctx, void (*destroy_callback)(void*));
 

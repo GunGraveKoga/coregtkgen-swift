@@ -27,7 +27,7 @@ static void __destroy_block(void *block_ptr, GClosure *closure) {
     Block_release(block_ptr);
 }
 
-glong swift_g_signal_connect(gpointer instance, const gchar *detailed_signal, void(^callback)(gpointer, void*)) {
+glong swift_g_signal_connect(gpointer instance, const gchar *detailed_signal, void(^callback)(gpointer)) {
     
     struct Block_layout *block_ptr = (__typeof__(block_ptr))(void *)Block_copy(callback);
     

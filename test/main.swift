@@ -24,7 +24,7 @@ window.setDefaultSize(width: 400, height: 300)
 let button = CGTKButton(withLabel: "Hello world!")
 
 CGTKSignalConnector.connect(gpointer: button.WIDGET, signal: "clicked", data: nil) {
-    print("Hello world")
+    print("Hello world #\(number)")
 }
 
 window.add(widget: button)

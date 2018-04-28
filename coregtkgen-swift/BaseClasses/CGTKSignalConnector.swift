@@ -14,4 +14,9 @@ public enum CGTKSignalConnector {
         
         g_signal_connect_data(gpointer, signal, body, data, nil, GConnectFlags(rawValue: 0))
     }
+    
+    public static func connect(gpointer: UnsafeMutableRawPointer, signal: String, body: @escaping (UnsafeMutableRawPointer!) -> Swift.Void) {
+        
+        swift_g_signal_connect(gpointer, signal, body)
+    }
 }
