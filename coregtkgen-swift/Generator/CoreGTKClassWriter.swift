@@ -121,6 +121,8 @@ public enum CoreGTKClassWriter {
             
             if CoreGTKUtil.isTypeSwappable(gtkFunction.cReturnType) {
                 output += CoreGTKUtil.convertType(from: gtkFunction.cReturnType, to: gtkFunction.returnType, withName: name)
+                
+                
             } else {
                 output += name
             }

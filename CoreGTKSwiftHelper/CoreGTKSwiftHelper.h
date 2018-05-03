@@ -13,8 +13,6 @@
 
 extern glong swift_g_signal_connect(gpointer instance, const gchar *detailed_signal, void(^callback)(gpointer));
 
-extern glong swift_g_signal_connect_f(gpointer instance, const gchar *detailed_signal, void (*callback)(gpointer, void*), void *ctx, void (*destroy_callback)(void*));
-
 extern GtkWidget *swift_gtk_file_chooser_dialog_new(const gchar *title, GtkWindow *parent, GtkFileChooserAction action);
 
 extern GtkWidget *swift_gtk_message_dialog_new_with_markup(GtkWindow *parent, GtkDialogFlags flags, GtkMessageType type, GtkButtonsType buttons, const gchar *markup);

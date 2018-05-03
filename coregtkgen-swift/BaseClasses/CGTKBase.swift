@@ -37,11 +37,15 @@ open class CGTKBase {
         }
     }
     
-    public init(withGObject object: UnsafeMutableRawPointer?) {
+    public required init?(withGObject object: UnsafeMutableRawPointer?) {
+        guard object != nil else {
+            return nil
+        }
+        
         self.setGObject(object)
     }
     
-    public convenience init(withGtkWidget widget: UnsafeMutablePointer<GtkWidget>?) {
+    public required convenience init?(withGtkWidget widget: UnsafeMutablePointer<GtkWidget>?) {
         self.init(withGObject: widget)
     }
     

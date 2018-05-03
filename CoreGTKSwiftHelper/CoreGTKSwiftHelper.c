@@ -34,41 +34,6 @@ glong swift_g_signal_connect(gpointer instance, const gchar *detailed_signal, vo
     return g_signal_connect_data(instance, detailed_signal, &__call_block, block_ptr, &__destroy_block, 0);
 }
 
-struct __swift_callback_ctx {
-    void (*execute)(gpointer, void*);
-    void (*destroy)(void*);
-    void *ctx;
-};
-
-static void __call_swift_callback(gpointer gtk, struct __swift_callback_ctx *ctx) {
-    ctx->execute(gtk, ctx->ctx);
-}
-
-static void __destroy_swift_callback_ctx(struct __swift_callback_ctx *ctx, GClosure *closure) {
-    
-    void *swift_ctx = ctx->ctx;
-    ctx->ctx = NULL;
-    ctx->execute = NULL;
-    ctx->destroy(swift_ctx);
-    ctx->destroy = NULL;
-    swift_ctx = NULL;
-    
-    free(ctx);
-}
-
-glong swift_g_signal_connect_f(gpointer instance, const gchar *detailed_signal, void (*callback)(gpointer, void*), void *ctx, void (*destroy_callback)(void*)) {
-    
-    struct __swift_callback_ctx *_ctx = (__typeof__(_ctx))calloc(1, sizeof(struct __swift_callback_ctx));
-    
-    memset(ctx, 0, sizeof(struct __swift_callback_ctx));
-    
-    _ctx->ctx = ctx;
-    _ctx->execute = callback;
-    _ctx->destroy = destroy_callback;
-    
-    return g_signal_connect_data(instance, detailed_signal, &__call_swift_callback, _ctx, &__destroy_swift_callback_ctx, 0);
-}
-
 GtkWidget *swift_gtk_file_chooser_dialog_new(const gchar *title, GtkWindow *parent, GtkFileChooserAction action) {
     
     return gtk_file_chooser_dialog_new(title, parent, action, NULL, NULL);
