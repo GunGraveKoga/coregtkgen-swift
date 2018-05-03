@@ -11,6 +11,7 @@ import Foundation
 public struct CoreGTKClass {
     public var cName: String
     public var cType: String
+    public var glibGetType: String? = nil
     public var cParentType: String?
     public var doc: String? = nil
     public var constructors = [CoreGTKMethod]()

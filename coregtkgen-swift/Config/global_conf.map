@@ -118,6 +118,7 @@
 		"StackSidebar",
 		"StackSwitcher",
 		"Statusbar",
+        "StatusIcon",
 		"Switch",
 		"Table",
 		"TearoffMenuItem",

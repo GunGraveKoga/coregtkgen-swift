@@ -16,6 +16,8 @@
 		ED29C4FC2094CB070069EA46 /* libCoreGTKSwiftHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED29C4F02094B2ED0069EA46 /* libCoreGTKSwiftHelper.a */; };
 		ED29C4FE209B41250069EA46 /* CGTKBaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4FD209B41250069EA46 /* CGTKBaseBuilder.swift */; };
 		ED29C500209B51270069EA46 /* gladeExample.glade in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED29C4FF209B4F2B0069EA46 /* gladeExample.glade */; };
+		ED29C504209B61720069EA46 /* CGTKApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C503209B61720069EA46 /* CGTKApplication.swift */; };
+		ED29C506209B8C070069EA46 /* CGTKStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C505209B8C070069EA46 /* CGTKStatusIcon.swift */; };
 		ED7283A0208DE09200AE4216 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72839F208DE09200AE4216 /* main.swift */; };
 		ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A7208DE0F600AE4216 /* GIRBase.swift */; };
 		ED7283AA208DEB5800AE4216 /* GIRType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A9208DEB5800AE4216 /* GIRType.swift */; };
@@ -225,6 +227,8 @@
 		ED29C4F82094B34D0069EA46 /* CoreGTKSwiftHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreGTKSwiftHelper.h; sourceTree = "<group>"; };
 		ED29C4FD209B41250069EA46 /* CGTKBaseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKBaseBuilder.swift; sourceTree = "<group>"; };
 		ED29C4FF209B4F2B0069EA46 /* gladeExample.glade */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gladeExample.glade; sourceTree = "<group>"; };
+		ED29C503209B61720069EA46 /* CGTKApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKApplication.swift; sourceTree = "<group>"; };
+		ED29C505209B8C070069EA46 /* CGTKStatusIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKStatusIcon.swift; sourceTree = "<group>"; };
 		ED72839C208DE09200AE4216 /* coregtkgen-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "coregtkgen-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED72839F208DE09200AE4216 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ED7283A7208DE0F600AE4216 /* GIRBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRBase.swift; sourceTree = "<group>"; };
@@ -432,6 +436,7 @@
 				ED29C4EA209391680069EA46 /* CGTKSignalConnector.swift */,
 				14742C062093D83F0079EB12 /* CGTKTypeWrapper.swift */,
 				ED29C4FD209B41250069EA46 /* CGTKBaseBuilder.swift */,
+				ED29C503209B61720069EA46 /* CGTKApplication.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -554,6 +559,7 @@
 		ED7284AD2091F59F00AE4216 /* Output */ = {
 			isa = PBXGroup;
 			children = (
+				ED29C505209B8C070069EA46 /* CGTKStatusIcon.swift */,
 				ED72851B20922C3200AE4216 /* CGTKAboutDialog.swift */,
 				ED7284E520922C2D00AE4216 /* CGTKAccelLabel.swift */,
 				ED72850820922C3100AE4216 /* CGTKActionBar.swift */,
@@ -827,6 +833,7 @@
 				ED72849B2090DB0600AE4216 /* CoreGTKUtil.swift in Sources */,
 				ED7283B6208DF35B00AE4216 /* GIRVirtualMethod.swift in Sources */,
 				ED7283B2208DF2F500AE4216 /* GIRField.swift in Sources */,
+				ED29C506209B8C070069EA46 /* CGTKStatusIcon.swift in Sources */,
 				ED7283C6208F3EF700AE4216 /* GIRVarArgs.swift in Sources */,
 				ED7283BE208E05E000AE4216 /* GIRReturnValue.swift in Sources */,
 				ED72849420908E9B00AE4216 /* Gir2Swift.swift in Sources */,
@@ -907,6 +914,7 @@
 				ED7285F120922E9E00AE4216 /* CGTKHBox.swift in Sources */,
 				ED7285EC20922E9E00AE4216 /* CGTKFontSelectionDialog.swift in Sources */,
 				ED72860020922E9E00AE4216 /* CGTKLevelBar.swift in Sources */,
+				ED29C504209B61720069EA46 /* CGTKApplication.swift in Sources */,
 				ED29C4EB209391680069EA46 /* CGTKSignalConnector.swift in Sources */,
 				ED72860120922E9E00AE4216 /* CGTKLinkButton.swift in Sources */,
 				ED7285E520922E9E00AE4216 /* CGTKFixed.swift in Sources */,

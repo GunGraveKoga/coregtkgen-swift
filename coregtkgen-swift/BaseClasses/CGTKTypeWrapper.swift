@@ -9,7 +9,7 @@
 import Foundation
 @_exported import CGtk
 
-public class CGTKTypeWrapper {
+open class CGTKTypeWrapper {
     private var _ptrValue: UnsafeMutableRawPointer? = nil
     private var _gintValue: gint = 0
     

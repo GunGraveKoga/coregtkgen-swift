@@ -176,10 +176,14 @@ public enum CoreGTKClassWriter {
                      "PLACESSIDEBAR":
                     type = "OpaquePointer!"
                 default:
-                    type = "UnsafeMutablePointer<\(gtkClass.cType)>"
+                    type = "UnsafeMutablePointer<\(gtkClass.cType)>!"
                 }
                 
-                output += "public let GTK_TYPE_\(macrosName): GType = gtk_\(macrosName.lowercased())_get_type()\n\n"
+                if let glibGetType = gtkClass.glibGetType {
+                    output += "public let GTK_TYPE_\(macrosName): GType = \(glibGetType)()\n\n"
+                } else {
+                    output += "public let GTK_TYPE_\(macrosName): GType = gtk_\(macrosName.lowercased())_get_type()\n\n"
+                }
                 output += "@inline(__always) public func GTK_\(macrosName)(_ ptr: UnsafeMutableRawPointer!) -> \(type) {\n"
                 output += "\treturn G_TYPE_CHECK_INSTANCE_CAST(ptr, GTK_TYPE_\(macrosName))\n}\n\n"
             }

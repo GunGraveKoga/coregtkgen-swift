@@ -60,9 +60,34 @@ func gladeExample() {
     }
 }
 
+func applicationExample() {
+    let app = CGTKApplication(withIdentifier: "org.gtk.myapplication")
+    
+    let rc = app.run {window in
+        CGTKSignalConnector.connect(gpointer: window.WIDGET, signal: "destroy") { widget in
+            print("Goodbye!")
+        }
+        
+        window.setBorderWidth(10)
+        window.setTitle("GtkApplication: Now supporting GTK+ 3.22!")
+        window.setDefaultSize(width: 400, height: 300)
+        
+        let button = CGTKButton(withLabel: "Hello world!")
+        
+        CGTKSignalConnector.connect(gpointer: button.WIDGET, signal: "clicked") { widget in
+            print("Hello world")
+        }
+        
+        window.add(widget: button)
+    }
+    
+    print("rc = \(rc)")
+}
+
 CGTK.initialize()
 
 standartExample()
 
 gladeExample()
 
+applicationExample()

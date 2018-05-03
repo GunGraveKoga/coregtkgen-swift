@@ -28,6 +28,14 @@ public struct CoreGTKMethod {
     
     public var returnType: String {
         get {
+            switch cName {
+            case "gtk_about_dialog_get_artists",
+                 "gtk_about_dialog_get_authors",
+                 "gtk_about_dialog_get_documenters":
+                return "UnsafePointer<UnsafePointer<gchar>?>!"
+            default:
+                break
+            }
             var type = CoreGTKUtil.swapTypes(cReturnType)
             var isConst = false
             var range = type.range(of: "const")

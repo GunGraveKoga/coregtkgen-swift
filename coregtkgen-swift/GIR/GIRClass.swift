@@ -11,6 +11,7 @@ import Foundation
 public class GIRClass : GIRBase {
     public private(set) var name: String? = nil
     public private(set) var cType: String? = nil
+    public private(set) var glibGetType: String? = nil
     public private(set) var cSymbolPrefix: String? = nil
     public private(set) var parent: String? = nil
     public private(set) var version: String? = nil
@@ -31,7 +32,6 @@ public class GIRClass : GIRBase {
                 case "text",
                      "glib:type-name",
                      "glib:type-struct",
-                     "glib:get-type",
                      "glib:signal":
                 continue
             case "name":
@@ -62,6 +62,8 @@ public class GIRClass : GIRBase {
                 self.processArrayOrDictionary(value, clazz: GIRImplements.self, andArray: &self.implements)
             case "function":
                 self.processArrayOrDictionary(value, clazz: GIRFunction.self, andArray: &self.functions)
+            case "glib:get-type":
+                self.glibGetType = (value as! String)
             default:
                 self.logUnknownElement(key)
             }

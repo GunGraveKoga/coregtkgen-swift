@@ -131,6 +131,7 @@ public enum Gir2Swift {
             }
             
             gtkClass.doc = clazz.doc?.docText
+            gtkClass.glibGetType = clazz.glibGetType
             
             classesDictionary[gtkClass.name] = gtkClass
         }
