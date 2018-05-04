@@ -9,18 +9,18 @@
 
 "GtkDialog" : {
 
-"\tpublic convenience init(withTitle title: String, parent: CGTKWindow, flags: GtkDialogFlags, buttonTextResponseDictionary buttonTextDict: [String: CGTKTypeWrapper]) {" :
-"\t\tself.init(withGObject:swift_gtk_dialog_new_with_buttons(title, parent.WINDOW, flags))!\n\n\t\tfor (text, wrapper) in buttonTextDict {\n\t\t\t_ = self.addButton(buttonText:text, responseId:wrapper.gintValue)\n\t\t}\n\t}",
+"\tpublic convenience init(withTitle title: String, parent: CGTKWindow, flags: GtkDialogFlags, _ buttons: [(buttonText: String, responseId: gint)]?) {" :
+"\t\tself.init(withGObject:swift_gtk_dialog_new_with_buttons(title, parent.WINDOW, flags))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId)\n\t\t\t}\n\t\t}\n\t}",
 
-"\topen func addButtons(_ buttonTextDict: [String: CGTKTypeWrapper]) {" :
-"\t\tfor (text, wrapper) in buttonTextDict {\n\t\t\t_ = self.addButton(buttonText:text, responseId:wrapper.gintValue)\n\t\t}\n\t}"
+"\topen func addButtons(_ buttons: [(buttonText: String, responseId: gint)]) {" :
+"\t\tfor button in buttons {\n\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId)\n\t\t}\n\t}"
 
 },
 
 "GtkFileChooserDialog" : {
 
-"\tpublic convenience init(withTitle title: String, parent: CGTKWindow, action: GtkFileChooserAction, buttonTextResponseDictionary buttonTextDict: [String: CGTKTypeWrapper]) {" :
-"\t\tself.init(withGObject:swift_gtk_file_chooser_dialog_new(title, parent.WINDOW, action))!\n\n\t\tfor (text, wrapper) in buttonTextDict {\n\t\t\t_ = self.addButton(buttonText:text, responseId:wrapper.gintValue)\n\t\t}\n\t}"
+"\tpublic convenience init(withTitle title: String, parent: CGTKWindow!, action: GtkFileChooserAction, _ buttons: [(buttonText: String, responseId: gint)]?) {" :
+"\t\tself.init(withGObject:swift_gtk_file_chooser_dialog_new(title, parent.WINDOW, action))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId)\n\t\t\t}\n\t\t}\n\t}"
 
 },
 
@@ -42,21 +42,21 @@
 
 "GtkRecentChooserDialog" : {
 
-"\tpublic convenience init(withTitle title: String, parent: CGTKWindow, buttonTextResponseDictionary buttonTextDict: [String: CGTKTypeWrapper]) {\n" :
-"\t\tself.init(withGObject:swift_gtk_recent_chooser_dialog_new(title, parent.WINDOW))!\n\n\t\tfor (text, wrapper) in buttonTextDict {\n\t\t\t_ = self.addButton(buttonText:text, responseId:wrapper.gintValue)\n\t\t}\n\t}",
+"\tpublic convenience init(withTitle title: String, parent: CGTKWindow, _ buttons: [(buttonText: String, responseId: gint)]?) {\n" :
+"\t\tself.init(withGObject:swift_gtk_recent_chooser_dialog_new(title, parent.WINDOW))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId)\n\t\t\t}\n\t\t}\n\t}",
 
-"\tpublic convenience init(forManagerWithTitle title: String, parent: CGTKWindow, manager: UnsafeMutablePointer<GtkRecentManager>!, buttonTextResponseDictionary buttonTextDict: [String: CGTKTypeWrapper]) {\n" :
-"\t\tself.init(withGObject:swift_gtk_recent_chooser_dialog_new_for_manager(title, parent.WINDOW, manager))!\n\n\t\tfor (text, wrapper) in buttonTextDict {\n\t\t\t_ = self.addButton(buttonText:text, responseId:wrapper.gintValue)\n\t\t}\n\t}"
+"\tpublic convenience init(forManagerWithTitle title: String, parent: CGTKWindow, manager: UnsafeMutablePointer<GtkRecentManager>!, _ buttons: [(buttonText: String, responseId: gint)]?) {\n" :
+"\t\tself.init(withGObject:swift_gtk_recent_chooser_dialog_new_for_manager(title, parent.WINDOW, manager))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId)\n\t\t\t}\n\t\t}\n\t}"
 
 },
 
 "GtkInfoBar" : {
 
-"\tpublic convenience init(withButtonTextResponseDictionary buttonTextDict: [String: CGTKTypeWrapper]) {\n" :
-"\t\tself.init(withGObject:gtk_info_bar_new())!\n\n\t\tfor (text, wrapper) in buttonTextDict {\n\t\t\t_ = self.addButton(buttonText:text, responseId:wrapper.gintValue)\n\t\t}\n\t}",
+"\tpublic convenience init(withButtons buttons: [(buttonText: String, responseId: gint)]?) {\n" :
+"\t\tself.init(withGObject:gtk_info_bar_new())!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId)\n\t\t\t}\n\t\t}\n\t}",
 
-"\topen func addButtonTextResponseDictionary(_ buttonTextDict: [String: CGTKTypeWrapper]) {\n" :
-"\t\tfor (text, wrapper) in buttonTextDict {\n\t\t\t_ = self.addButton(buttonText:text, responseId:wrapper.gintValue)\n\t\t}\n\t}"
+"\topen func addButtons(_ buttons: [(buttonText: String, responseId: gint)]) {" :
+"\t\tfor button in buttons {\n\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId)\n\t\t}\n\t}"
 
 }
 
