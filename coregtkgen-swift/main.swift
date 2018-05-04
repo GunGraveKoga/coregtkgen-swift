@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CGtk
 
 let path = CommandLine.arguments[1]
 
@@ -15,7 +14,6 @@ do {
     let aip = try Gir2Swift.firsApiFrom(girFile: path)
     
     if let api = aip {
-        print("Parsed")
         _ = Gir2Swift.generateClassFileFromApi(api)
     } else {
         print("Failed to parse gir file \(path)")
