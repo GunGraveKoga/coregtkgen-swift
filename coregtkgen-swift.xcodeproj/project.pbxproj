@@ -12,7 +12,6 @@
 		ED29C4E920937F710069EA46 /* CGTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4E820937F710069EA46 /* CGTK.swift */; };
 		ED29C4EB209391680069EA46 /* CGTKSignalConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4EA209391680069EA46 /* CGTKSignalConnector.swift */; };
 		ED29C4F92094B34D0069EA46 /* CoreGTKSwiftHelper.c in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4F72094B34D0069EA46 /* CoreGTKSwiftHelper.c */; };
-		ED29C4FA2094B34D0069EA46 /* CoreGTKSwiftHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = ED29C4F82094B34D0069EA46 /* CoreGTKSwiftHelper.h */; };
 		ED29C4FC2094CB070069EA46 /* libCoreGTKSwiftHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED29C4F02094B2ED0069EA46 /* libCoreGTKSwiftHelper.a */; };
 		ED29C4FE209B41250069EA46 /* CGTKBaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4FD209B41250069EA46 /* CGTKBaseBuilder.swift */; };
 		ED29C500209B51270069EA46 /* gladeExample.glade in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED29C4FF209B4F2B0069EA46 /* gladeExample.glade */; };
@@ -224,7 +223,6 @@
 		ED29C4EA209391680069EA46 /* CGTKSignalConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKSignalConnector.swift; sourceTree = "<group>"; };
 		ED29C4F02094B2ED0069EA46 /* libCoreGTKSwiftHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCoreGTKSwiftHelper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED29C4F72094B34D0069EA46 /* CoreGTKSwiftHelper.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CoreGTKSwiftHelper.c; sourceTree = "<group>"; };
-		ED29C4F82094B34D0069EA46 /* CoreGTKSwiftHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreGTKSwiftHelper.h; sourceTree = "<group>"; };
 		ED29C4FD209B41250069EA46 /* CGTKBaseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKBaseBuilder.swift; sourceTree = "<group>"; };
 		ED29C4FF209B4F2B0069EA46 /* gladeExample.glade */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gladeExample.glade; sourceTree = "<group>"; };
 		ED29C503209B61720069EA46 /* CGTKApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKApplication.swift; sourceTree = "<group>"; };
@@ -445,7 +443,6 @@
 			isa = PBXGroup;
 			children = (
 				ED29C4F72094B34D0069EA46 /* CoreGTKSwiftHelper.c */,
-				ED29C4F82094B34D0069EA46 /* CoreGTKSwiftHelper.h */,
 			);
 			path = CoreGTKSwiftHelper;
 			sourceTree = "<group>";
@@ -713,7 +710,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED29C4FA2094B34D0069EA46 /* CoreGTKSwiftHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

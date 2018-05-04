@@ -6,7 +6,7 @@
 //  Copyright © 2018 gungravekoga. All rights reserved.
 //
 
-#include "CoreGTKSwiftHelper.h"
+#include <gtk/gtk.h>
 #include <Block.h>
 
 #ifndef _BLOCK_PRIVATE_H_
