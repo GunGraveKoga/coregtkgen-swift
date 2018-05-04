@@ -57,7 +57,11 @@ public enum Gir2Swift {
         }
         
         for ns in namspaces {
-            if !self.generateClassFileFromNamespace(ns) {
+            if !self.generateProtocolsFilesFromNamespace(ns) {
+                return false
+            }
+            
+            if !self.generateClassesFilesFromNamespace(ns) {
                 return false
             }
         }
@@ -65,7 +69,12 @@ public enum Gir2Swift {
         return true
     }
     
-    public static func generateClassFileFromNamespace(_ namespace: GIRNamespace) -> Bool {
+    public static func generateProtocolsFilesFromNamespace(_ namespace: GIRNamespace) -> Bool {
+        
+        return true
+    }
+    
+    public static func generateClassesFilesFromNamespace(_ namespace: GIRNamespace) -> Bool {
         let classesToGen: [String]? = CoreGTKUtil.globalConfigValue(forKey: "classesToGen")
         
         guard classesToGen != nil else {
@@ -132,6 +141,10 @@ public enum Gir2Swift {
             
             gtkClass.doc = clazz.doc?.docText
             gtkClass.glibGetType = clazz.glibGetType
+            
+            for implemets in clazz.implements {
+                gtkClass.implements.append(implemets.name!)
+            }
             
             classesDictionary[gtkClass.name] = gtkClass
         }

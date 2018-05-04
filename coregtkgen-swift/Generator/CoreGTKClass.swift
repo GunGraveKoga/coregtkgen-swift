@@ -17,6 +17,7 @@ public struct CoreGTKClass {
     public var constructors = [CoreGTKMethod]()
     public var functions = [CoreGTKMethod]()
     public var methods = [CoreGTKMethod]()
+    public var implements = [String]()
     
     public var type: String {
         get {

@@ -11,6 +11,29 @@ import Foundation
 fileprivate let configURL = URL(fileURLWithPath: CommandLine.arguments[2], isDirectory: true)
 
 public enum CoreGTKClassWriter {
+    public static func generateFile(forProtocol gtkProtocol: CoreGTKProtocol, inDirectory directory: String) throws {
+        var isDir: ObjCBool = false
+        
+        if FileManager.default.fileExists(atPath: directory, isDirectory: &isDir) && isDir.boolValue {
+            let directoryURL = URL(fileURLWithPath: directory, isDirectory: true)
+            
+            let fileURL = directoryURL.appendingPathComponent(gtkProtocol.name, isDirectory: false).appendingPathExtension("swift")
+            
+            try self.sourceString(forProtocol: gtkProtocol).write(to: fileURL, atomically: false, encoding: .utf8)
+            
+        } else {
+            var message = "Invalid output directory path \(directory)"
+            
+            if !isDir.boolValue {
+                message += " (not directory!)"
+            }
+            
+            print(message)
+            fatalError(message)
+        }
+        
+    }
+    
     public static func generateFile(forClass gtkClass: CoreGTKClass, inDirectory directory: String) throws {
         var isDir: ObjCBool = false
         
@@ -31,6 +54,25 @@ public enum CoreGTKClassWriter {
             print(message)
             fatalError(message)
         }
+    }
+    
+    public static func sourceString(forProtocol gtkProtocol: CoreGTKProtocol) -> String {
+        var output = ""
+        
+        output += self.generateLicense(forFile: "\(gtkProtocol.name).swift") ?? ""
+        output += "\n@_exported import CGtk\n\n"
+        output += self.macrosesSourceString(forProtocol: gtkProtocol)
+        
+        if gtkProtocol.doc != nil {
+            let set = CharacterSet.whitespaces
+            for line in gtkProtocol.doc!.split(separator: "\n") {
+                output += "/// " + line.trimmingCharacters(in: set) + "\n"
+            }
+            
+            output += "\n\n"
+        }
+        
+        return output
     }
     
     public static func sourceString(forClass gtkClass: CoreGTKClass) -> String {
@@ -151,6 +193,35 @@ public enum CoreGTKClassWriter {
         output += CoreGTKUtil.getFunctionCallForConstructor(of: gtkClass.cType, with: constructorString)
         
         output += "\t}\n\n"
+        
+        return output
+    }
+    
+    public static func macrosesSourceString(forProtocol gtkProtocol: CoreGTKProtocol) -> String {
+        
+        let gtkProtocolName = gtkProtocol.cName.uppercased()
+        var output = ""
+        
+        switch gtkProtocolName {
+        default:
+            do {
+                let type: String
+                let macrosName = CoreGTKUtil.selfTypeMacrosName(gtkProtocol.cType)
+                
+                switch macrosName {
+                default:
+                    type = "UnsafeMutablePointer<\(gtkProtocol.cType)>!"
+                }
+                
+                if let glibGetType = gtkProtocol.glibGetType {
+                    output += "public let GTK_TYPE_\(macrosName): GType = \(glibGetType)()\n\n"
+                } else {
+                    output += "public let GTK_TYPE_\(macrosName): GType = gtk_\(macrosName.lowercased())_get_type()\n\n"
+                }
+                output += "@inline(__always) public func GTK_\(macrosName)(_ ptr: UnsafeMutableRawPointer!) -> \(type) {\n"
+                output += "\treturn G_TYPE_CHECK_INSTANCE_CAST(ptr, GTK_TYPE_\(macrosName))\n}\n\n"
+            }
+        }
         
         return output
     }

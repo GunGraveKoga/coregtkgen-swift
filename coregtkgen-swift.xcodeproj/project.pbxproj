@@ -17,6 +17,7 @@
 		ED29C500209B51270069EA46 /* gladeExample.glade in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED29C4FF209B4F2B0069EA46 /* gladeExample.glade */; };
 		ED29C504209B61720069EA46 /* CGTKApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C503209B61720069EA46 /* CGTKApplication.swift */; };
 		ED29C507209C6A3D0069EA46 /* CGTKStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C505209B8C070069EA46 /* CGTKStatusIcon.swift */; };
+		ED29C50D209CD29C0069EA46 /* CoreGTKProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C50C209CD29C0069EA46 /* CoreGTKProtocol.swift */; };
 		ED7283A0208DE09200AE4216 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72839F208DE09200AE4216 /* main.swift */; };
 		ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A7208DE0F600AE4216 /* GIRBase.swift */; };
 		ED7283AA208DEB5800AE4216 /* GIRType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A9208DEB5800AE4216 /* GIRType.swift */; };
@@ -227,6 +228,7 @@
 		ED29C4FF209B4F2B0069EA46 /* gladeExample.glade */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gladeExample.glade; sourceTree = "<group>"; };
 		ED29C503209B61720069EA46 /* CGTKApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKApplication.swift; sourceTree = "<group>"; };
 		ED29C505209B8C070069EA46 /* CGTKStatusIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKStatusIcon.swift; sourceTree = "<group>"; };
+		ED29C50C209CD29C0069EA46 /* CoreGTKProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTKProtocol.swift; sourceTree = "<group>"; };
 		ED72839C208DE09200AE4216 /* coregtkgen-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "coregtkgen-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED72839F208DE09200AE4216 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ED7283A7208DE0F600AE4216 /* GIRBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRBase.swift; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 			children = (
 				ED72849A2090DB0600AE4216 /* CoreGTKUtil.swift */,
 				ED72849C2090DB1F00AE4216 /* CoreGTKClass.swift */,
+				ED29C50C209CD29C0069EA46 /* CoreGTKProtocol.swift */,
 				ED72849E2090DB3500AE4216 /* CoreGTKMethod.swift */,
 				ED7284A02090DB5900AE4216 /* CoreGTKParameter.swift */,
 				ED7284A22090DB6A00AE4216 /* CoreGTKClassWriter.swift */,
@@ -841,6 +844,7 @@
 				ED7283B4208DF31600AE4216 /* GIRMethod.swift in Sources */,
 				ED7283BC208DF3CE00AE4216 /* GIRFunction.swift in Sources */,
 				ED7283C0208E060600AE4216 /* GIRParameter.swift in Sources */,
+				ED29C50D209CD29C0069EA46 /* CoreGTKProtocol.swift in Sources */,
 				ED7283B8208DF38C00AE4216 /* GIRProperty.swift in Sources */,
 				ED7284962090D09B00AE4216 /* GIRInclude.swift in Sources */,
 				ED7284922090815F00AE4216 /* XMLReader.swift in Sources */,
