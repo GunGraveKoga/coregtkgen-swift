@@ -26,6 +26,12 @@ public struct CoreGTKMethod {
         }
     }
     
+    public var returnsGeneric: Bool {
+        get {
+            return self.returnType.hasPrefix("CGTK")
+        }
+    }
+    
     public var returnType: String {
         get {
             switch cName {
@@ -142,11 +148,39 @@ public struct CoreGTKMethod {
         default:
             break
         }
+        
+        if cName == "gtk_image_get_stock" {
+            let stockIdParam = parameters[0]
+            parameters[0] = CoreGTKParameter(cName: stockIdParam.cName, cType: "UnsafeMutablePointer<UnsafeMutablePointer<gchar>?>!", nullable: false, optional: false)
+            
+        } else if cName == "gtk_widget_class_path" ||
+            cName == "gtk_widget_path" {
+            let pathParam = parameters[1]
+            let pathReversedParam = parameters[2]
+            
+            parameters[1] = CoreGTKParameter(cName: pathParam.cName, cType: "UnsafeMutablePointer<UnsafeMutablePointer<gchar>?>!", nullable: false, optional: false)
+            parameters[2] = CoreGTKParameter(cName: pathReversedParam.cName, cType: "UnsafeMutablePointer<UnsafeMutablePointer<gchar>?>!", nullable: false, optional: false)
+        } else if cName == "gtk_builder_add_objects_from_file" ||
+            cName == "gtk_builder_add_objects_from_resource" ||
+            cName == "gtk_builder_add_objects_from_string" {
+            
+            var index = 1
+            
+            if cName == "gtk_builder_add_objects_from_string" {
+                index += 1
+            }
+            
+            let objectIdsParam = parameters[index]
+            
+            parameters[index] = CoreGTKParameter.init(cName: objectIdsParam.cName, cType: "UnsafeMutablePointer<UnsafeMutablePointer<gchar>?>!", nullable: false, optional: false)
+        }
     }
     
     public var sig: String {
         get {
             var result: String
+            
+            let isGeneric = self.returnsGeneric
             
             if isConstructor {
                 result = "init("
@@ -163,7 +197,13 @@ public struct CoreGTKMethod {
                 }
                 
             } else {
-                result = "\(self.name)("
+                
+                
+                if isGeneric {
+                    result = "\(self.name)<T>("
+                } else {
+                    result = "\(self.name)("
+                }
             }
             
             if parameters.count > 0 {
@@ -195,7 +235,20 @@ public struct CoreGTKMethod {
             result += ")"
             
             if !self.returnsVoid && !isConstructor {
-                result += " -> \(self.returnType)"
+                if isGeneric {
+                    result += " -> T"
+                    var retType = self.returnType
+                    
+                    if retType.hasSuffix("?") || retType.hasSuffix("!") {
+                        let index = retType.index(before: retType.endIndex)
+                        result += String(retType[index...])
+                        retType = String(retType[..<index])
+                    }
+                    result += " where T: "
+                    result += retType
+                } else {
+                    result += " -> \(self.returnType)"
+                }
             }
             
             return result

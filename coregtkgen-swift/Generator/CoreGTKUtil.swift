@@ -92,11 +92,17 @@ public enum CoreGTKUtil {
         
         if outerDict == nil {
             if fromType.hasPrefix("Gtk") && toType.hasPrefix("CGTK") {
-                if toType.hasSuffix("?") || toType.hasSuffix("!") {
+                var res = "T.init(withGObject: \(name))"
+                if !toType.hasSuffix("?") && !toType.hasSuffix("!") {
+                    res += "!"
+                }
+                
+                return res
+                /*if toType.hasSuffix("?") || toType.hasSuffix("!") {
                     let index = toType.index(before: toType.endIndex)
                     return "\(toType[..<index])(withGObject: \(name))"
                 }
-                return "\(toType[..<toType.endIndex])(withGObject: \(name))!"
+                return "\(toType[..<toType.endIndex])(withGObject: \(name))!"*/
             } else if fromType.hasPrefix("CGTK") && toType.hasPrefix("Gtk") {
                 let start = toType.index(toType.startIndex, offsetBy: 3)
                 let end = toType.index(toType.endIndex, offsetBy: -1)

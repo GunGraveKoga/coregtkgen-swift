@@ -17,7 +17,7 @@
 		ED29C4FE209B41250069EA46 /* CGTKBaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C4FD209B41250069EA46 /* CGTKBaseBuilder.swift */; };
 		ED29C500209B51270069EA46 /* gladeExample.glade in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED29C4FF209B4F2B0069EA46 /* gladeExample.glade */; };
 		ED29C504209B61720069EA46 /* CGTKApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C503209B61720069EA46 /* CGTKApplication.swift */; };
-		ED29C506209B8C070069EA46 /* CGTKStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C505209B8C070069EA46 /* CGTKStatusIcon.swift */; };
+		ED29C507209C6A3D0069EA46 /* CGTKStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C505209B8C070069EA46 /* CGTKStatusIcon.swift */; };
 		ED7283A0208DE09200AE4216 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72839F208DE09200AE4216 /* main.swift */; };
 		ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A7208DE0F600AE4216 /* GIRBase.swift */; };
 		ED7283AA208DEB5800AE4216 /* GIRType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A9208DEB5800AE4216 /* GIRType.swift */; };
@@ -833,7 +833,6 @@
 				ED72849B2090DB0600AE4216 /* CoreGTKUtil.swift in Sources */,
 				ED7283B6208DF35B00AE4216 /* GIRVirtualMethod.swift in Sources */,
 				ED7283B2208DF2F500AE4216 /* GIRField.swift in Sources */,
-				ED29C506209B8C070069EA46 /* CGTKStatusIcon.swift in Sources */,
 				ED7283C6208F3EF700AE4216 /* GIRVarArgs.swift in Sources */,
 				ED7283BE208E05E000AE4216 /* GIRReturnValue.swift in Sources */,
 				ED72849420908E9B00AE4216 /* Gir2Swift.swift in Sources */,
@@ -928,6 +927,7 @@
 				ED72861420922E9E00AE4216 /* CGTKPopover.swift in Sources */,
 				ED72861820922E9E00AE4216 /* CGTKRadioMenuItem.swift in Sources */,
 				ED7285F520922E9E00AE4216 /* CGTKHScale.swift in Sources */,
+				ED29C507209C6A3D0069EA46 /* CGTKStatusIcon.swift in Sources */,
 				ED72861720922E9E00AE4216 /* CGTKRadioButton.swift in Sources */,
 				ED7285FB20922E9E00AE4216 /* CGTKImageMenuItem.swift in Sources */,
 				ED72863120922E9F00AE4216 /* CGTKTearoffMenuItem.swift in Sources */,

@@ -587,6 +587,7 @@
 "cairo_font_options_t*" : "OpaquePointer",
 "GdkFrameClock*" : "OpaquePointer",
 "GdkScreen*" : "OpaquePointer",
+"GdkScreen**" : "UnsafeMutablePointer<OpaquePointer?>",
 "GdkVisual*" : "OpaquePointer",
 "cairo_region_t*" : "OpaquePointer",
 "PangoFontDescription*" : "OpaquePointer",
