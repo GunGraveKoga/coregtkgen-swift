@@ -31,7 +31,7 @@ glong swift_g_signal_connect(gpointer instance, const gchar *detailed_signal, vo
     
     struct Block_layout *block_ptr = (__typeof__(block_ptr))(void *)Block_copy(callback);
     
-    return g_signal_connect_data(instance, detailed_signal, &__call_block, block_ptr, &__destroy_block, 0);
+    return g_signal_connect_data(instance, detailed_signal, G_CALLBACK(&__call_block), block_ptr, &__destroy_block, 0);
 }
 
 GtkWidget *swift_gtk_file_chooser_dialog_new(const gchar *title, GtkWindow *parent, GtkFileChooserAction action) {
