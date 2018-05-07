@@ -34,7 +34,7 @@ public enum CoreGTKClassWriter {
         
     }
     
-    public static func generateFile(forClass gtkClass: CoreGTKClass, inDirectory directory: String) throws {
+    public static func generateFile(forClass gtkClass: CoreGTKClass, interfaces: [String], inDirectory directory: String) throws {
         var isDir: ObjCBool = false
         
         if FileManager.default.fileExists(atPath: directory, isDirectory: &isDir) && isDir.boolValue {
@@ -42,7 +42,7 @@ public enum CoreGTKClassWriter {
             
             let fileURL = directoryURL.appendingPathComponent(gtkClass.name, isDirectory: false).appendingPathExtension("swift")
             
-            try self.sourceString(forClass: gtkClass).write(to: fileURL, atomically: false, encoding: .utf8)
+            try self.sourceString(forClass: gtkClass, interfaces: interfaces).write(to: fileURL, atomically: false, encoding: .utf8)
             
         } else {
             var message = "Invalid output directory path \(directory)"
@@ -61,21 +61,47 @@ public enum CoreGTKClassWriter {
         
         output += self.generateLicense(forFile: "\(gtkProtocol.name).swift") ?? ""
         output += "\n@_exported import CGtk\n\n"
+        
+        if gtkProtocol.cType == "GtkCellAccessibleParent" {
+            output += "#if os(Linux)\n\n"
+        }
+        
         output += self.macrosesSourceString(forProtocol: gtkProtocol)
         
         if gtkProtocol.doc != nil {
             let set = CharacterSet.whitespaces
             for line in gtkProtocol.doc!.split(separator: "\n") {
-                output += "/// " + line.trimmingCharacters(in: set) + "\n"
+                let _line = line.trimmingCharacters(in: set)
+                
+                if _line.count > 0 {
+                    output += "/// " + _line + "\n"
+                }
             }
             
             output += "\n\n"
         }
         
+        let protocolName = gtkProtocol.name
+        
+        output += "public protocol \(protocolName): class {\n"
+        
+        for method in gtkProtocol.methods {
+            output += self.generateDocumentation(forMethod: method)
+            output += "\tfunc \(method.sig)\n\n"
+        }
+        
+        output = output.replacingOccurrences(of: " = nil", with: "")
+        
+        output += "}\n"
+        
+        if gtkProtocol.cType == "GtkCellAccessibleParent" {
+            output += "\n#endif\n"
+        }
+        
         return output
     }
     
-    public static func sourceString(forClass gtkClass: CoreGTKClass) -> String {
+    public static func sourceString(forClass gtkClass: CoreGTKClass, interfaces: [String]) -> String {
         var output = ""
         
         output += self.generateLicense(forFile: "\(gtkClass.name).swift") ?? ""
@@ -85,13 +111,27 @@ public enum CoreGTKClassWriter {
         if gtkClass.doc != nil {
             let set = CharacterSet.whitespaces
             for line in gtkClass.doc!.split(separator: "\n") {
-                output += "/// " + line.trimmingCharacters(in: set) + "\n"
+                let _line = line.trimmingCharacters(in: set)
+                
+                if _line.count > 0 {
+                    output += "/// " + _line + "\n"
+                }
             }
             
             output += "\n\n"
         }
         
-        output += "open class \(gtkClass.name) : \(CoreGTKUtil.swapTypes(gtkClass.cParentType!)) {\n"
+        output += "open class \(gtkClass.name) : \(CoreGTKUtil.swapTypes(gtkClass.cParentType!))"
+        
+        if gtkClass.implements.count > 0 {
+            for implement in gtkClass.implements {
+                if interfaces.contains(implement) {
+                    output += ", CGTK\(implement)"
+                }
+            }
+        }
+        
+        output += " {\n"
         
         for function in gtkClass.functions {
             output += self.generateDocumentation(forMethod: function)
@@ -125,7 +165,7 @@ public enum CoreGTKClassWriter {
                 output += "override "
             }
             output += "open "
-            output += self.sourceString(forFunction: method, passSelf: gtkClass.type)
+            output += self.sourceString(forFunction: method, passSelf: method.selfArgumentType ?? gtkClass.type)
         }
         
         output += "}\n"
@@ -210,7 +250,7 @@ public enum CoreGTKClassWriter {
                 
                 switch macrosName {
                 default:
-                    type = "UnsafeMutablePointer<\(gtkProtocol.cType)>!"
+                    type = "OpaquePointer!"
                 }
                 
                 if let glibGetType = gtkProtocol.glibGetType {
@@ -352,22 +392,26 @@ public enum CoreGTKClassWriter {
         if method.doc != nil {
             let set = CharacterSet.whitespaces
             for line in method.doc!.split(separator: "\n") {
-                doc += "\t/// " + line.trimmingCharacters(in: set) + "\n"
+                let _line = line.trimmingCharacters(in: set)
+                
+                if _line.count > 0 {
+                    doc += "\t/// " + _line + "\n"
+                }
             }
         } else {
             doc += "\t/// func \(method.sig) -> \(method.returnType)\n"
         }
         
         if method.parameters.count > 0 {
-            doc += "\t/// Parameters:\n"
+            doc += "\t/// - Parameters:\n"
             
             for parameter in method.parameters {
-                doc += "\t///\t- \(parameter.name): \(parameter.type)\n"
+                doc += "\t///\t- \(parameter.name): \(parameter.type) (\(parameter.cType))\n"
             }
         }
         
         if !method.returnsVoid {
-            doc += "\t/// - Returns: \(method.returnType)\n"
+            doc += "\t/// - Returns: \(method.returnType) (\(method.cReturnType))\n"
         }
         
         return doc

@@ -18,6 +18,27 @@
 		ED29C504209B61720069EA46 /* CGTKApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C503209B61720069EA46 /* CGTKApplication.swift */; };
 		ED29C507209C6A3D0069EA46 /* CGTKStatusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C505209B8C070069EA46 /* CGTKStatusIcon.swift */; };
 		ED29C50D209CD29C0069EA46 /* CoreGTKProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C50C209CD29C0069EA46 /* CoreGTKProtocol.swift */; };
+		ED29C52420A05D950069EA46 /* CGTKAppChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C50F20A05D940069EA46 /* CGTKAppChooser.swift */; };
+		ED29C52520A05D950069EA46 /* CGTKEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51020A05D940069EA46 /* CGTKEditable.swift */; };
+		ED29C52620A05D950069EA46 /* CGTKFontChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51120A05D940069EA46 /* CGTKFontChooser.swift */; };
+		ED29C52720A05D950069EA46 /* CGTKOrientable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51220A05D940069EA46 /* CGTKOrientable.swift */; };
+		ED29C52820A05D950069EA46 /* CGTKActionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51320A05D940069EA46 /* CGTKActionable.swift */; };
+		ED29C52920A05D950069EA46 /* CGTKActivatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51420A05D940069EA46 /* CGTKActivatable.swift */; };
+		ED29C52A20A05D950069EA46 /* CGTKFileChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51520A05D940069EA46 /* CGTKFileChooser.swift */; };
+		ED29C52B20A05D950069EA46 /* CGTKTreeDragDest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51620A05D940069EA46 /* CGTKTreeDragDest.swift */; };
+		ED29C52C20A05D950069EA46 /* CGTKTreeSortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51720A05D940069EA46 /* CGTKTreeSortable.swift */; };
+		ED29C52D20A05D950069EA46 /* CGTKCellAccessibleParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51820A05D940069EA46 /* CGTKCellAccessibleParent.swift */; };
+		ED29C52E20A05D950069EA46 /* CGTKToolShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51920A05D940069EA46 /* CGTKToolShell.swift */; };
+		ED29C52F20A05D950069EA46 /* CGTKCellEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51A20A05D950069EA46 /* CGTKCellEditable.swift */; };
+		ED29C53020A05D950069EA46 /* CGTKStyleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51B20A05D950069EA46 /* CGTKStyleProvider.swift */; };
+		ED29C53120A05D950069EA46 /* CGTKCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51C20A05D950069EA46 /* CGTKCellLayout.swift */; };
+		ED29C53220A05D950069EA46 /* CGTKScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51D20A05D950069EA46 /* CGTKScrollable.swift */; };
+		ED29C53320A05D950069EA46 /* CGTKTreeDragSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51E20A05D950069EA46 /* CGTKTreeDragSource.swift */; };
+		ED29C53420A05D950069EA46 /* CGTKTreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C51F20A05D950069EA46 /* CGTKTreeModel.swift */; };
+		ED29C53520A05D950069EA46 /* CGTKRecentChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C52020A05D950069EA46 /* CGTKRecentChooser.swift */; };
+		ED29C53620A05D950069EA46 /* CGTKBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C52120A05D950069EA46 /* CGTKBuildable.swift */; };
+		ED29C53720A05D950069EA46 /* CGTKColorChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C52220A05D950069EA46 /* CGTKColorChooser.swift */; };
+		ED29C53820A05D950069EA46 /* CGTKPrintOperationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29C52320A05D950069EA46 /* CGTKPrintOperationPreview.swift */; };
 		ED7283A0208DE09200AE4216 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72839F208DE09200AE4216 /* main.swift */; };
 		ED7283A8208DE0F600AE4216 /* GIRBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A7208DE0F600AE4216 /* GIRBase.swift */; };
 		ED7283AA208DEB5800AE4216 /* GIRType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7283A9208DEB5800AE4216 /* GIRType.swift */; };
@@ -229,6 +250,27 @@
 		ED29C503209B61720069EA46 /* CGTKApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTKApplication.swift; sourceTree = "<group>"; };
 		ED29C505209B8C070069EA46 /* CGTKStatusIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKStatusIcon.swift; sourceTree = "<group>"; };
 		ED29C50C209CD29C0069EA46 /* CoreGTKProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGTKProtocol.swift; sourceTree = "<group>"; };
+		ED29C50F20A05D940069EA46 /* CGTKAppChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKAppChooser.swift; sourceTree = "<group>"; };
+		ED29C51020A05D940069EA46 /* CGTKEditable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKEditable.swift; sourceTree = "<group>"; };
+		ED29C51120A05D940069EA46 /* CGTKFontChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFontChooser.swift; sourceTree = "<group>"; };
+		ED29C51220A05D940069EA46 /* CGTKOrientable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKOrientable.swift; sourceTree = "<group>"; };
+		ED29C51320A05D940069EA46 /* CGTKActionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKActionable.swift; sourceTree = "<group>"; };
+		ED29C51420A05D940069EA46 /* CGTKActivatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKActivatable.swift; sourceTree = "<group>"; };
+		ED29C51520A05D940069EA46 /* CGTKFileChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKFileChooser.swift; sourceTree = "<group>"; };
+		ED29C51620A05D940069EA46 /* CGTKTreeDragDest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKTreeDragDest.swift; sourceTree = "<group>"; };
+		ED29C51720A05D940069EA46 /* CGTKTreeSortable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKTreeSortable.swift; sourceTree = "<group>"; };
+		ED29C51820A05D940069EA46 /* CGTKCellAccessibleParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKCellAccessibleParent.swift; sourceTree = "<group>"; };
+		ED29C51920A05D940069EA46 /* CGTKToolShell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKToolShell.swift; sourceTree = "<group>"; };
+		ED29C51A20A05D950069EA46 /* CGTKCellEditable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKCellEditable.swift; sourceTree = "<group>"; };
+		ED29C51B20A05D950069EA46 /* CGTKStyleProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKStyleProvider.swift; sourceTree = "<group>"; };
+		ED29C51C20A05D950069EA46 /* CGTKCellLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKCellLayout.swift; sourceTree = "<group>"; };
+		ED29C51D20A05D950069EA46 /* CGTKScrollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKScrollable.swift; sourceTree = "<group>"; };
+		ED29C51E20A05D950069EA46 /* CGTKTreeDragSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKTreeDragSource.swift; sourceTree = "<group>"; };
+		ED29C51F20A05D950069EA46 /* CGTKTreeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKTreeModel.swift; sourceTree = "<group>"; };
+		ED29C52020A05D950069EA46 /* CGTKRecentChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKRecentChooser.swift; sourceTree = "<group>"; };
+		ED29C52120A05D950069EA46 /* CGTKBuildable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKBuildable.swift; sourceTree = "<group>"; };
+		ED29C52220A05D950069EA46 /* CGTKColorChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKColorChooser.swift; sourceTree = "<group>"; };
+		ED29C52320A05D950069EA46 /* CGTKPrintOperationPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGTKPrintOperationPreview.swift; sourceTree = "<group>"; };
 		ED72839C208DE09200AE4216 /* coregtkgen-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "coregtkgen-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED72839F208DE09200AE4216 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ED7283A7208DE0F600AE4216 /* GIRBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIRBase.swift; sourceTree = "<group>"; };
@@ -456,6 +498,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED29C50E20A05D620069EA46 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ED29C51320A05D940069EA46 /* CGTKActionable.swift */,
+				ED29C51420A05D940069EA46 /* CGTKActivatable.swift */,
+				ED29C50F20A05D940069EA46 /* CGTKAppChooser.swift */,
+				ED29C52120A05D950069EA46 /* CGTKBuildable.swift */,
+				ED29C51820A05D940069EA46 /* CGTKCellAccessibleParent.swift */,
+				ED29C51A20A05D950069EA46 /* CGTKCellEditable.swift */,
+				ED29C51C20A05D950069EA46 /* CGTKCellLayout.swift */,
+				ED29C52220A05D950069EA46 /* CGTKColorChooser.swift */,
+				ED29C51020A05D940069EA46 /* CGTKEditable.swift */,
+				ED29C51520A05D940069EA46 /* CGTKFileChooser.swift */,
+				ED29C51120A05D940069EA46 /* CGTKFontChooser.swift */,
+				ED29C51220A05D940069EA46 /* CGTKOrientable.swift */,
+				ED29C52320A05D950069EA46 /* CGTKPrintOperationPreview.swift */,
+				ED29C52020A05D950069EA46 /* CGTKRecentChooser.swift */,
+				ED29C51D20A05D950069EA46 /* CGTKScrollable.swift */,
+				ED29C51B20A05D950069EA46 /* CGTKStyleProvider.swift */,
+				ED29C51920A05D940069EA46 /* CGTKToolShell.swift */,
+				ED29C51620A05D940069EA46 /* CGTKTreeDragDest.swift */,
+				ED29C51E20A05D950069EA46 /* CGTKTreeDragSource.swift */,
+				ED29C51F20A05D950069EA46 /* CGTKTreeModel.swift */,
+				ED29C51720A05D940069EA46 /* CGTKTreeSortable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		ED728393208DE09200AE4216 = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +629,7 @@
 		ED7284AD2091F59F00AE4216 /* Output */ = {
 			isa = PBXGroup;
 			children = (
+				ED29C50E20A05D620069EA46 /* Protocols */,
 				ED29C505209B8C070069EA46 /* CGTKStatusIcon.swift */,
 				ED72851B20922C3200AE4216 /* CGTKAboutDialog.swift */,
 				ED7284E520922C2D00AE4216 /* CGTKAccelLabel.swift */,
@@ -884,10 +955,12 @@
 				ED72861120922E9E00AE4216 /* CGTKOverlay.swift in Sources */,
 				ED7285FC20922E9E00AE4216 /* CGTKInfoBar.swift in Sources */,
 				ED72863320922E9F00AE4216 /* CGTKToggleButton.swift in Sources */,
+				ED29C53420A05D950069EA46 /* CGTKTreeModel.swift in Sources */,
 				ED7285E620922E9E00AE4216 /* CGTKFlowBox.swift in Sources */,
 				ED72862320922E9E00AE4216 /* CGTKSearchBar.swift in Sources */,
 				ED72863720922E9F00AE4216 /* CGTKToolItem.swift in Sources */,
 				ED7285ED20922E9E00AE4216 /* CGTKFrame.swift in Sources */,
+				ED29C52520A05D950069EA46 /* CGTKEditable.swift in Sources */,
 				ED7285DF20922E9E00AE4216 /* CGTKEntry.swift in Sources */,
 				ED72861620922E9E00AE4216 /* CGTKProgressBar.swift in Sources */,
 				ED7285E820922E9E00AE4216 /* CGTKFontButton.swift in Sources */,
@@ -900,23 +973,33 @@
 				ED72862820922E9F00AE4216 /* CGTKShortcutsShortcut.swift in Sources */,
 				ED7285CD20922E9E00AE4216 /* CGTKBox.swift in Sources */,
 				ED7285FF20922E9E00AE4216 /* CGTKLayout.swift in Sources */,
+				ED29C52920A05D950069EA46 /* CGTKActivatable.swift in Sources */,
+				ED29C52A20A05D950069EA46 /* CGTKFileChooser.swift in Sources */,
 				ED72862C20922E9F00AE4216 /* CGTKStackSidebar.swift in Sources */,
 				ED72862B20922E9F00AE4216 /* CGTKStack.swift in Sources */,
 				ED29C4E920937F710069EA46 /* CGTK.swift in Sources */,
+				ED29C53820A05D950069EA46 /* CGTKPrintOperationPreview.swift in Sources */,
 				ED72861020922E9E00AE4216 /* CGTKOffscreenWindow.swift in Sources */,
 				ED72861F20922E9E00AE4216 /* CGTKScale.swift in Sources */,
 				ED7285E320922E9E00AE4216 /* CGTKFileChooserDialog.swift in Sources */,
+				ED29C53320A05D950069EA46 /* CGTKTreeDragSource.swift in Sources */,
 				ED72860F20922E9E00AE4216 /* CGTKNotebook.swift in Sources */,
 				ED7285D720922E9E00AE4216 /* CGTKColorChooserWidget.swift in Sources */,
 				ED72863820922E9F00AE4216 /* CGTKToolItemGroup.swift in Sources */,
 				ED72860320922E9E00AE4216 /* CGTKListBoxRow.swift in Sources */,
 				ED7285F120922E9E00AE4216 /* CGTKHBox.swift in Sources */,
 				ED7285EC20922E9E00AE4216 /* CGTKFontSelectionDialog.swift in Sources */,
+				ED29C53620A05D950069EA46 /* CGTKBuildable.swift in Sources */,
+				ED29C52C20A05D950069EA46 /* CGTKTreeSortable.swift in Sources */,
 				ED72860020922E9E00AE4216 /* CGTKLevelBar.swift in Sources */,
+				ED29C53520A05D950069EA46 /* CGTKRecentChooser.swift in Sources */,
 				ED29C504209B61720069EA46 /* CGTKApplication.swift in Sources */,
+				ED29C52F20A05D950069EA46 /* CGTKCellEditable.swift in Sources */,
 				ED29C4EB209391680069EA46 /* CGTKSignalConnector.swift in Sources */,
 				ED72860120922E9E00AE4216 /* CGTKLinkButton.swift in Sources */,
+				ED29C52420A05D950069EA46 /* CGTKAppChooser.swift in Sources */,
 				ED7285E520922E9E00AE4216 /* CGTKFixed.swift in Sources */,
+				ED29C52620A05D950069EA46 /* CGTKFontChooser.swift in Sources */,
 				ED72861220922E9E00AE4216 /* CGTKPaned.swift in Sources */,
 				ED7285C620922E9E00AE4216 /* CGTKAppChooserDialog.swift in Sources */,
 				ED7285DC20922E9E00AE4216 /* CGTKContainer.swift in Sources */,
@@ -925,8 +1008,10 @@
 				ED7285CB20922E9E00AE4216 /* CGTKAssistant.swift in Sources */,
 				ED72860720922E9E00AE4216 /* CGTKMenuButton.swift in Sources */,
 				ED72861420922E9E00AE4216 /* CGTKPopover.swift in Sources */,
+				ED29C52B20A05D950069EA46 /* CGTKTreeDragDest.swift in Sources */,
 				ED72861820922E9E00AE4216 /* CGTKRadioMenuItem.swift in Sources */,
 				ED7285F520922E9E00AE4216 /* CGTKHScale.swift in Sources */,
+				ED29C52D20A05D950069EA46 /* CGTKCellAccessibleParent.swift in Sources */,
 				ED29C507209C6A3D0069EA46 /* CGTKStatusIcon.swift in Sources */,
 				ED72861720922E9E00AE4216 /* CGTKRadioButton.swift in Sources */,
 				ED7285FB20922E9E00AE4216 /* CGTKImageMenuItem.swift in Sources */,
@@ -951,7 +1036,9 @@
 				ED7285CA20922E9E00AE4216 /* CGTKAspectFrame.swift in Sources */,
 				ED72862620922E9E00AE4216 /* CGTKSeparatorMenuItem.swift in Sources */,
 				ED7285BD20922E7C00AE4216 /* main.swift in Sources */,
+				ED29C52820A05D950069EA46 /* CGTKActionable.swift in Sources */,
 				ED72860D20922E9E00AE4216 /* CGTKModelButton.swift in Sources */,
+				ED29C53020A05D950069EA46 /* CGTKStyleProvider.swift in Sources */,
 				ED72862120922E9E00AE4216 /* CGTKScrollbar.swift in Sources */,
 				ED7285C320922E9E00AE4216 /* CGTKActionBar.swift in Sources */,
 				ED72863F20922E9F00AE4216 /* CGTKVPaned.swift in Sources */,
@@ -963,15 +1050,18 @@
 				ED72863A20922E9F00AE4216 /* CGTKTreeView.swift in Sources */,
 				ED29C4FE209B41250069EA46 /* CGTKBaseBuilder.swift in Sources */,
 				ED72862720922E9E00AE4216 /* CGTKSeparatorToolItem.swift in Sources */,
+				ED29C53220A05D950069EA46 /* CGTKScrollable.swift in Sources */,
 				ED72864320922E9F00AE4216 /* CGTKWidget.swift in Sources */,
 				ED7285C720922E9E00AE4216 /* CGTKAppChooserWidget.swift in Sources */,
 				ED72863220922E9F00AE4216 /* CGTKTextView.swift in Sources */,
 				ED7285F220922E9E00AE4216 /* CGTKHButtonBox.swift in Sources */,
 				ED7285E020922E9E00AE4216 /* CGTKEventBox.swift in Sources */,
+				ED29C52E20A05D950069EA46 /* CGTKToolShell.swift in Sources */,
 				ED7285D520922E9E00AE4216 /* CGTKColorButton.swift in Sources */,
 				ED7285DA20922E9E00AE4216 /* CGTKComboBox.swift in Sources */,
 				ED72864420922E9F00AE4216 /* CGTKWindow.swift in Sources */,
 				ED7285DD20922E9E00AE4216 /* CGTKDialog.swift in Sources */,
+				ED29C52720A05D950069EA46 /* CGTKOrientable.swift in Sources */,
 				ED72862520922E9E00AE4216 /* CGTKSeparator.swift in Sources */,
 				ED7285D420922E9E00AE4216 /* CGTKCheckMenuItem.swift in Sources */,
 				ED7285CC20922E9E00AE4216 /* CGTKBin.swift in Sources */,
@@ -988,6 +1078,7 @@
 				ED7285F620922E9E00AE4216 /* CGTKHScrollbar.swift in Sources */,
 				14742C072093D83F0079EB12 /* CGTKTypeWrapper.swift in Sources */,
 				ED7285DB20922E9E00AE4216 /* CGTKComboBoxText.swift in Sources */,
+				ED29C53720A05D950069EA46 /* CGTKColorChooser.swift in Sources */,
 				ED7285EF20922E9E00AE4216 /* CGTKGrid.swift in Sources */,
 				ED7285D120922E9E00AE4216 /* CGTKCalendar.swift in Sources */,
 				ED72861920922E9E00AE4216 /* CGTKRadioToolButton.swift in Sources */,
@@ -1001,6 +1092,7 @@
 				ED72861B20922E9E00AE4216 /* CGTKRecentChooserDialog.swift in Sources */,
 				ED72861E20922E9E00AE4216 /* CGTKRevealer.swift in Sources */,
 				ED7285D020922E9E00AE4216 /* CGTKButtonBox.swift in Sources */,
+				ED29C53120A05D950069EA46 /* CGTKCellLayout.swift in Sources */,
 				ED72860820922E9E00AE4216 /* CGTKMenuItem.swift in Sources */,
 				ED7285F020922E9E00AE4216 /* CGTKHandleBox.swift in Sources */,
 				ED7285D320922E9E00AE4216 /* CGTKCheckButton.swift in Sources */,

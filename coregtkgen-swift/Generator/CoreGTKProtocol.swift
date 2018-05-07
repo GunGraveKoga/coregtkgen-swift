@@ -22,6 +22,18 @@ public struct CoreGTKProtocol {
         }
     }
     
+    public var type: String {
+        get {
+            let gtkType = CoreGTKUtil.swapTypes(cType)
+            
+            guard gtkType != "OpaquePointer" else {
+                return cType
+            }
+            
+            return gtkType
+        }
+    }
+    
     init(cName: String, cType: String, cSymbolPrefix: String) {
         self.cName = cName
         self.cType = cType

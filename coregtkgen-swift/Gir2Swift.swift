@@ -57,11 +57,7 @@ public enum Gir2Swift {
         }
         
         for ns in namspaces {
-            if !self.generateProtocolsFilesFromNamespace(ns) {
-                return false
-            }
-            
-            if !self.generateClassesFilesFromNamespace(ns) {
+            if !self.generateFilesFromNamespace(ns) {
                 return false
             }
         }
@@ -69,12 +65,44 @@ public enum Gir2Swift {
         return true
     }
     
-    public static func generateProtocolsFilesFromNamespace(_ namespace: GIRNamespace) -> Bool {
+    public static func generateFilesFromNamespace(_ namespace: GIRNamespace) -> Bool {
         
-        return true
+        var protocols = [CoreGTKProtocol]()
+        
+        for interface in namespace.interfaces {
+            CoreGTKUtil.addToTrimMethodName("gtk_" + interface.cSymbolPrefix!)
+            
+            var proto = CoreGTKProtocol(cName: interface.name!, cType: interface.cType!, cSymbolPrefix: interface.cSymbolPrefix!)
+            
+            for method in interface.methods {
+                let protocolMethod = self.generateMethodFromFunction(method)
+                
+                if var protocolMethod = protocolMethod {
+                    protocolMethod.selfArgumentType = proto.type
+                    proto.addMethod(protocolMethod)
+                }
+            }
+            
+            proto.doc = interface.doc?.docText
+            proto.glibGetType = interface.glibGetType
+            
+            protocols.append(proto)
+        }
+        
+        for gtkProtocol in protocols {
+            do {
+                try CoreGTKClassWriter.generateFile(forProtocol: gtkProtocol, inDirectory: CommandLine.arguments[3])
+            } catch let error {
+                print("Cannot generate source file for \(gtkProtocol.name): \(error)")
+                
+                return false
+            }
+        }
+        
+        return self.generateClassesFiles(namespace.classes, protocols: protocols)
     }
     
-    public static func generateClassesFilesFromNamespace(_ namespace: GIRNamespace) -> Bool {
+    public static func generateClassesFiles(_ classes: [GIRClass], protocols: [CoreGTKProtocol]) -> Bool {
         let classesToGen: [String]? = CoreGTKUtil.globalConfigValue(forKey: "classesToGen")
         
         guard classesToGen != nil else {
@@ -105,7 +133,7 @@ public enum Gir2Swift {
         
         var classesDictionary = [String: CoreGTKClass]()
         
-        for clazz in namespace.classes {
+        for clazz in classes {
             if !classesToGen!.contains(clazz.name!) {
                 continue
             }
@@ -151,49 +179,87 @@ public enum Gir2Swift {
         
         do {
             let classesArray = classesDictionary.map {$0.value}
-            let rootClasses = classesArray.filter {
-                if CoreGTKUtil.swapTypes($0.cParentType!) == "CGTKBase" {
-                    return true
-                }
-                
-                return false
-            }
             
-            for clazz in rootClasses {
-                
-                let rootFunctions = clazz.hasFunctions() ? Set(clazz.functions.map {$0.sig}) : nil
-                let rootConstructors = clazz.hasConstructors() ? Set(clazz.constructors.map {$0.sig}) : nil
-                let rootMethods = clazz.hasMethods() ? Set(clazz.methods.map {$0.sig}) : nil
-                
-                if let overrides = self.resolveOverrides(parent: clazz.name, functionsSigs: rootFunctions, constructorsSigs: rootConstructors, methodsSigs: rootMethods, classes: classesArray) {
-                    for (key, value) in overrides {
-                        do {
-                            if let functions = value["functions"] {
-                                for index in functions {
-                                    classesDictionary[key]!.functions[index].isOverrided = true
-                                }
+            if let overrides = self.resolveOverrides(parent: "CGTKBase", functionsSigs: nil, constructorsSigs: nil, methodsSigs: nil, classes: classesArray) {
+                for (key, value) in overrides {
+                    do {
+                        if let functions = value["functions"] {
+                            for index in functions {
+                                classesDictionary[key]!.functions[index].isOverrided = true
                             }
-                            
-                            if let constructors = value["constructors"] {
-                                for index in constructors {
-                                    classesDictionary[key]!.constructors[index].isOverrided = true
-                                }
+                        }
+                        
+                        if let constructors = value["constructors"] {
+                            for index in constructors {
+                                classesDictionary[key]!.constructors[index].isOverrided = true
                             }
-                            
-                            if let methods = value["methods"] {
-                                for index in methods {
-                                    classesDictionary[key]!.methods[index].isOverrided = true
-                                }
+                        }
+                        
+                        if let methods = value["methods"] {
+                            for index in methods {
+                                classesDictionary[key]!.methods[index].isOverrided = true
                             }
                         }
                     }
                 }
             }
+            
+            
+            
+            if let inheritedInterfaces = self.resolveInterfaces([String](), parent: "CGTKBase", classes: classesArray) {
+                
+                for (key, value) in inheritedInterfaces {
+                    do {
+                        let oldImplements = classesDictionary[key]!.implements
+                        var newImplements = [String]()
+                        
+                        for (index, implement) in oldImplements.enumerated() {
+                            if !value.contains(index) {
+                                newImplements.append(implement)
+                            }
+                        }
+                        
+                        classesDictionary[key]!.implements = newImplements
+                    }
+                }
+            }
+            
+            for (key, value) in classesDictionary {
+                do {
+                    var methodsSigs = Set<String>(value.methods.map {$0.sig})
+                    
+                    var parent = CoreGTKUtil.swapTypes(classesDictionary[key]!.cParentType!)
+                    
+                    while parent != "CGTKBase" {
+                        do {
+                            methodsSigs.formUnion(classesDictionary[parent]!.methods.map {$0.sig})
+                            parent = CoreGTKUtil.swapTypes(classesDictionary[parent]!.cParentType!)
+                        }
+                    }
+                    
+                    for implement in value.implements {
+                        if let interface = (protocols.filter {$0.cName == implement}).first {
+                            for method in interface.methods {
+                                if !methodsSigs.contains(method.sig
+                                    ) {
+                                    classesDictionary[key]!.addMethod(method)
+                                    methodsSigs.insert(method.sig)
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
         }
+        
+        let interfaces = protocols.map {$0.cName}
         
         for (_, gtkClass) in classesDictionary {
             do {
-                try CoreGTKClassWriter.generateFile(forClass: gtkClass, inDirectory: CommandLine.arguments[3])
+                try CoreGTKClassWriter.generateFile(forClass: gtkClass, interfaces: interfaces, inDirectory: CommandLine.arguments[3])
+                
+                
             } catch let error {
                 print("Cannot generate source file for \(gtkClass.name): \(error)")
                 
@@ -202,6 +268,49 @@ public enum Gir2Swift {
         }
         
         return true
+    }
+    
+    fileprivate static func resolveInterfaces(_ interfaces: [String], parent: String, classes: [CoreGTKClass]) -> [String: [Int]]? {
+        let children = classes.filter {
+            if CoreGTKUtil.swapTypes($0.cParentType!) == parent {
+                return true
+            }
+            
+            return false
+        }
+        
+        guard children.count > 0 else {
+            return nil
+        }
+        
+        var inheritedInterfaces = [String: [Int]]()
+        
+        for child in children {
+            if child.implements.count > 0 {
+                var indexes = [Int]()
+                
+                for (index, implement) in child.implements.enumerated() {
+                    if interfaces.contains(implement) {
+                        indexes.append(index)
+                    }
+                }
+                
+                if indexes.count > 0 {
+                    inheritedInterfaces[child.name] = indexes
+                }
+                
+                if let nextInterfaces = self.resolveInterfaces(child.implements, parent: child.name, classes: classes) {
+                    
+                    inheritedInterfaces.merge(nextInterfaces, uniquingKeysWith: {(_, last) in last})
+                }
+            }
+        }
+        
+        guard inheritedInterfaces.count > 0 else {
+            return nil
+        }
+        
+        return inheritedInterfaces
     }
     
     fileprivate static func resolveOverrides(parent: String, functionsSigs: Set<String>?, constructorsSigs: Set<String>?, methodsSigs: Set<String>?, classes: [CoreGTKClass]) -> [String: [String: [Int]]]? {

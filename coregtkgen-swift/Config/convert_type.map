@@ -19,8 +19,14 @@
     "String" : "String(utf8String: %@)"
     },
     
+    "char*" : {
+        "String" : "String(utf8String: %@)"
+    },
+    
     "String" : {
     "gchar*" : "%@",
-    "const gchar*" : "%@"
+    "const gchar*" : "%@",
+    "char*" : "%@",
+    "const char*" : "%@"
     }
 }

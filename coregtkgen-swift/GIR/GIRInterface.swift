@@ -11,6 +11,7 @@ import Foundation
 public class GIRInterface : GIRBase {
     public private(set) var name: String? = nil
     public private(set) var cType: String? = nil
+    public private(set) var glibGetType: String? = nil
     public private(set) var cSymbolPrefix: String?  = nil
     public private(set) var doc: GIRDoc? = nil
     public private(set) var fields: [GIRField] = [GIRField]()
@@ -25,8 +26,7 @@ public class GIRInterface : GIRBase {
             case "text",
                  "glib:type-name",
                  "glib:type-struct",
-                 "glib:signal",
-                 "glib:get-type":
+                 "glib:signal":
                 continue
             case "name":
                 self.name = (value as! String)
@@ -46,6 +46,8 @@ public class GIRInterface : GIRBase {
                 self.processArrayOrDictionary(value, clazz: GIRProperty.self, andArray: &self.properties)
             case "prerequisite":
                 self.prerequisite = GIRPrerequisite(value as! Dictionary<String, Any>)
+            case "glib:get-type":
+                self.glibGetType = (value as! String)
             default:
                 self.logUnknownElement(key)
             }

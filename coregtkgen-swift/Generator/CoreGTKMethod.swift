@@ -18,6 +18,7 @@ public struct CoreGTKMethod {
     public var isConstructor = false
     public var doc: String? = nil
     public var isOverrided = false
+    public var selfArgumentType: String? = nil
     
     public var name: String {
         get {
@@ -39,6 +40,8 @@ public struct CoreGTKMethod {
                  "gtk_about_dialog_get_authors",
                  "gtk_about_dialog_get_documenters":
                 return "UnsafePointer<UnsafePointer<gchar>?>!"
+            case "gtk_recent_chooser_get_uris":
+                return "UnsafeMutablePointer<UnsafeMutablePointer<gchar>?>!"
             default:
                 break
             }
@@ -140,7 +143,16 @@ public struct CoreGTKMethod {
              "gtk_builder_add_objects_from_string",
              "gtk_builder_extend_with_template",
              "gtk_builder_value_from_string",
-             "gtk_builder_value_from_string_type":
+             "gtk_builder_value_from_string_type",
+             "gtk_file_chooser_add_shortcut_folder",
+             "gtk_file_chooser_add_shortcut_folder_uri",
+             "gtk_file_chooser_remove_shortcut_folder",
+             "gtk_file_chooser_select_file",
+             "gtk_file_chooser_set_current_folder_file",
+             "gtk_file_chooser_remove_shortcut_folder_uri",
+             "gtk_file_chooser_set_file",
+             "gtk_recent_chooser_select_uri",
+             "gtk_recent_chooser_set_current_uri":
             do {
                 let param = CoreGTKParameter(cName: "err", cType: "GError**", nullable: true, optional: true)
                 self.parameters.append(param)
@@ -249,6 +261,8 @@ public struct CoreGTKMethod {
                 } else {
                     result += " -> \(self.returnType)"
                 }
+            } else if self.returnsVoid {
+                result += " -> Swift.Void"
             }
             
             return result
