@@ -24,6 +24,34 @@ public class GIRParameter : GIRBase {
     public private(set) var array: GIRArray? = nil
     public private(set) var varArgs: GIRVarArgs? = nil
     
+    public var isNullable: Bool {
+        get {
+            if let _direction = self.direction {
+                if _direction != "out" && self.allowNone {
+                    return true
+                }
+            }
+            
+            if !self.nullable && self.allowNone {
+                return true
+            }
+            
+            return self.nullable
+        }
+    }
+    
+    public var isOptional: Bool {
+        get {
+            if let _direction = self.direction {
+                if _direction == "out" && self.allowNone {
+                    return true
+                }
+            }
+            
+            return self.optional
+        }
+    }
+    
     public override func parseDictionary(_ dictionary: Dictionary<String, Any>) {
         for (key, value) in dictionary {
             switch key {

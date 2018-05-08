@@ -83,7 +83,7 @@ public enum CoreGTKUtil {
         return "self.init(withGObject: \(constructor))!\n"
     }
     
-    public static func convertType(from fromType: String, to toType: String, withName name: String) -> String {
+    public static func convertType(from fromType: String, to toType: String, withName name: String, nullable: Bool = false) -> String {
         if dictConvertType.count == 0 {
             dictConvertType.merge(self._dictionaryFromFile("convert_type.map"), uniquingKeysWith: {(_, last) in last})
         }
@@ -106,7 +106,13 @@ public enum CoreGTKUtil {
             } else if fromType.hasPrefix("CGTK") && toType.hasPrefix("Gtk") {
                 let start = toType.index(toType.startIndex, offsetBy: 3)
                 let end = toType.index(toType.endIndex, offsetBy: -1)
-                return "\(name).\(toType[start..<end].uppercased())"
+                var result = "\(name)"
+                if nullable {
+                    result += "?"
+                }
+                result += ".\(toType[start..<end].uppercased())"
+                
+                return result
             } else {
                 return name
             }

@@ -127,6 +127,14 @@ public struct CoreGTKParameter {
                 return "@escaping " + type
             }
             
+            if nullable {
+                type += "?"
+            }
+            
+            if optional {
+                type += " = nil"
+            }
+            
             return type
         }
     }

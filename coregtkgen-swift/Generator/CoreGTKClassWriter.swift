@@ -340,7 +340,7 @@ public enum CoreGTKClassWriter {
         for i in 0..<params.count {
             let param = params[i]
             
-            paramsOutput += CoreGTKUtil.convertType(from: param.type, to: param.cType, withName: param.name)
+            paramsOutput += CoreGTKUtil.convertType(from: param.type, to: param.cType, withName: param.name, nullable: param.nullable)
             
             if i < limit {
                 paramsOutput += ", "
@@ -362,7 +362,7 @@ public enum CoreGTKClassWriter {
             for i in 0..<params.count {
                 let param = params[i]
                 
-                paramsOutput += CoreGTKUtil.convertType(from: param.type, to: param.cType, withName: param.name)
+                paramsOutput += CoreGTKUtil.convertType(from: param.type, to: param.cType, withName: param.name, nullable: param.nullable)
                 
                 if i < limit {
                     paramsOutput += ", "
