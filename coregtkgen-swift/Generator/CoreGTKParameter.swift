@@ -107,16 +107,6 @@ public struct CoreGTKParameter {
                 return result
             }
             
-            if nullable && optional {
-                return type + "? = nil"
-            } else if type == "OpaquePointer" {
-                if nullable {
-                    return type + "?"
-                }
-                
-                return type + "!"
-            }
-            
             let _name = self.name
             let isFunction = _name.range(of: "func", options: .caseInsensitive) != nil && _name != "funcData"
             let isNotify = _name.range(of: "notify", options: .caseInsensitive) != nil
@@ -127,12 +117,14 @@ public struct CoreGTKParameter {
                 return "@escaping " + type
             }
             
-            if nullable {
-                type += "?"
-            }
-            
-            if optional {
-                type += " = nil"
+            if !type.hasSuffix("!") {
+                if nullable && !type.hasSuffix("?") {
+                    type += "?"
+                }
+                
+                if optional {
+                    type += " = nil"
+                }
             }
             
             return type
