@@ -107,6 +107,14 @@ public struct CoreGTKParameter {
                 return result
             }
             
+            if type == "OpaquePointer" {
+                if nullable {
+                    return type + "?"
+                }
+                
+                return type + "!"
+            }
+            
             let _name = self.name
             let isFunction = _name.range(of: "func", options: .caseInsensitive) != nil && _name != "funcData"
             let isNotify = _name.range(of: "notify", options: .caseInsensitive) != nil

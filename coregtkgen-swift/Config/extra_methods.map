@@ -9,8 +9,8 @@
 
 "GtkDialog" : {
 
-"\tpublic convenience init(withTitle title: String, parent: CGTKWindow, flags: GtkDialogFlags, _ buttons: [(buttonText: String, responseId: GtkResponseType)]?) {" :
-"\t\tself.init(withGObject:swift_gtk_dialog_new_with_buttons(title, parent.WINDOW, flags))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId.rawValue)\n\t\t\t}\n\t\t}\n\t}",
+"\tpublic convenience init(withTitle title: String, parent: CGTKWindow?, flags: GtkDialogFlags, _ buttons: [(buttonText: String, responseId: GtkResponseType)]?) {" :
+"\t\tself.init(withGObject:swift_gtk_dialog_new_with_buttons(title, parent?.WINDOW, flags))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId.rawValue)\n\t\t\t}\n\t\t}\n\t}",
 
 "\topen func addButtons(_ buttons: [(buttonText: String, responseId: GtkResponseType)]) {" :
 "\t\tfor button in buttons {\n\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId.rawValue)\n\t\t}\n\t}"
@@ -19,18 +19,18 @@
 
 "GtkFileChooserDialog" : {
 
-"\tpublic convenience init(withTitle title: String, parent: CGTKWindow!, action: GtkFileChooserAction, _ buttons: [(buttonText: String, responseId: GtkResponseType)]?) {" :
-"\t\tself.init(withGObject:swift_gtk_file_chooser_dialog_new(title, parent.WINDOW, action))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId.rawValue)\n\t\t\t}\n\t\t}\n\t}"
+"\tpublic convenience init(withTitle title: String, parent: CGTKWindow?, action: GtkFileChooserAction, _ buttons: [(buttonText: String, responseId: GtkResponseType)]?) {" :
+"\t\tself.init(withGObject:swift_gtk_file_chooser_dialog_new(title, parent?.WINDOW, action))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId.rawValue)\n\t\t\t}\n\t\t}\n\t}"
 
 },
 
 "GtkMessageDialog" : {
 
-"\tpublic convenience init(withParent parent: CGTKWindow, flags: GtkDialogFlags, type: GtkMessageType, buttons: GtkButtonsType, message: String) {" :
-"\t\tself.init(withGObject:swift_gtk_message_dialog_new(parent.WINDOW, flags, type, buttons, message))!\n\t}",
+"\tpublic convenience init(withParent parent: CGTKWindow?, flags: GtkDialogFlags, type: GtkMessageType, buttons: GtkButtonsType, message: String) {" :
+"\t\tself.init(withGObject:swift_gtk_message_dialog_new(parent?.WINDOW, flags, type, buttons, message))!\n\t}",
 
-"\tpublic convenience init(withParent parent: CGTKWindow, flags: GtkDialogFlags, type: GtkMessageType, buttons: GtkButtonsType, markup: String) {" :
-"\t\tself.init(withGObject:swift_gtk_message_dialog_new_with_markup(parent.WINDOW, flags, type, buttons, markup))!\n\t}",
+"\tpublic convenience init(withParent parent: CGTKWindow?, flags: GtkDialogFlags, type: GtkMessageType, buttons: GtkButtonsType, markup: String) {" :
+"\t\tself.init(withGObject:swift_gtk_message_dialog_new_with_markup(parent?.WINDOW, flags, type, buttons, markup))!\n\t}",
 
 "\topen func formatSecondaryText(_ message: String) {" :
 "\t\tswift_gtk_message_dialog_format_secondary_text(self.MESSAGEDIALOG, message)\n\t}",
@@ -42,11 +42,11 @@
 
 "GtkRecentChooserDialog" : {
 
-"\tpublic convenience init(withTitle title: String, parent: CGTKWindow, _ buttons: [(buttonText: String, responseId: GtkResponseType)]?) {\n" :
-"\t\tself.init(withGObject:swift_gtk_recent_chooser_dialog_new(title, parent.WINDOW))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId.rawValue)\n\t\t\t}\n\t\t}\n\t}",
+"\tpublic convenience init(withTitle title: String, parent: CGTKWindow?, _ buttons: [(buttonText: String, responseId: GtkResponseType)]?) {\n" :
+"\t\tself.init(withGObject:swift_gtk_recent_chooser_dialog_new(title, parent?.WINDOW))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId.rawValue)\n\t\t\t}\n\t\t}\n\t}",
 
-"\tpublic convenience init(forManagerWithTitle title: String, parent: CGTKWindow, manager: UnsafeMutablePointer<GtkRecentManager>!, _ buttons: [(buttonText: String, responseId: GtkResponseType)]?) {\n" :
-"\t\tself.init(withGObject:swift_gtk_recent_chooser_dialog_new_for_manager(title, parent.WINDOW, manager))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId.rawValue)\n\t\t\t}\n\t\t}\n\t}"
+"\tpublic convenience init(forManagerWithTitle title: String, parent: CGTKWindow?, manager: UnsafeMutablePointer<GtkRecentManager>!, _ buttons: [(buttonText: String, responseId: GtkResponseType)]?) {\n" :
+"\t\tself.init(withGObject:swift_gtk_recent_chooser_dialog_new_for_manager(title, parent?.WINDOW, manager))!\n\n\t\tif let buttons = buttons {\n\t\t\tfor button in buttons {\n\t\t\t\t_ = self.addButton(buttonText: button.buttonText, responseId: button.responseId.rawValue)\n\t\t\t}\n\t\t}\n\t}"
 
 },
 

@@ -45,6 +45,7 @@ public struct CoreGTKMethod {
             default:
                 break
             }
+            
             var type = CoreGTKUtil.swapTypes(cReturnType)
             var isConst = false
             var range = type.range(of: "const")

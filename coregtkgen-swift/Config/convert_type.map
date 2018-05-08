@@ -16,11 +16,11 @@
     },
     
     "gchar*" : {
-    "String" : "String(utf8String: %@)"
+        "String" : "{\n\t\t\tlet ptr = %@\n\t\t\tdefer {\n\t\t\t\tif ptr != nil {\n\t\t\t\t\tg_free(ptr)\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn ptr != nil ? String(utf8String: ptr!) : nil\n\t\t}()"
     },
     
     "char*" : {
-        "String" : "String(utf8String: %@)"
+        "String" : "{\n\t\t\tlet ptr = %@\n\t\t\tdefer {\n\t\t\t\tif ptr != nil {\n\t\t\t\t\tg_free(ptr)\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn ptr != nil ? String(utf8String: ptr!) : nil\n\t\t}()"
     },
     
     "String" : {
